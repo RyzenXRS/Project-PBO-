@@ -44,8 +44,18 @@ namespace PBOOO_PROJECT
 
         private void Loginbutton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(usernamebox.Text.Trim()) || string.IsNullOrEmpty(passwordbox.Text.Trim()))
+                //|| string.IsNullOrEmpty(comboBox1.Text.Trim()))
+            {
+                MessageBox.Show("Username dan password tidak boleh kosong", "Login Data",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string username = usernamebox.Text;
+            string password = passwordbox.Text;
 
         }
+        //}
 
         private void label5_Click(object sender, EventArgs e)
         {

@@ -73,6 +73,16 @@ namespace PBOOO_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_24_Mei_2025__20_49_18 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 24 Mei 2025, 20.49.18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Desain_tanpa_judul {
             get {
                 object obj = ResourceManager.GetObject("Desain tanpa judul", resourceCulture);

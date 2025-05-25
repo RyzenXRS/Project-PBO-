@@ -97,6 +97,7 @@
             passwordbox.Margin = new Padding(6, 5, 6, 5);
             passwordbox.Name = "passwordbox";
             passwordbox.PlaceholderText = "";
+            passwordbox.RightToLeft = RightToLeft.No;
             passwordbox.SelectedText = "";
             passwordbox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             passwordbox.Size = new Size(433, 45);
@@ -222,6 +223,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
             panel1.BackgroundImage = Properties.Resources.Desain_tanpa_judul;
             panel1.Location = new Point(79, 87);
             panel1.Name = "panel1";
@@ -233,6 +235,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(138, 154, 91);
+            BackgroundImage = Properties.Resources.ChatGPT_Image_24_Mei_2025__20_49_18;
             ClientSize = new Size(1261, 693);
             Controls.Add(panel1);
             Controls.Add(usernamebox);

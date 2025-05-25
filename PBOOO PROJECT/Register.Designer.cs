@@ -50,7 +50,7 @@
             konfirmasibox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            alamatbox = new Guna.UI2.WinForms.Guna2TextBox();
+            emailbox = new Guna.UI2.WinForms.Guna2TextBox();
             notelpbox = new Guna.UI2.WinForms.Guna2TextBox();
             namabox = new Guna.UI2.WinForms.Guna2TextBox();
             label8 = new Label();
@@ -209,31 +209,31 @@
             // 
             // alamatbox
             // 
-            alamatbox.Anchor = AnchorStyles.None;
-            alamatbox.BackColor = Color.FromArgb(138, 154, 91);
-            alamatbox.BorderColor = Color.Transparent;
-            alamatbox.BorderRadius = 9;
-            alamatbox.BorderThickness = 0;
-            alamatbox.CustomizableEdges = customizableEdges9;
-            alamatbox.DefaultText = "";
-            alamatbox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            alamatbox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            alamatbox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            alamatbox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            alamatbox.FillColor = Color.FromArgb(245, 248, 241);
-            alamatbox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            alamatbox.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
-            alamatbox.ForeColor = Color.FromArgb(74, 75, 67);
-            alamatbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            alamatbox.Location = new Point(127, 287);
-            alamatbox.Margin = new Padding(6, 5, 6, 5);
-            alamatbox.Name = "alamatbox";
-            alamatbox.PlaceholderText = "";
-            alamatbox.SelectedText = "";
-            alamatbox.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            alamatbox.Size = new Size(470, 46);
-            alamatbox.TabIndex = 92;
-            alamatbox.TextChanged += alamatbox_TextChanged;
+            emailbox.Anchor = AnchorStyles.None;
+            emailbox.BackColor = Color.FromArgb(138, 154, 91);
+            emailbox.BorderColor = Color.Transparent;
+            emailbox.BorderRadius = 9;
+            emailbox.BorderThickness = 0;
+            emailbox.CustomizableEdges = customizableEdges9;
+            emailbox.DefaultText = "";
+            emailbox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            emailbox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            emailbox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            emailbox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            emailbox.FillColor = Color.FromArgb(245, 248, 241);
+            emailbox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            emailbox.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
+            emailbox.ForeColor = Color.FromArgb(74, 75, 67);
+            emailbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            emailbox.Location = new Point(127, 287);
+            emailbox.Margin = new Padding(6, 5, 6, 5);
+            emailbox.Name = "emailbox";
+            emailbox.PlaceholderText = "";
+            emailbox.SelectedText = "";
+            emailbox.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            emailbox.Size = new Size(470, 46);
+            emailbox.TabIndex = 92;
+            emailbox.TextChanged += emailbox_TextChanged;
             // 
             // notelpbox
             // 
@@ -401,12 +401,12 @@
             label15.Anchor = AnchorStyles.None;
             label15.AutoSize = true;
             label15.BackColor = Color.FromArgb(138, 154, 91);
-            label15.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold);
+            label15.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.FromArgb(217, 224, 184);
             label15.Location = new Point(116, 65);
             label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
-            label15.Size = new Size(176, 46);
+            label15.Size = new Size(168, 46);
             label15.TabIndex = 82;
             label15.Text = "Register";
             label15.Click += label15_Click;
@@ -454,13 +454,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(138, 154, 91);
+            BackgroundImage = Properties.Resources.ChatGPT_Image_24_Mei_2025__20_49_18;
             ClientSize = new Size(1265, 678);
             Controls.Add(label9);
             Controls.Add(label10);
             Controls.Add(konfirmasibox);
             Controls.Add(guna2TextBox1);
             Controls.Add(guna2TextBox2);
-            Controls.Add(alamatbox);
+            Controls.Add(emailbox);
             Controls.Add(notelpbox);
             Controls.Add(namabox);
             Controls.Add(label8);
@@ -487,7 +488,7 @@
         private Guna.UI2.WinForms.Guna2TextBox konfirmasibox;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox alamatbox;
+        private Guna.UI2.WinForms.Guna2TextBox emailbox;
         private Guna.UI2.WinForms.Guna2TextBox notelpbox;
         private Guna.UI2.WinForms.Guna2TextBox namabox;
         private Label label8;
