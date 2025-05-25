@@ -235,7 +235,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(138, 154, 91);
-            BackgroundImage = Properties.Resources.ChatGPT_Image_24_Mei_2025__20_49_18;
+            BackgroundImage = Properties.Resources.Background;
             ClientSize = new Size(1261, 693);
             Controls.Add(panel1);
             Controls.Add(usernamebox);

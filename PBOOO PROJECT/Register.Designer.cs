@@ -207,7 +207,7 @@
             guna2TextBox2.TabIndex = 93;
             guna2TextBox2.TextChanged += guna2TextBox2_TextChanged;
             // 
-            // alamatbox
+            // emailbox
             // 
             emailbox.Anchor = AnchorStyles.None;
             emailbox.BackColor = Color.FromArgb(138, 154, 91);
@@ -431,6 +431,7 @@
             // btnRegister
             // 
             btnRegister.BackColor = Color.FromArgb(138, 154, 91);
+            btnRegister.BackgroundImage = Properties.Resources.Background;
             btnRegister.BorderRadius = 15;
             btnRegister.CustomizableEdges = customizableEdges15;
             btnRegister.DisabledState.BorderColor = Color.DarkGray;
@@ -454,7 +455,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(138, 154, 91);
-            BackgroundImage = Properties.Resources.ChatGPT_Image_24_Mei_2025__20_49_18;
+            BackgroundImage = Properties.Resources.Background;
             ClientSize = new Size(1265, 678);
             Controls.Add(label9);
             Controls.Add(label10);
@@ -475,6 +476,7 @@
             Controls.Add(guna2ShadowPanel1);
             Name = "Register";
             Text = "Register";
+            Load += Register_Load;
             guna2ShadowPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
