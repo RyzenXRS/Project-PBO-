@@ -1,4 +1,4 @@
-using PBOOO_PROJECT.Controller;
+//using PBOOO_PROJECT.Controller;
 
 namespace PBOOO_PROJECT
 {
@@ -65,8 +65,6 @@ namespace PBOOO_PROJECT
             string selectedTable = comboBox1.SelectedItem.ToString();
             string username = usernamebox.Text;
             string password = passwordbox.Text;
-            LoginController loginController = new LoginController();
-            var (result, userId) = loginController.AuthLogin(selectedTable, username, password);
 
         }
         private void label10_Click(object sender, EventArgs e)

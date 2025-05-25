@@ -77,7 +77,7 @@
             comboBox1.HoverState.FillColor = Color.Transparent;
             comboBox1.IntegralHeight = false;
             comboBox1.ItemHeight = 40;
-            comboBox1.Items.AddRange(new object[] { "Admin", "Pemilik", "Penyewa" });
+            comboBox1.Items.AddRange(new object[] { "Admin", "Penjual", "Pembeli" });
             comboBox1.ItemsAppearance.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             comboBox1.Location = new Point(767, 400);
             comboBox1.Margin = new Padding(6, 5, 6, 5);
