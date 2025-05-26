@@ -14,10 +14,14 @@ namespace PBOOO_PROJECT.View.Admin
     public partial class FormAdmin : Form
     {
         private int _userId;
+        // Assuming ucDashboardAdmin is a UserControl that needs to be added to the form
+        private UCDashboardAdmin ucDashboardAdmin = new UCDashboardAdmin();
         public FormAdmin(int userId)
         {
             _userId = userId;
             InitializeComponent();
+            ucDashboardAdmin.UserId = _userId;
+            ucDashboardAdmin.Dock = DockStyle.Fill; // Adjust as needed
         }
 
         private void FormAdmin_Load(object sender, EventArgs e)

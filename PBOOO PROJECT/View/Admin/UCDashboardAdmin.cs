@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBOOO_PROJECT.Controller.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBOOO_PROJECT.Controller;
+using PBOOO_PROJECT.Controller.Admin;
 
 namespace PBOOO_PROJECT.View.Admin
 {
     public partial class UCDashboardAdmin : UserControl
     {
+        private int _userId;
+        DashboardControllerA dashboardControllerA;
+        public int UserId
+        {
+            get { return _userId; }
+            set
+            {
+                _userId = value;
+            }
+        }
         public UCDashboardAdmin()
         {
+            dashboardControllerA = new DashboardControllerA();
             InitializeComponent();
+            //Owners();
+            //Renters();
+            //Rentals();
         }
 
         private void Total_TO_Click(object sender, EventArgs e)

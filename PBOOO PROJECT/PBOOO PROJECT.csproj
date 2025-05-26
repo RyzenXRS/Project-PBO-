@@ -31,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controller\Admin\" />
     <Folder Include="Controller\Penjual\" />
     <Folder Include="Controller\Pembeli\" />
   </ItemGroup>
