@@ -12,9 +12,16 @@ namespace PBOOO_PROJECT.View.Pembeli
 {
     public partial class FormPembeli : Form
     {
-        public FormPembeli()
+        private int _userId;
+        public FormPembeli(int userId)
         {
             InitializeComponent();
+            _userId = userId;
+        }
+
+        private void FormPembeli_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

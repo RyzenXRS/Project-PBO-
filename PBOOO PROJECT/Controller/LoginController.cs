@@ -33,10 +33,10 @@ namespace PBOOO_PROJECT.Controller
             {
                 case "Admin":
                     return "id_admin";
-                case "Pemilik":
-                    return "id_pemilik";
-                case "Penyewa":
-                    return "id_penyewa";
+                case "Pembeli":
+                    return "id_pembeli";
+                case "Penjual":
+                    return "id_penjual";
                 default:
                     throw new ArgumentException("Invalid table name");
             }

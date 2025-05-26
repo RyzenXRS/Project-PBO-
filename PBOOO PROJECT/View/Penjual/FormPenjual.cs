@@ -12,9 +12,16 @@ namespace PBOOO_PROJECT.View.Penjual
 {
     public partial class FormPenjual : Form
     {
-        public FormPenjual()
+        private int _userId;
+        public FormPenjual(int userId)
         {
             InitializeComponent();
+            _userId = userId;
+        }
+
+        private void FormPenjual_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

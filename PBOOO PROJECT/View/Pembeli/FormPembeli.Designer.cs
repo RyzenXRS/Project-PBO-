@@ -48,6 +48,7 @@
             Controls.Add(label1);
             Name = "FormPembeli";
             Text = "FormPembeli";
+            Load += FormPembeli_Load;
             ResumeLayout(false);
             PerformLayout();
         }

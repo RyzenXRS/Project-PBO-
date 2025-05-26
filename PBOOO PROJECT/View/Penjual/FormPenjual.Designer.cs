@@ -48,6 +48,7 @@
             Controls.Add(label1);
             Name = "FormPenjual";
             Text = "FormPenjual";
+            Load += FormPenjual_Load;
             ResumeLayout(false);
             PerformLayout();
         }
