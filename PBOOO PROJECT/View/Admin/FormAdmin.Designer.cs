@@ -41,10 +41,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             LogoGoCamp = new PictureBox();
             MaGrow = new Label();
             buttonlogoutadm = new Guna.UI2.WinForms.Guna2Button();
@@ -54,9 +54,10 @@
             buttondashboardadmin = new Guna.UI2.WinForms.Guna2Button();
             panellogo = new Guna.UI2.WinForms.Guna2Panel();
             sidebardashboard = new Panel();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             buttonrenters = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            ucDashboardAdmin1 = new UCDashboardAdmin();
             ((System.ComponentModel.ISupportInitialize)LogoGoCamp).BeginInit();
             panellogo.SuspendLayout();
             sidebardashboard.SuspendLayout();
@@ -258,6 +259,26 @@
             sidebardashboard.TabIndex = 40;
             sidebardashboard.Paint += sidebardashboard_Paint;
             // 
+            // guna2Button1
+            // 
+            guna2Button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.CustomizableEdges = customizableEdges13;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(64, 65, 56);
+            guna2Button1.Font = new Font("Microsoft Sans Serif", 13F);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(22, 751);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Button1.Size = new Size(210, 53);
+            guna2Button1.TabIndex = 7;
+            guna2Button1.Text = "Logout";
+            guna2Button1.Click += guna2Button1_Click;
+            // 
             // buttonrenters
             // 
             buttonrenters.BackColor = Color.Transparent;
@@ -296,31 +317,22 @@
             panel1.TabIndex = 41;
             panel1.Paint += panel1_Paint;
             // 
-            // guna2Button1
+            // ucDashboardAdmin1
             // 
-            guna2Button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            guna2Button1.BorderRadius = 10;
-            guna2Button1.CustomizableEdges = customizableEdges13;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(64, 65, 56);
-            guna2Button1.Font = new Font("Microsoft Sans Serif", 13F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(22, 751);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Button1.Size = new Size(210, 53);
-            guna2Button1.TabIndex = 7;
-            guna2Button1.Text = "Logout";
-            guna2Button1.Click += guna2Button1_Click;
+            ucDashboardAdmin1.Location = new Point(256, 0);
+            ucDashboardAdmin1.Name = "ucDashboardAdmin1";
+            ucDashboardAdmin1.Size = new Size(1280, 864);
+            ucDashboardAdmin1.TabIndex = 42;
+            ucDashboardAdmin1.UserId = 0;
+            ucDashboardAdmin1.Load += ucDashboardAdmin1_Load;
+            
             // 
             // FormAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1536, 864);
+            Controls.Add(ucDashboardAdmin1);
             Controls.Add(panel1);
             Controls.Add(sidebardashboard);
             Name = "FormAdmin";
@@ -349,5 +361,7 @@
         private Guna.UI2.WinForms.Guna2Button buttonrenters;
         private UCDashboardAdmin ucDashboardAdmin1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private UCOwner ucOwners1; 
+        private UCProfileAdmin ucProfileAdmin1;
     }
 }

@@ -33,6 +33,8 @@
   <ItemGroup>
     <Folder Include="Controller\Penjual\" />
     <Folder Include="Controller\Pembeli\" />
+    <Folder Include="Models\Pembeli\" />
+    <Folder Include="Models\Penjual\" />
   </ItemGroup>
 
 </Project>

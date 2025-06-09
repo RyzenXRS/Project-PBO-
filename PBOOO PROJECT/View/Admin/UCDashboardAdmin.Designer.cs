@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             Total_TRE = new Label();
             label2 = new Label();
@@ -49,7 +49,7 @@
             guna2ShadowPanel2.Controls.Add(Total_TRE);
             guna2ShadowPanel2.Controls.Add(label2);
             guna2ShadowPanel2.FillColor = Color.White;
-            guna2ShadowPanel2.Location = new Point(394, 246);
+            guna2ShadowPanel2.Location = new Point(394, 232);
             guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             guna2ShadowPanel2.Radius = 10;
             guna2ShadowPanel2.RightToLeft = RightToLeft.Yes;
@@ -67,7 +67,7 @@
             Total_TRE.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Total_TRE.ForeColor = Color.FromArgb(14, 115, 116);
             Total_TRE.ImageAlign = ContentAlignment.MiddleLeft;
-            Total_TRE.Location = new Point(125, 83);
+            Total_TRE.Location = new Point(121, 83);
             Total_TRE.Name = "Total_TRE";
             Total_TRE.Size = new Size(42, 46);
             Total_TRE.TabIndex = 24;
@@ -94,7 +94,7 @@
             guna2ShadowPanel1.Controls.Add(Total_TO);
             guna2ShadowPanel1.Controls.Add(label1);
             guna2ShadowPanel1.FillColor = Color.White;
-            guna2ShadowPanel1.Location = new Point(34, 246);
+            guna2ShadowPanel1.Location = new Point(34, 232);
             guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             guna2ShadowPanel1.Radius = 10;
             guna2ShadowPanel1.RightToLeft = RightToLeft.Yes;
@@ -141,11 +141,11 @@
             paneltopdashboard.Controls.Add(juduldashboard);
             paneltopdashboard.CustomBorderColor = Color.FromArgb(217, 224, 184);
             paneltopdashboard.CustomBorderThickness = new Padding(0, 0, 0, 1);
-            paneltopdashboard.CustomizableEdges = customizableEdges5;
+            paneltopdashboard.CustomizableEdges = customizableEdges1;
             paneltopdashboard.Dock = DockStyle.Top;
             paneltopdashboard.Location = new Point(0, 0);
             paneltopdashboard.Name = "paneltopdashboard";
-            paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
             paneltopdashboard.Size = new Size(1277, 131);
             paneltopdashboard.TabIndex = 47;
             paneltopdashboard.Paint += paneltopdashboard_Paint;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PBOOO_PROJECT.View.Admin
 {
     public partial class FormAdmin : Form
@@ -19,6 +20,9 @@ namespace PBOOO_PROJECT.View.Admin
             _userId = userId;
             InitializeComponent();
             ucDashboardAdmin1.UserId = _userId;
+            ucOwners1.UserId = _userId;
+            ucProfileAdmin1.UserId = _userId;
+
         }
         private void FormAdmin_Load(object sender, EventArgs e)
         {
@@ -28,6 +32,8 @@ namespace PBOOO_PROJECT.View.Admin
         private void buttondashboardadmin_Click(object sender, EventArgs e)
         {
             ucDashboardAdmin1.Visible = true;
+            ucOwners1.Visible = false;
+            ucProfileAdmin1.Visible = false;
         }
 
         private void panellogo_Paint(object sender, PaintEventArgs e)
@@ -52,7 +58,9 @@ namespace PBOOO_PROJECT.View.Admin
 
         private void buttonowners_Click(object sender, EventArgs e)
         {
-
+            ucDashboardAdmin1.Visible = false;
+            ucOwners1.Visible = true;
+            ucProfileAdmin1.Visible = false;
         }
 
         private void buttonrenters_Click(object sender, EventArgs e)
@@ -67,7 +75,9 @@ namespace PBOOO_PROJECT.View.Admin
 
         private void buttonprofiladmin_Click(object sender, EventArgs e)
         {
-
+            ucDashboardAdmin1.Visible = false;
+            ucOwners1.Visible = false;
+            ucProfileAdmin1.Visible = true;
         }
 
         private void sidebardashboard_Paint(object sender, PaintEventArgs e)
@@ -85,6 +95,11 @@ namespace PBOOO_PROJECT.View.Admin
                 formLogin.Show();
                 this.Hide();
             }
+        }
+
+        private void ucDashboardAdmin1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
