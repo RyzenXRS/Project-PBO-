@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             Total_TRE = new Label();
             label2 = new Label();
@@ -38,13 +38,9 @@
             label1 = new Label();
             paneltopdashboard = new Guna.UI2.WinForms.Guna2Panel();
             juduldashboard = new Label();
-            guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            Total_TRA = new Label();
-            label3 = new Label();
             guna2ShadowPanel2.SuspendLayout();
             guna2ShadowPanel1.SuspendLayout();
             paneltopdashboard.SuspendLayout();
-            guna2ShadowPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // guna2ShadowPanel2
@@ -53,7 +49,7 @@
             guna2ShadowPanel2.Controls.Add(Total_TRE);
             guna2ShadowPanel2.Controls.Add(label2);
             guna2ShadowPanel2.FillColor = Color.White;
-            guna2ShadowPanel2.Location = new Point(340, 246);
+            guna2ShadowPanel2.Location = new Point(394, 246);
             guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             guna2ShadowPanel2.Radius = 10;
             guna2ShadowPanel2.RightToLeft = RightToLeft.Yes;
@@ -62,6 +58,7 @@
             guna2ShadowPanel2.ShadowShift = 10;
             guna2ShadowPanel2.Size = new Size(300, 200);
             guna2ShadowPanel2.TabIndex = 49;
+            guna2ShadowPanel2.Paint += guna2ShadowPanel2_Paint;
             // 
             // Total_TRE
             // 
@@ -86,9 +83,9 @@
             label2.ImageAlign = ContentAlignment.MiddleLeft;
             label2.Location = new Point(32, 28);
             label2.Name = "label2";
-            label2.Size = new Size(128, 25);
+            label2.Size = new Size(131, 25);
             label2.TabIndex = 22;
-            label2.Text = "Total Renters";
+            label2.Text = "Total Pembeli";
             label2.Click += label2_Click;
             // 
             // guna2ShadowPanel1
@@ -131,9 +128,9 @@
             label1.ImageAlign = ContentAlignment.MiddleLeft;
             label1.Location = new Point(29, 28);
             label1.Name = "label1";
-            label1.Size = new Size(119, 25);
+            label1.Size = new Size(126, 25);
             label1.TabIndex = 21;
-            label1.Text = "Total Owner";
+            label1.Text = "Total Penjual";
             label1.Click += label1_Click;
             // 
             // paneltopdashboard
@@ -144,11 +141,11 @@
             paneltopdashboard.Controls.Add(juduldashboard);
             paneltopdashboard.CustomBorderColor = Color.FromArgb(217, 224, 184);
             paneltopdashboard.CustomBorderThickness = new Padding(0, 0, 0, 1);
-            paneltopdashboard.CustomizableEdges = customizableEdges17;
+            paneltopdashboard.CustomizableEdges = customizableEdges5;
             paneltopdashboard.Dock = DockStyle.Top;
             paneltopdashboard.Location = new Point(0, 0);
             paneltopdashboard.Name = "paneltopdashboard";
-            paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges6;
             paneltopdashboard.Size = new Size(1277, 131);
             paneltopdashboard.TabIndex = 47;
             paneltopdashboard.Paint += paneltopdashboard_Paint;
@@ -167,51 +164,6 @@
             juduldashboard.Text = "Dashboard";
             juduldashboard.Click += juduldashboard_Click;
             // 
-            // guna2ShadowPanel3
-            // 
-            guna2ShadowPanel3.BackColor = Color.Transparent;
-            guna2ShadowPanel3.Controls.Add(Total_TRA);
-            guna2ShadowPanel3.Controls.Add(label3);
-            guna2ShadowPanel3.FillColor = Color.White;
-            guna2ShadowPanel3.Location = new Point(646, 246);
-            guna2ShadowPanel3.Name = "guna2ShadowPanel3";
-            guna2ShadowPanel3.Radius = 10;
-            guna2ShadowPanel3.RightToLeft = RightToLeft.Yes;
-            guna2ShadowPanel3.ShadowColor = Color.Black;
-            guna2ShadowPanel3.ShadowDepth = 5;
-            guna2ShadowPanel3.ShadowShift = 10;
-            guna2ShadowPanel3.Size = new Size(300, 200);
-            guna2ShadowPanel3.TabIndex = 50;
-            guna2ShadowPanel3.Paint += guna2ShadowPanel3_Paint;
-            // 
-            // Total_TRA
-            // 
-            Total_TRA.AutoSize = true;
-            Total_TRA.BackColor = Color.Transparent;
-            Total_TRA.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Total_TRA.ForeColor = Color.FromArgb(14, 115, 116);
-            Total_TRA.ImageAlign = ContentAlignment.MiddleLeft;
-            Total_TRA.Location = new Point(125, 83);
-            Total_TRA.Name = "Total_TRA";
-            Total_TRA.Size = new Size(42, 46);
-            Total_TRA.TabIndex = 23;
-            Total_TRA.Text = "0";
-            Total_TRA.Click += Total_TRA_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(14, 115, 116);
-            label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(34, 28);
-            label3.Name = "label3";
-            label3.Size = new Size(126, 25);
-            label3.TabIndex = 23;
-            label3.Text = "Total Rentals";
-            label3.Click += label3_Click;
-            // 
             // UCDashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -219,7 +171,6 @@
             Controls.Add(guna2ShadowPanel2);
             Controls.Add(guna2ShadowPanel1);
             Controls.Add(paneltopdashboard);
-            Controls.Add(guna2ShadowPanel3);
             Name = "UCDashboardAdmin";
             Size = new Size(1277, 864);
             Load += UCDashboardAdmin_Load;
@@ -229,8 +180,6 @@
             guna2ShadowPanel1.PerformLayout();
             paneltopdashboard.ResumeLayout(false);
             paneltopdashboard.PerformLayout();
-            guna2ShadowPanel3.ResumeLayout(false);
-            guna2ShadowPanel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -244,8 +193,5 @@
         private Label label1;
         private Guna.UI2.WinForms.Guna2Panel paneltopdashboard;
         private Label juduldashboard;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
-        private Label Total_TRA;
-        private Label label3;
     }
 }

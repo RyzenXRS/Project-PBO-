@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,56 @@ namespace PBOOO_PROJECT.View.Pembeli
         }
 
         private void FormPembeli_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panellogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GO_CAMP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoGoCamp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonhomepenyewa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttontransactionpenyewa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttohistorypenyewa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonReportsPy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonprofilpeyewa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sidebardashboard_Paint(object sender, PaintEventArgs e)
         {
 
         }

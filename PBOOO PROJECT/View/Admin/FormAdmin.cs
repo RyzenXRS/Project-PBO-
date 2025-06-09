@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,42 +13,34 @@ namespace PBOOO_PROJECT.View.Admin
     public partial class FormAdmin : Form
     {
         private int _userId;
-        // Assuming ucDashboardAdmin is a UserControl that needs to be added to the form
-        private UCDashboardAdmin ucDashboardAdmin = new UCDashboardAdmin();
+
         public FormAdmin(int userId)
         {
             _userId = userId;
             InitializeComponent();
-            ucDashboardAdmin.UserId = _userId;
-            ucDashboardAdmin.Dock = DockStyle.Fill; // Adjust as needed
+            ucDashboardAdmin1.UserId = _userId;
         }
-
         private void FormAdmin_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void buttohistorypenyewa_Click(object sender, EventArgs e)
+        private void buttondashboardadmin_Click(object sender, EventArgs e)
+        {
+            ucDashboardAdmin1.Visible = true;
+        }
+
+        private void panellogo_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void buttonhomepenyewa_Click(object sender, EventArgs e)
+        private void GO_CAMP_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void buttontransactionpenyewa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonReportsPy_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonprofilpeyewa_Click(object sender, EventArgs e)
+        private void LogoGoCamp_Click(object sender, EventArgs e)
         {
 
         }
@@ -57,6 +48,43 @@ namespace PBOOO_PROJECT.View.Admin
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonowners_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonrenters_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonlaporan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonprofiladmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sidebardashboard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Anda yakin ingin keluar ?",
+            "Konfirmasi Pesan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                Form1 formLogin = new Form1();
+                formLogin.Show();
+                this.Hide();
+            }
         }
     }
 }

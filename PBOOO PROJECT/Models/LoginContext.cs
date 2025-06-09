@@ -14,8 +14,10 @@ namespace PBOOO_PROJECT.Models
 
         public LoginContext()
         {
-
+            // Initialize the _connection field to avoid the CS8618 warning
+            _connection = new NpgsqlConnection();
         }
+
         public (bool isAuthenticated, int userId) AuthenticateAndGetId(string table, string idColumn, string username, string password)
         {
             string query = $"SELECT {idColumn} FROM {table} WHERE username=@username AND password=@password";
@@ -40,6 +42,7 @@ namespace PBOOO_PROJECT.Models
                 }
             }
         }
+
         public void Dispose()
         {
             if (_connection != null)
@@ -48,6 +51,5 @@ namespace PBOOO_PROJECT.Models
                 _connection.Dispose();
             }
         }
-
     }
 }

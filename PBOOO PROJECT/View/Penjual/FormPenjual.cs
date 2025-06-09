@@ -23,5 +23,60 @@ namespace PBOOO_PROJECT.View.Penjual
         {
 
         }
+
+        private void panellogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GO_CAMP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoGoCamp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttondashboardPemilik_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonstocksPemilik_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttoncategoriesPemilik_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonrentersPemilik_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTransactionsPemilik_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonprofilepemilik_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sidebardashboard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

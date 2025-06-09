@@ -1,4 +1,7 @@
-﻿using PBOOO_PROJECT.Controller.Admin;
+﻿using Npgsql;
+using PBOOO_PROJECT.Controller;
+using PBOOO_PROJECT.Controller.Admin;
+using PBOOO_PROJECT.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,8 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PBOOO_PROJECT.Controller;
-using PBOOO_PROJECT.Controller.Admin;
 
 namespace PBOOO_PROJECT.View.Admin
 {
@@ -29,9 +30,45 @@ namespace PBOOO_PROJECT.View.Admin
         {
             dashboardControllerA = new DashboardControllerA();
             InitializeComponent();
-            //Owners();
-            //Renters();
+            Owners();
+            Pembeli();
             //Rentals();
+        }
+        public void Owners()
+        {
+            string query = string.Format(@"SELECT COUNT(id_penjual) FROM penjual;");
+            using (var db = new DBConnection())
+            {
+                db.Open();
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, db.Connection))
+                {
+                    NpgsqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        int count = Convert.ToInt32(reader[0]);
+                        Total_TO.Text = count.ToString();
+                    }
+                    reader.Close();
+                }
+            }
+        }
+        public void Pembeli()
+        {
+            string query = string.Format(@"SELECT COUNT(id_pembeli) FROM pembeli;");
+            using (var db = new DBConnection())
+            {
+                db.Open();
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, db.Connection))
+                {
+                    NpgsqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        int count = Convert.ToInt32(reader[0]);
+                        Total_TRE.Text = count.ToString();
+                    }
+                    reader.Close();
+                }
+            }
         }
 
         private void Total_TO_Click(object sender, EventArgs e)
@@ -85,6 +122,11 @@ namespace PBOOO_PROJECT.View.Admin
         }
 
         private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2ShadowPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
