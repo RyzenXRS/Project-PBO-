@@ -59,14 +59,14 @@ namespace PBOOO_PROJECT.View.Admin
             readListController.Read();
             DataTable table = new DataTable();
             table.Columns.Add("ID", typeof(int));
-            table.Columns.Add("Nama Pemilik", typeof(string));
+            table.Columns.Add("Nama Penjual", typeof(string));
             table.Columns.Add("Nomor Telepon", typeof(string));
             table.Columns.Add("Alamat", typeof(string));
             table.Columns.Add("Pendapatan", typeof(string));
             foreach (var owner in readListController.ListOwner)
             {
-                table.Rows.Add(owner.ID, owner.Nama_Penjual, owner.No_Telepon_Penjual
-                                , owner.Alamat_Penjual, owner.Pendapatan);
+                table.Rows.Add(owner.ID, owner.Nama_Penjual, owner.No_telp
+                                , owner.Alamat, owner.Pendapatan);
             }
 
             guna2DataGridView1.DataSource = table;

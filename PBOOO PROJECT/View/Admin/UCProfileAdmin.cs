@@ -53,7 +53,7 @@ namespace PBOOO_PROJECT.View.Admin
 
         private void UCProfileAdmin_Load(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT nama_admin, no_telepon_admin FROM admin WHERE id_admin = @userId";
+            string selectQuery = "SELECT nama_admin, no_telp FROM admin WHERE id_admin = @userId";
             using (var db = new DBConnection())
             {
                 db.Open();
@@ -66,11 +66,11 @@ namespace PBOOO_PROJECT.View.Admin
                         if (reader.Read())
                         {
                             ProfileA profileA = new ProfileA();
-                            //profileA.id_admin = (int)reader["id_admin"];
+                            //profileA.id_admin = (int)reader["id_admin"]; 
                             profileA.nama_admin = (string)reader["nama_admin"];
-                            profileA.no_telepon_admin = (string)reader["no_telepon_admin"];
+                            profileA.no_telp = (string)reader["no_telp"];
                             guna2nama.Text = profileA.nama_admin;
-                            guna2Nohp.Text = profileA.no_telepon_admin;
+                            guna2Nohp.Text = profileA.no_telp;
                             //namaadmin = reader["namaadmin"].ToString();
                             //no_hp = reader["no_hp"].ToString();
                         }
@@ -95,7 +95,7 @@ namespace PBOOO_PROJECT.View.Admin
                 return;
             }
             string cekQuery = "SELECT COUNT(*) FROM admin WHERE nama_admin = @nama_admin AND id_admin != @userId";
-            string updateQuery = "UPDATE admin SET nama_admin = @nama_admin, no_telepon_admin = @no_hp WHERE id_admin = @userId";
+            string updateQuery = "UPDATE admin SET nama_admin = @nama_admin, no_hp = @no_hp WHERE id_admin = @userId";
 
             try
             {
@@ -152,6 +152,31 @@ namespace PBOOO_PROJECT.View.Admin
         }
 
         private void paneltopdashboard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2nama_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Nohp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void juduldashboard_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace PBOOO_PROJECT.View.Admin
 {
-    partial class UCOwner
+    partial class UCRentersAdmin
     {
         /// <summary> 
         /// Required designer variable.
@@ -52,12 +52,10 @@
             paneltopdashboard.CustomizableEdges = customizableEdges1;
             paneltopdashboard.Dock = DockStyle.Top;
             paneltopdashboard.Location = new Point(0, 0);
-            paneltopdashboard.Margin = new Padding(6, 5, 6, 5);
             paneltopdashboard.Name = "paneltopdashboard";
             paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            paneltopdashboard.Size = new Size(1826, 218);
+            paneltopdashboard.Size = new Size(1504, 131);
             paneltopdashboard.TabIndex = 44;
-            paneltopdashboard.Paint += paneltopdashboard_Paint;
             // 
             // juduldashboard
             // 
@@ -66,12 +64,11 @@
             juduldashboard.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             juduldashboard.ForeColor = Color.FromArgb(91, 80, 80);
             juduldashboard.ImageAlign = ContentAlignment.MiddleLeft;
-            juduldashboard.Location = new Point(49, 68);
-            juduldashboard.Margin = new Padding(6, 0, 6, 0);
+            juduldashboard.Location = new Point(34, 41);
             juduldashboard.Name = "juduldashboard";
-            juduldashboard.Size = new Size(235, 69);
+            juduldashboard.Size = new Size(171, 46);
             juduldashboard.TabIndex = 20;
-            juduldashboard.Text = "Penjual";
+            juduldashboard.Text = "Pembeli";
             // 
             // guna2DataGridView1
             // 
@@ -85,6 +82,7 @@
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             guna2DataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            guna2DataGridView1.CausesValidation = false;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(14, 115, 116);
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -98,13 +96,14 @@
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(97, 191, 143);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             guna2DataGridView1.GridColor = Color.White;
-            guna2DataGridView1.Location = new Point(49, 270);
+            guna2DataGridView1.Location = new Point(34, 162);
+            guna2DataGridView1.Margin = new Padding(2);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.ReadOnly = true;
             guna2DataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -119,8 +118,8 @@
             guna2DataGridView1.RowHeadersVisible = false;
             guna2DataGridView1.RowHeadersWidth = 82;
             guna2DataGridView1.RowTemplate.Height = 41;
-            guna2DataGridView1.Size = new Size(1300, 767);
-            guna2DataGridView1.TabIndex = 45;
+            guna2DataGridView1.Size = new Size(1437, 767);
+            guna2DataGridView1.TabIndex = 46;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
@@ -142,18 +141,17 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.Height = 41;
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
+            guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick_1;
             // 
-            // UCOwner
+            // UCRentersAdmin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(guna2DataGridView1);
             Controls.Add(paneltopdashboard);
-            Margin = new Padding(6, 5, 6, 5);
-            Name = "UCOwner";
+            Name = "UCRentersAdmin";
             Size = new Size(1920, 961);
-            Load += UCOwner_Load;
+            Load += UCRentersAdmin_Load;
             paneltopdashboard.ResumeLayout(false);
             paneltopdashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();

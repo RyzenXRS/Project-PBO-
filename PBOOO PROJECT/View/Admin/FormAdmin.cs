@@ -22,6 +22,7 @@ namespace PBOOO_PROJECT.View.Admin
             ucDashboardAdmin1.UserId = _userId;
             ucOwners1.UserId = _userId;
             ucProfileAdmin1.UserId = _userId;
+            ucRentersAdmin1.UserId = _userId;
 
         }
         private void FormAdmin_Load(object sender, EventArgs e)
@@ -29,11 +30,22 @@ namespace PBOOO_PROJECT.View.Admin
 
         }
 
-        private void buttondashboardadmin_Click(object sender, EventArgs e)
+        private void ShowUserControl(UserControl uc)
         {
-            ucDashboardAdmin1.Visible = true;
+            // Sembunyikan semua UserControl
+            ucDashboardAdmin1.Visible = false;
             ucOwners1.Visible = false;
             ucProfileAdmin1.Visible = false;
+            ucRentersAdmin1.Visible = false;
+
+            // Tampilkan UserControl yang dipilih
+            uc.Visible = true;
+            uc.BringToFront();
+        }
+
+        private void buttondashboardadmin_Click(object sender, EventArgs e)
+        {
+            ShowUserControl(ucDashboardAdmin1);
         }
 
         private void panellogo_Paint(object sender, PaintEventArgs e)
@@ -53,19 +65,19 @@ namespace PBOOO_PROJECT.View.Admin
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            //ucDashboardAdmin1.Visible = true;
+            //ucOwners1.Visible = false;
+            //ucProfileAdmin1.Visible = false;
         }
 
         private void buttonowners_Click(object sender, EventArgs e)
         {
-            ucDashboardAdmin1.Visible = false;
-            ucOwners1.Visible = true;
-            ucProfileAdmin1.Visible = false;
+            ShowUserControl(ucOwners1);
         }
 
         private void buttonrenters_Click(object sender, EventArgs e)
         {
-
+            ShowUserControl(ucRentersAdmin1);
         }
 
         private void buttonlaporan_Click(object sender, EventArgs e)
@@ -75,9 +87,7 @@ namespace PBOOO_PROJECT.View.Admin
 
         private void buttonprofiladmin_Click(object sender, EventArgs e)
         {
-            ucDashboardAdmin1.Visible = false;
-            ucOwners1.Visible = false;
-            ucProfileAdmin1.Visible = true;
+            ShowUserControl(ucProfileAdmin1);
         }
 
         private void sidebardashboard_Paint(object sender, PaintEventArgs e)

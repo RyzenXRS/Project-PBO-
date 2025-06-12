@@ -16,8 +16,8 @@ namespace PBOOO_PROJECT.View.Pembeli
         private int _userId;
         public FormPembeli(int userId)
         {
-            InitializeComponent();
             _userId = userId;
+            InitializeComponent();;
         }
 
         private void FormPembeli_Load(object sender, EventArgs e)

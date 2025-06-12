@@ -1,4 +1,6 @@
-﻿namespace PBOOO_PROJECT.View.Penjual
+﻿using PBOOO_PROJECT.View.Admin;
+
+namespace PBOOO_PROJECT.View.Penjual
 {
     partial class FormPenjual
     {
@@ -54,9 +56,11 @@
             buttoncategoriesPemilik = new Guna.UI2.WinForms.Guna2Button();
             buttonstocksPemilik = new Guna.UI2.WinForms.Guna2Button();
             buttondashboardPemilik = new Guna.UI2.WinForms.Guna2Button();
+            ucProfilePenjual1 = new UCProfilePenjual();
             panellogo = new Guna.UI2.WinForms.Guna2Panel();
             LogoGoCamp = new PictureBox();
             MaGrow = new Label();
+            //ucProfilePenjual1 = new UCProfilePenjual();
             sidebardashboard.SuspendLayout();
             panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoGoCamp).BeginInit();
@@ -301,6 +305,15 @@
             panellogo.Size = new Size(254, 130);
             panellogo.TabIndex = 5;
             panellogo.Paint += panellogo_Paint;
+            //
+            // ucProfilePenjual1
+            //
+            ucProfilePenjual1.Location = new Point(366, 0);
+            ucProfilePenjual1.Margin = new Padding(9, 8, 9, 8);
+            ucProfilePenjual1.Name = "ucProfilePenjual1";
+            ucProfilePenjual1.Size = new Size(1920, 1440);
+            ucProfilePenjual1.TabIndex = 44;
+            ucProfilePenjual1.UserId = 0;
             // 
             // LogoGoCamp
             // 
@@ -334,6 +347,7 @@
             ClientSize = new Size(1536, 864);
             Controls.Add(panel1);
             Controls.Add(sidebardashboard);
+            Controls.Add(ucProfilePenjual1);
             Name = "FormPenjual";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPenjual";
@@ -359,5 +373,6 @@
         private Guna.UI2.WinForms.Guna2Panel panellogo;
         private PictureBox LogoGoCamp;
         private Label MaGrow;
+        private UCProfilePenjual ucProfilePenjual1;
     }
 }

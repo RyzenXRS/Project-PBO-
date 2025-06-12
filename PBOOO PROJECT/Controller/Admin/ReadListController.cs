@@ -15,15 +15,14 @@ namespace PBOOO_PROJECT.View.Admin
         public List<ReadListContext> ListOwner = new List<ReadListContext>();
         public void Read()
         {
-            string query = string.Format(@"SELECT p.id_pemilik, p.nama_pemilik, p.no_telepon_pemilik, p.alamat_pemilik,
-                            SUM(dt.lama_sewa * ac.hargaalatcamping * dt.quantity) AS total_revenue
-                     FROM pemilik p
-                     JOIN alat_camping ac ON p.id_pemilik = ac.id_pemilik
-                     JOIN detail_transaksi dt ON ac.id_alatcamping = dt.id_alatcamping
-                     JOIN peminjaman pem ON pem.id_peminjaman = dt.id_peminjaman
-                     JOIN pengembalian peng ON pem.id_peminjaman = peng.id_peminjaman
-                     WHERE peng.status_kembali = true
-                     GROUP BY p.id_pemilik, p.nama_pemilik, p.no_telepon_pemilik, p.alamat_pemilik;");
+            // ... kode lama tetap ada di bawah
+            string query = string.Format(@"SELECT pj.id_penjual, pj.nama_penjual, pj.no_telp, pj.alamat,SUM(tm.jumlah_kg * m.harga_per_kg) AS total_revenue
+                                           FROM penjual pj
+                                           JOIN maggot m ON pj.id_penjual = m.id_penjual
+                                           JOIN detail_transaksi_maggot dt ON m.id_maggot = dt.id_maggot
+                                           JOIN transaksi_maggot tm ON dt.id_transaksi_maggot = tm.id_transaksi_maggot
+                                           WHERE tm.status = 'diterima'
+                                           GROUP BY pj.id_penjual, pj.nama_penjual, pj.no_telp, pj.alamat;");
 
             using (var db = new DBConnection())
             {
@@ -36,11 +35,11 @@ namespace PBOOO_PROJECT.View.Admin
                     while (reader.Read())
                     {
                         ReadListContext listRenters = new ReadListContext();
-                        long pendapatanFormat = (long)reader["total_revenue"];
-                        listRenters.ID = (int)reader["id_pemilik"];
-                        listRenters.Nama_Penjual = (string)reader["nama_pemilik"];
-                        listRenters.No_Telepon_Penjual = (string)reader["no_telepon_pemilik"];
-                        listRenters.Alamat_Penjual = (string)reader["alamat_pemilik"];
+                        long pendapatanFormat = Convert.ToInt64(reader["total_revenue"]);
+                        listRenters.ID = (int)reader["id_penjual"];
+                        listRenters.Nama_Penjual = (string)reader["nama_penjual"];
+                        listRenters.No_telp = (string)reader["no_telp"];
+                        listRenters.Alamat = (string)reader["alamat"];
                         listRenters.Pendapatan = $"Rp.{pendapatanFormat}";
                         ListOwner.Add(listRenters);
                     }
@@ -49,3 +48,5 @@ namespace PBOOO_PROJECT.View.Admin
         }
     }
 }
+
+//readListController.Read();

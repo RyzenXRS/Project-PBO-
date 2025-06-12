@@ -102,20 +102,20 @@ namespace PBOOO_PROJECT
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(usernamebox.Text.Trim()) || string.IsNullOrEmpty(passwordbox.Text.Trim())
+             if (string.IsNullOrEmpty(usernamebox.Text.Trim()) || string.IsNullOrEmpty(passwordbox.Text.Trim())
                 || string.IsNullOrEmpty(namabox.Text.Trim()) || string.IsNullOrEmpty(konfirmasibox.Text.Trim())
                 || string.IsNullOrEmpty(alamatbox.Text.Trim()) || string.IsNullOrEmpty(notelpbox.Text.Trim())
                 || string.IsNullOrEmpty(sebagai.Text.Trim()))
             {
-                MessageBox.Show("Datat tidak boleh ada yang kosong!", "Register Data",
+                MessageBox.Show("Data tidak boleh ada yang kosong!", "Register Data",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string nama_penjual = namabox.Text;
-            string email_penjual = alamatbox.Text;
+            string alamat_penjual = alamatbox.Text;
             string no_telepon_penjual = notelpbox.Text;
             string nama_pembeli = namabox.Text;
-            string email_pembeli = alamatbox.Text;
+            string alamat_pembeli = alamatbox.Text;
             string no_telepon_pembeli = notelpbox.Text;
             string username = usernamebox.Text;
             string password = passwordbox.Text;
@@ -124,7 +124,7 @@ namespace PBOOO_PROJECT
 
             if (password == konfirmasi)
             {
-                using (NpgsqlConnection con = new NpgsqlConnection("Host=localhost;Username=postgres;Password=321;Database=Maggot"))
+                using (NpgsqlConnection con = new NpgsqlConnection("Host=localhost;Username=postgres;Password=321;Database=MaggotPBO"))
                 {
                     if (selectedTable == "Pembeli")
                     {
@@ -144,13 +144,13 @@ namespace PBOOO_PROJECT
                             }
                         }
 
-                        string register = "INSERT INTO pembeli (id_pembeli, nama_pembeli, email_pembeli, no_telepon_pembeli, username, password) VALUES (nextval('id_pembeli_seq'), @nama_pembeli, @email_pembeli, @no_telepon_pembeli, @username, @password)";
+                        string register = "INSERT INTO penjual (id_penjual, nama_penjual, alamat, no_telp, username, password) VALUES (nextval('id_penjual_seq'), @nama_penjual, @alamat, @no_telp, @username, @password)";
 
                         using (NpgsqlCommand cmd = new NpgsqlCommand(register, con))
                         {
                             cmd.Parameters.AddWithValue("@nama_pembeli", nama_pembeli);
-                            cmd.Parameters.AddWithValue("@email_pembeli", email_pembeli);
-                            cmd.Parameters.AddWithValue("@no_telepon_pembeli", no_telepon_pembeli);
+                            cmd.Parameters.AddWithValue("@alamat", alamat_pembeli);
+                            cmd.Parameters.AddWithValue("@no_telp", no_telepon_pembeli);
                             cmd.Parameters.AddWithValue("@username", username);
                             cmd.Parameters.AddWithValue("@password", password);
                             int rowsAffected = cmd.ExecuteNonQuery();
@@ -180,12 +180,12 @@ namespace PBOOO_PROJECT
                                 return;
                             }
                         }
-                        string register = "INSERT INTO penjual (id_penjual, nama_penjual, email_penjual, no_telepon_penjual, username, password) VALUES (nextval('id_penjual_seq'), @nama_penjual, @email_penjual, @no_telepon_penjual, @username, @password)";
+                        string register = "INSERT INTO penjual (id_penjual, nama_penjual, alamat, no_telp, username, password) VALUES (nextval('id_penjual_seq'), @nama_penjual, @alamat, @no_telp, @username, @password)";
                         using (NpgsqlCommand cmd = new NpgsqlCommand(register, con))
-                        {
+                        { 
                             cmd.Parameters.AddWithValue("@nama_penjual", nama_penjual);
-                            cmd.Parameters.AddWithValue("@email_penjual", email_penjual);
-                            cmd.Parameters.AddWithValue("@no_telepon_penjual", no_telepon_penjual);
+                            cmd.Parameters.AddWithValue("@alamat", alamat_penjual); // changed parameter name
+                            cmd.Parameters.AddWithValue("@no_telp", no_telepon_penjual);
                             cmd.Parameters.AddWithValue("@username", username);
                             cmd.Parameters.AddWithValue("@password", password);
                             int rowsAffected = cmd.ExecuteNonQuery();

@@ -10,6 +10,6 @@ namespace PBOOO_PROJECT.Models.Admin
     {
         public int id_admin { get; set; }
         public string nama_admin { get; set; }
-        public string no_telepon_admin { get; set; }
+        public string no_telp { get; set; }
     }
 }

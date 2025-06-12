@@ -73,10 +73,9 @@
             label9.BackColor = Color.FromArgb(138, 154, 91);
             label9.Font = new Font("Microsoft Sans Serif", 13F);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(827, 596);
-            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Location = new Point(1181, 993);
             label9.Name = "label9";
-            label9.Size = new Size(54, 22);
+            label9.Size = new Size(75, 30);
             label9.TabIndex = 71;
             label9.Text = "Login";
             label9.Click += label9_Click;
@@ -88,10 +87,9 @@
             label10.BackColor = Color.FromArgb(138, 154, 91);
             label10.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(217, 224, 184);
-            label10.Location = new Point(591, 596);
-            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Location = new Point(844, 993);
             label10.Name = "label10";
-            label10.Size = new Size(218, 22);
+            label10.Size = new Size(307, 30);
             label10.TabIndex = 70;
             label10.Text = "Already have an account?";
             label10.Click += label10_Click;
@@ -115,11 +113,11 @@
             sebagai.ItemHeight = 40;
             sebagai.Items.AddRange(new object[] { "Penjual", "Pembeli" });
             sebagai.ItemsAppearance.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            sebagai.Location = new Point(227, 498);
-            sebagai.Margin = new Padding(6, 5, 6, 5);
+            sebagai.Location = new Point(324, 830);
+            sebagai.Margin = new Padding(9, 8, 9, 8);
             sebagai.Name = "sebagai";
             sebagai.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            sebagai.Size = new Size(470, 46);
+            sebagai.Size = new Size(670, 46);
             sebagai.TabIndex = 69;
             sebagai.SelectedIndexChanged += sebagai_SelectedIndexChanged;
             // 
@@ -141,13 +139,13 @@
             konfirmasibox.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
             konfirmasibox.ForeColor = Color.FromArgb(74, 75, 67);
             konfirmasibox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            konfirmasibox.Location = new Point(787, 400);
-            konfirmasibox.Margin = new Padding(6, 5, 6, 5);
+            konfirmasibox.Location = new Point(1124, 667);
+            konfirmasibox.Margin = new Padding(9, 8, 9, 8);
             konfirmasibox.Name = "konfirmasibox";
             konfirmasibox.PlaceholderText = "";
             konfirmasibox.SelectedText = "";
             konfirmasibox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            konfirmasibox.Size = new Size(470, 46);
+            konfirmasibox.Size = new Size(671, 77);
             konfirmasibox.TabIndex = 68;
             konfirmasibox.TextChanged += konfirmasibox_TextChanged;
             // 
@@ -169,13 +167,13 @@
             passwordbox.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
             passwordbox.ForeColor = Color.FromArgb(74, 75, 67);
             passwordbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            passwordbox.Location = new Point(787, 301);
-            passwordbox.Margin = new Padding(6, 5, 6, 5);
+            passwordbox.Location = new Point(1124, 502);
+            passwordbox.Margin = new Padding(9, 8, 9, 8);
             passwordbox.Name = "passwordbox";
             passwordbox.PlaceholderText = "";
             passwordbox.SelectedText = "";
             passwordbox.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            passwordbox.Size = new Size(470, 46);
+            passwordbox.Size = new Size(671, 77);
             passwordbox.TabIndex = 67;
             passwordbox.TextChanged += passwordbox_TextChanged;
             // 
@@ -197,13 +195,13 @@
             usernamebox.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
             usernamebox.ForeColor = Color.FromArgb(74, 75, 67);
             usernamebox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            usernamebox.Location = new Point(787, 201);
-            usernamebox.Margin = new Padding(6, 5, 6, 5);
+            usernamebox.Location = new Point(1124, 335);
+            usernamebox.Margin = new Padding(9, 8, 9, 8);
             usernamebox.Name = "usernamebox";
             usernamebox.PlaceholderText = "";
             usernamebox.SelectedText = "";
             usernamebox.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            usernamebox.Size = new Size(470, 46);
+            usernamebox.Size = new Size(671, 77);
             usernamebox.TabIndex = 66;
             usernamebox.TextChanged += usernamebox_TextChanged;
             // 
@@ -225,13 +223,13 @@
             alamatbox.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
             alamatbox.ForeColor = Color.FromArgb(74, 75, 67);
             alamatbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            alamatbox.Location = new Point(226, 301);
-            alamatbox.Margin = new Padding(6, 5, 6, 5);
+            alamatbox.Location = new Point(323, 502);
+            alamatbox.Margin = new Padding(9, 8, 9, 8);
             alamatbox.Name = "alamatbox";
             alamatbox.PlaceholderText = "";
             alamatbox.SelectedText = "";
             alamatbox.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            alamatbox.Size = new Size(470, 46);
+            alamatbox.Size = new Size(671, 77);
             alamatbox.TabIndex = 65;
             alamatbox.TextChanged += alamatbox_TextChanged;
             // 
@@ -253,13 +251,13 @@
             notelpbox.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
             notelpbox.ForeColor = Color.FromArgb(74, 75, 67);
             notelpbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            notelpbox.Location = new Point(227, 400);
-            notelpbox.Margin = new Padding(6, 5, 6, 5);
+            notelpbox.Location = new Point(324, 667);
+            notelpbox.Margin = new Padding(9, 8, 9, 8);
             notelpbox.Name = "notelpbox";
             notelpbox.PlaceholderText = "";
             notelpbox.SelectedText = "";
             notelpbox.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            notelpbox.Size = new Size(470, 46);
+            notelpbox.Size = new Size(671, 77);
             notelpbox.TabIndex = 64;
             notelpbox.TextChanged += notelpbox_TextChanged;
             // 
@@ -281,13 +279,13 @@
             namabox.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
             namabox.ForeColor = Color.FromArgb(74, 75, 67);
             namabox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            namabox.Location = new Point(227, 201);
-            namabox.Margin = new Padding(6, 5, 6, 5);
+            namabox.Location = new Point(324, 335);
+            namabox.Margin = new Padding(9, 8, 9, 8);
             namabox.Name = "namabox";
             namabox.PlaceholderText = "";
             namabox.SelectedText = "";
             namabox.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            namabox.Size = new Size(470, 46);
+            namabox.Size = new Size(671, 77);
             namabox.TabIndex = 63;
             namabox.TextChanged += namabox_TextChanged;
             // 
@@ -298,10 +296,9 @@
             label8.BackColor = Color.FromArgb(138, 154, 91);
             label8.Font = new Font("Microsoft Sans Serif", 15F);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(227, 463);
-            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Location = new Point(324, 772);
             label8.Name = "label8";
-            label8.Size = new Size(109, 25);
+            label8.Size = new Size(165, 36);
             label8.TabIndex = 61;
             label8.Text = "Register as";
             label8.Click += label8_Click;
@@ -313,10 +310,9 @@
             label7.BackColor = Color.FromArgb(138, 154, 91);
             label7.Font = new Font("Microsoft Sans Serif", 15F);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(225, 168);
-            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Location = new Point(321, 280);
             label7.Name = "label7";
-            label7.Size = new Size(100, 25);
+            label7.Size = new Size(149, 36);
             label7.TabIndex = 60;
             label7.Text = "Full Name";
             label7.Click += label7_Click;
@@ -328,10 +324,9 @@
             label6.BackColor = Color.FromArgb(138, 154, 91);
             label6.Font = new Font("Microsoft Sans Serif", 15F);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(227, 367);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Location = new Point(324, 612);
             label6.Name = "label6";
-            label6.Size = new Size(143, 25);
+            label6.Size = new Size(215, 36);
             label6.TabIndex = 59;
             label6.Text = "Phone Number";
             label6.Click += label6_Click;
@@ -343,10 +338,9 @@
             label5.BackColor = Color.FromArgb(138, 154, 91);
             label5.Font = new Font("Microsoft Sans Serif", 15F);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(787, 367);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new Point(1124, 612);
             label5.Name = "label5";
-            label5.Size = new Size(171, 25);
+            label5.Size = new Size(258, 36);
             label5.TabIndex = 58;
             label5.Text = "Confirm Password";
             label5.Click += label5_Click;
@@ -358,12 +352,11 @@
             label4.BackColor = Color.FromArgb(138, 154, 91);
             label4.Font = new Font("Microsoft Sans Serif", 15F);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(221, 268);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(316, 447);
             label4.Name = "label4";
-            label4.Size = new Size(60, 25);
+            label4.Size = new Size(106, 36);
             label4.TabIndex = 57;
-            label4.Text = "Email";
+            label4.Text = "Alamat";
             label4.Click += label4_Click;
             // 
             // label3
@@ -373,10 +366,9 @@
             label3.BackColor = Color.FromArgb(138, 154, 91);
             label3.Font = new Font("Microsoft Sans Serif", 15F);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(787, 268);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(1124, 447);
             label3.Name = "label3";
-            label3.Size = new Size(98, 25);
+            label3.Size = new Size(147, 36);
             label3.TabIndex = 56;
             label3.Text = "Password";
             label3.Click += label3_Click;
@@ -388,10 +380,9 @@
             label2.BackColor = Color.FromArgb(138, 154, 91);
             label2.Font = new Font("Microsoft Sans Serif", 15F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(787, 168);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(1124, 280);
             label2.Name = "label2";
-            label2.Size = new Size(102, 25);
+            label2.Size = new Size(150, 36);
             label2.TabIndex = 55;
             label2.Text = "Username";
             label2.Click += label2_Click;
@@ -403,10 +394,9 @@
             label1.BackColor = Color.FromArgb(138, 154, 91);
             label1.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(217, 224, 184);
-            label1.Location = new Point(215, 79);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(307, 132);
             label1.Name = "label1";
-            label1.Size = new Size(176, 46);
+            label1.Size = new Size(260, 69);
             label1.TabIndex = 54;
             label1.Text = "Register";
             label1.Click += label1_Click;
@@ -417,14 +407,15 @@
             guna2ShadowPanel1.BackColor = Color.Transparent;
             guna2ShadowPanel1.Controls.Add(btnRegister);
             guna2ShadowPanel1.FillColor = Color.FromArgb(138, 154, 91);
-            guna2ShadowPanel1.Location = new Point(131, 28);
+            guna2ShadowPanel1.Location = new Point(187, 47);
+            guna2ShadowPanel1.Margin = new Padding(4, 5, 4, 5);
             guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             guna2ShadowPanel1.Radius = 20;
             guna2ShadowPanel1.RightToLeft = RightToLeft.Yes;
             guna2ShadowPanel1.ShadowColor = Color.Black;
             guna2ShadowPanel1.ShadowDepth = 35;
             guna2ShadowPanel1.ShadowShift = 15;
-            guna2ShadowPanel1.Size = new Size(1200, 650);
+            guna2ShadowPanel1.Size = new Size(1714, 1083);
             guna2ShadowPanel1.TabIndex = 72;
             guna2ShadowPanel1.Paint += guna2ShadowPanel1_Paint;
             // 
@@ -440,11 +431,12 @@
             btnRegister.FillColor = Color.FromArgb(150, 160, 91);
             btnRegister.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Bold);
             btnRegister.ForeColor = Color.FromArgb(74, 75, 67);
-            btnRegister.Location = new Point(656, 466);
+            btnRegister.Location = new Point(937, 777);
+            btnRegister.Margin = new Padding(4, 5, 4, 5);
             btnRegister.Name = "btnRegister";
             btnRegister.Padding = new Padding(1, 0, 0, 0);
             btnRegister.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btnRegister.Size = new Size(470, 50);
+            btnRegister.Size = new Size(671, 83);
             btnRegister.TabIndex = 31;
             btnRegister.Text = "Submit";
             btnRegister.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -452,11 +444,11 @@
             // 
             // Register
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(138, 154, 91);
             BackgroundImage = Properties.Resources.Background;
-            ClientSize = new Size(1424, 714);
+            ClientSize = new Size(1924, 1170);
             Controls.Add(label9);
             Controls.Add(label10);
             Controls.Add(sebagai);
@@ -475,6 +467,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(guna2ShadowPanel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Register";
             Text = "Register";
             guna2ShadowPanel1.ResumeLayout(false);

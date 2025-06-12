@@ -55,9 +55,11 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.BackgroundImage = Properties.Resources.Desain_tanpa_judul;
-            panel1.Location = new Point(79, 87);
+            panel1.BackgroundImageLayout = ImageLayout.Center;
+            panel1.Location = new Point(113, 145);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(503, 474);
+            panel1.Size = new Size(719, 790);
             panel1.TabIndex = 63;
             // 
             // comboBox1
@@ -79,11 +81,11 @@
             comboBox1.ItemHeight = 40;
             comboBox1.Items.AddRange(new object[] { "Admin", "Penjual", "Pembeli" });
             comboBox1.ItemsAppearance.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox1.Location = new Point(767, 400);
-            comboBox1.Margin = new Padding(6, 5, 6, 5);
+            comboBox1.Location = new Point(1096, 667);
+            comboBox1.Margin = new Padding(9, 8, 9, 8);
             comboBox1.Name = "comboBox1";
             comboBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            comboBox1.Size = new Size(433, 46);
+            comboBox1.Size = new Size(617, 46);
             comboBox1.TabIndex = 84;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -105,13 +107,13 @@
             usernamebox.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
             usernamebox.ForeColor = Color.FromArgb(74, 75, 67);
             usernamebox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            usernamebox.Location = new Point(767, 207);
-            usernamebox.Margin = new Padding(11, 9, 11, 9);
+            usernamebox.Location = new Point(1096, 345);
+            usernamebox.Margin = new Padding(16, 15, 16, 15);
             usernamebox.Name = "usernamebox";
             usernamebox.PlaceholderText = "";
             usernamebox.SelectedText = "";
             usernamebox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            usernamebox.Size = new Size(433, 45);
+            usernamebox.Size = new Size(619, 75);
             usernamebox.TabIndex = 83;
             usernamebox.TextChanged += usernamebox_TextChanged;
             // 
@@ -133,13 +135,13 @@
             passwordbox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold);
             passwordbox.ForeColor = Color.FromArgb(74, 75, 67);
             passwordbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            passwordbox.Location = new Point(767, 306);
-            passwordbox.Margin = new Padding(6, 5, 6, 5);
+            passwordbox.Location = new Point(1096, 510);
+            passwordbox.Margin = new Padding(9, 8, 9, 8);
             passwordbox.Name = "passwordbox";
             passwordbox.PlaceholderText = "";
             passwordbox.SelectedText = "";
             passwordbox.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            passwordbox.Size = new Size(433, 45);
+            passwordbox.Size = new Size(619, 75);
             passwordbox.TabIndex = 82;
             passwordbox.TextChanged += passwordbox_TextChanged;
             // 
@@ -156,11 +158,12 @@
             guna2Button1.FillColor = Color.FromArgb(150, 160, 91);
             guna2Button1.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Bold);
             guna2Button1.ForeColor = Color.FromArgb(74, 75, 67);
-            guna2Button1.Location = new Point(877, 520);
+            guna2Button1.Location = new Point(1253, 867);
+            guna2Button1.Margin = new Padding(4, 5, 4, 5);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.Padding = new Padding(1, 0, 0, 0);
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button1.Size = new Size(200, 50);
+            guna2Button1.Size = new Size(286, 83);
             guna2Button1.TabIndex = 81;
             guna2Button1.Text = "Submit";
             guna2Button1.Click += guna2Button1_Click;
@@ -172,9 +175,10 @@
             label4.BackColor = Color.FromArgb(138, 154, 91);
             label4.Font = new Font("Microsoft Sans Serif", 15F);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(767, 367);
+            label4.Location = new Point(1096, 612);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(51, 25);
+            label4.Size = new Size(77, 36);
             label4.TabIndex = 80;
             label4.Text = "Role";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -187,9 +191,10 @@
             label7.BackColor = Color.FromArgb(138, 154, 91);
             label7.Font = new Font("Microsoft Sans Serif", 15F);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(764, 272);
+            label7.Location = new Point(1091, 453);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(98, 25);
+            label7.Size = new Size(147, 36);
             label7.TabIndex = 79;
             label7.Text = "Password";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -202,9 +207,10 @@
             label8.BackColor = Color.FromArgb(138, 154, 91);
             label8.Font = new Font("Microsoft Sans Serif", 15F);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(764, 173);
+            label8.Location = new Point(1091, 288);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(102, 25);
+            label8.Size = new Size(150, 36);
             label8.TabIndex = 78;
             label8.Text = "Username";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -217,10 +223,9 @@
             label9.BackColor = Color.FromArgb(138, 154, 91);
             label9.Font = new Font("Microsoft Sans Serif", 12F);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(1040, 601);
-            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Location = new Point(1486, 1002);
             label9.Name = "label9";
-            label9.Size = new Size(69, 20);
+            label9.Size = new Size(104, 29);
             label9.TabIndex = 77;
             label9.Text = "Register";
             label9.Click += label9_Click;
@@ -232,10 +237,9 @@
             label10.BackColor = Color.FromArgb(138, 154, 91);
             label10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(217, 224, 184);
-            label10.Location = new Point(850, 601);
-            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Location = new Point(1214, 1002);
             label10.Name = "label10";
-            label10.Size = new Size(177, 20);
+            label10.Size = new Size(257, 29);
             label10.TabIndex = 76;
             label10.Text = "Don't have an account?";
             label10.Click += label10_Click;
@@ -247,10 +251,9 @@
             label11.BackColor = Color.FromArgb(138, 154, 91);
             label11.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold);
             label11.ForeColor = Color.FromArgb(217, 224, 184);
-            label11.Location = new Point(217, 46);
-            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Location = new Point(310, 77);
             label11.Name = "label11";
-            label11.Size = new Size(123, 46);
+            label11.Size = new Size(180, 69);
             label11.TabIndex = 75;
             label11.Text = "Login";
             label11.TextAlign = ContentAlignment.MiddleLeft;
@@ -262,24 +265,25 @@
             guna2ShadowPanel1.BackColor = Color.Transparent;
             guna2ShadowPanel1.Controls.Add(label11);
             guna2ShadowPanel1.FillColor = Color.FromArgb(138, 154, 91);
-            guna2ShadowPanel1.Location = new Point(719, 41);
+            guna2ShadowPanel1.Location = new Point(1027, 68);
+            guna2ShadowPanel1.Margin = new Padding(4, 5, 4, 5);
             guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             guna2ShadowPanel1.Radius = 15;
             guna2ShadowPanel1.RightToLeft = RightToLeft.Yes;
             guna2ShadowPanel1.ShadowColor = Color.Black;
             guna2ShadowPanel1.ShadowDepth = 35;
             guna2ShadowPanel1.ShadowShift = 15;
-            guna2ShadowPanel1.Size = new Size(530, 623);
+            guna2ShadowPanel1.Size = new Size(757, 1038);
             guna2ShadowPanel1.TabIndex = 85;
             guna2ShadowPanel1.Paint += guna2ShadowPanel1_Paint;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(138, 154, 91);
             BackgroundImage = Properties.Resources.Background;
-            ClientSize = new Size(1261, 693);
+            ClientSize = new Size(1801, 1155);
             Controls.Add(comboBox1);
             Controls.Add(usernamebox);
             Controls.Add(passwordbox);
@@ -291,6 +295,7 @@
             Controls.Add(label10);
             Controls.Add(guna2ShadowPanel1);
             Controls.Add(panel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

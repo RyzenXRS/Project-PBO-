@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCProfileAdmin));
             paneltopdashboard = new Guna.UI2.WinForms.Guna2Panel();
             juduldashboard = new Label();
@@ -60,11 +60,11 @@
             paneltopdashboard.Controls.Add(juduldashboard);
             paneltopdashboard.CustomBorderColor = Color.FromArgb(217, 224, 184);
             paneltopdashboard.CustomBorderThickness = new Padding(0, 0, 0, 1);
-            paneltopdashboard.CustomizableEdges = customizableEdges9;
+            paneltopdashboard.CustomizableEdges = customizableEdges1;
             paneltopdashboard.Dock = DockStyle.Top;
             paneltopdashboard.Location = new Point(0, 0);
             paneltopdashboard.Name = "paneltopdashboard";
-            paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
             paneltopdashboard.Size = new Size(1277, 131);
             paneltopdashboard.TabIndex = 44;
             paneltopdashboard.Paint += paneltopdashboard_Paint;
@@ -81,6 +81,7 @@
             juduldashboard.Size = new Size(141, 46);
             juduldashboard.TabIndex = 20;
             juduldashboard.Text = "Profile";
+            juduldashboard.Click += juduldashboard_Click;
             // 
             // label2
             // 
@@ -90,9 +91,10 @@
             label2.Location = new Point(326, 498);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(125, 25);
+            label2.Size = new Size(140, 26);
             label2.TabIndex = 49;
             label2.Text = "Nama Admin";
+            label2.Click += label2_Click;
             // 
             // button2edit
             // 
@@ -118,9 +120,10 @@
             label3.Location = new Point(326, 580);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(67, 25);
+            label3.Size = new Size(72, 26);
             label3.TabIndex = 54;
             label3.Text = "No Hp";
+            label3.Click += label3_Click;
             // 
             // label1
             // 
@@ -151,14 +154,14 @@
             guna2Nohp.Anchor = AnchorStyles.None;
             guna2Nohp.BorderColor = Color.Black;
             guna2Nohp.BorderRadius = 5;
-            guna2Nohp.CustomizableEdges = customizableEdges11;
+            guna2Nohp.CustomizableEdges = customizableEdges3;
             guna2Nohp.DefaultText = "";
             guna2Nohp.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2Nohp.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             guna2Nohp.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             guna2Nohp.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2Nohp.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2Nohp.Font = new Font("Microsoft Sans Serif", 20.2499962F);
+            guna2Nohp.Font = new Font("Lufga", 20.2499962F);
             guna2Nohp.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2Nohp.Location = new Point(502, 573);
             guna2Nohp.Margin = new Padding(12, 16, 12, 16);
@@ -166,16 +169,17 @@
             guna2Nohp.PlaceholderForeColor = SystemColors.WindowText;
             guna2Nohp.PlaceholderText = "";
             guna2Nohp.SelectedText = "";
-            guna2Nohp.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Nohp.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Nohp.Size = new Size(493, 43);
             guna2Nohp.TabIndex = 59;
+            guna2Nohp.TextChanged += guna2Nohp_TextChanged;
             // 
             // guna2nama
             // 
             guna2nama.Anchor = AnchorStyles.None;
             guna2nama.BorderColor = Color.Black;
             guna2nama.BorderRadius = 5;
-            guna2nama.CustomizableEdges = customizableEdges13;
+            guna2nama.CustomizableEdges = customizableEdges5;
             guna2nama.DefaultText = "";
             guna2nama.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2nama.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -190,14 +194,15 @@
             guna2nama.Name = "guna2nama";
             guna2nama.PlaceholderText = "";
             guna2nama.SelectedText = "";
-            guna2nama.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2nama.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2nama.Size = new Size(493, 43);
             guna2nama.TabIndex = 60;
+            guna2nama.TextChanged += guna2nama_TextChanged;
             // 
             // guna2ButtonSave
             // 
             guna2ButtonSave.Anchor = AnchorStyles.None;
-            guna2ButtonSave.CustomizableEdges = customizableEdges15;
+            guna2ButtonSave.CustomizableEdges = customizableEdges7;
             guna2ButtonSave.DisabledState.BorderColor = Color.DarkGray;
             guna2ButtonSave.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2ButtonSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -207,7 +212,7 @@
             guna2ButtonSave.ForeColor = Color.White;
             guna2ButtonSave.Location = new Point(695, 696);
             guna2ButtonSave.Name = "guna2ButtonSave";
-            guna2ButtonSave.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2ButtonSave.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2ButtonSave.Size = new Size(114, 59);
             guna2ButtonSave.TabIndex = 61;
             guna2ButtonSave.Text = "Save";
@@ -240,7 +245,7 @@
             Controls.Add(label2);
             Controls.Add(paneltopdashboard);
             Name = "UCProfileAdmin";
-            Size = new Size(1277, 864);
+            Size = new Size(2100, 1400);
             Load += UCProfileAdmin_Load;
             paneltopdashboard.ResumeLayout(false);
             paneltopdashboard.PerformLayout();

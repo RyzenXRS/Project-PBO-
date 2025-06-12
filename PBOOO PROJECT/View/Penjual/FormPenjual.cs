@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBOOO_PROJECT.View.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,17 @@ namespace PBOOO_PROJECT.View.Penjual
         {
             InitializeComponent();
             _userId = userId;
+            ucProfilePenjual1.UserId = userId;
+        }
+
+        private void ShowUserControl(UserControl uc)
+        {
+            // Sembunyikan semua UserControl
+            ucProfilePenjual1.Visible = false;
+
+            // Tampilkan UserControl yang dipilih
+            uc.Visible = true;
+            uc.BringToFront();
         }
 
         private void FormPenjual_Load(object sender, EventArgs e)
@@ -71,7 +83,7 @@ namespace PBOOO_PROJECT.View.Penjual
 
         private void buttonprofilepemilik_Click(object sender, EventArgs e)
         {
-
+            ShowUserControl(ucProfilePenjual1);
         }
 
         private void sidebardashboard_Paint(object sender, PaintEventArgs e)

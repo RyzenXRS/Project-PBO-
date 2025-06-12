@@ -10,8 +10,8 @@ namespace PBOOO_PROJECT.Models.Admin
     {
         public int ID { get; set; }
         public string Nama_Penjual { get; set; }
-        public string No_Telepon_Penjual { get; set; }
-        public string Alamat_Penjual { get; set; }
+        public string No_telp { get; set; }
+        public string Alamat { get; set; }
         public string Pendapatan { get; set; }
     }
 }
