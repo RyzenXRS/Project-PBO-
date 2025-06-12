@@ -21,12 +21,12 @@ namespace PBOOO_PROJECT.Controller.Penjual
         }
         public void Read()
         {
-            string query = string.Format(@"SELECT row_number() OVER () AS nomor, m.id_maggot, m.jenis_maggot, m.harga_per_kg, s.jumlah_kg AS stok, s.status_stok, p.id_penjual, p.nama_penjual
+            string query = string.Format(@"SELECT row_number() OVER () AS nomor, m.id_maggot, m.jenis_maggot, m.harga_per_kg, s.jumlah_kg AS stok, s.status, p.id_penjual, p.nama_penjual
                                            FROM maggot m
                                            JOIN stok_maggot s ON m.id_maggot = s.id_maggot
                                            JOIN penjual p ON m.id_penjual = p.id_penjual
                                            WHERE m.id_penjual = @userId
-                                           ORDER BY m.id_maggot ASC;;");
+                                           ORDER BY m.id_maggot ASC;");
             using (var db = new DBConnection())
             {
                 db.Open();
@@ -46,16 +46,17 @@ namespace PBOOO_PROJECT.Controller.Penjual
                         product.status = reader["status"].ToString();
                         product.id_penjual = Convert.ToInt32(reader["id_penjual"]);
                         product.nama_penjual = reader["nama_penjual"].ToString();
+                        ListProduct.Add(product);
                     }
                 }
             }
         }
-        public void Tambah(string Namakategori, bool dihentikan, string status)
+        public void Tambah(string Namakategori, string stok)
         {
 
             //MessageBox.Show($"User ID: {_userId}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            string cekQuery = "SELECT COUNT(*) FROM kategori_alat_camping WHERE namakategori = @namakategori";
-            string insertQuery = "INSERT INTO kategori_alat_camping (namakategori,id_pemilik,dihentikan) VALUES (@namakategori,@userId,@dihentikan)";
+            string cekQuery = "SELECT COUNT(*) FROM maggot WHERE jenis_maggot = @jenis_maggot";
+            string insertQuery = "INSERT INTO maggot (jenis_maggot,id_penjual,status) VALUES (@jenis_maggot,@userId,@status)";
 
             try
             {
@@ -65,7 +66,7 @@ namespace PBOOO_PROJECT.Controller.Penjual
                     using (NpgsqlCommand cmdcek = new NpgsqlCommand(cekQuery, db.Connection))
                     {
 
-                        cmdcek.Parameters.AddWithValue("@namakategori", Namakategori.Trim());
+                        cmdcek.Parameters.AddWithValue("@jenis_maggot", Namakategori.Trim());
 
                         int count = Convert.ToInt32(cmdcek.ExecuteScalar());
 
@@ -80,9 +81,9 @@ namespace PBOOO_PROJECT.Controller.Penjual
                     using (NpgsqlCommand cmd = new NpgsqlCommand(insertQuery, db.Connection))
                     {
 
-                        cmd.Parameters.AddWithValue("@namakategori", Namakategori.Trim());
+                        cmd.Parameters.AddWithValue("@jenis_maggot", Namakategori.Trim());
                         cmd.Parameters.AddWithValue("@userId", _userId);
-                        cmd.Parameters.AddWithValue("@dihentikan", dihentikan);
+                        cmd.Parameters.AddWithValue("@stok", stok);
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
@@ -106,16 +107,16 @@ namespace PBOOO_PROJECT.Controller.Penjual
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void Edit(int idkategori, string namaKategori, bool dihentikan)
+        public void Edit(int idmaggot, string namaproduk, string status)
         {
-            if (string.IsNullOrEmpty(namaKategori.Trim()))
+            if (string.IsNullOrEmpty(namaproduk.Trim()))
             {
-                MessageBox.Show("Nama Kategori tidak boleh kosong", "Edit Data",
+                MessageBox.Show("Nama Produk tidak boleh kosong", "Edit Data",
                   MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string cekQuery = "SELECT COUNT(*) FROM kategori_alat_camping WHERE namakategori = @namakategori AND id_kategori != @id";
-            string updateQuery = "UPDATE kategori_alat_camping SET namakategori = @namakategori, dihentikan = @dihentikan WHERE id_kategori = @id";
+            string cekQuery = "SELECT COUNT(*) FROM maggot WHERE jenis_maggot = @jenis_maggot AND id_maggot != @id";
+            string updateQuery = "UPDATE maggot SET jenis_maggot = @jenis_maggot, status = @status WHERE id_maggot = @id";
 
             try
             {
@@ -124,8 +125,8 @@ namespace PBOOO_PROJECT.Controller.Penjual
                     db.Open();
                     using (NpgsqlCommand checkCmd = new NpgsqlCommand(cekQuery, db.Connection))
                     {
-                        checkCmd.Parameters.AddWithValue("@namakategori", namaKategori.Trim());
-                        checkCmd.Parameters.AddWithValue("@id", idkategori);
+                        checkCmd.Parameters.AddWithValue("@jenis_produk", namaproduk.Trim());
+                        checkCmd.Parameters.AddWithValue("@id", idmaggot);
                         int count = Convert.ToInt32(checkCmd.ExecuteScalar());
 
                         if (count > 0)
@@ -137,9 +138,9 @@ namespace PBOOO_PROJECT.Controller.Penjual
                     }
                     using (NpgsqlCommand cmd = new NpgsqlCommand(updateQuery, db.Connection))
                     {
-                        cmd.Parameters.AddWithValue("@namakategori", namaKategori.Trim());
-                        cmd.Parameters.AddWithValue("@id", idkategori);
-                        cmd.Parameters.AddWithValue("@dihentikan", dihentikan);
+                        cmd.Parameters.AddWithValue("@jenis_produk", namaproduk.Trim());
+                        cmd.Parameters.AddWithValue("@id", idmaggot);
+                        cmd.Parameters.AddWithValue("@status", status);
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)

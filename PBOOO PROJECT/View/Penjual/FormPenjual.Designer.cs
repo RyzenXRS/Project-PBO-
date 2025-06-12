@@ -57,6 +57,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonstocksPemilik = new Guna.UI2.WinForms.Guna2Button();
             buttondashboardPemilik = new Guna.UI2.WinForms.Guna2Button();
             ucProfilePenjual1 = new UCProfilePenjual();
+            ucProdukPenjual1 = new UCProdukPenjual();
             panellogo = new Guna.UI2.WinForms.Guna2Panel();
             LogoGoCamp = new PictureBox();
             MaGrow = new Label();
@@ -315,6 +316,15 @@ namespace PBOOO_PROJECT.View.Penjual
             ucProfilePenjual1.TabIndex = 44;
             ucProfilePenjual1.UserId = 0;
             // 
+            // ucProdukPenjual1
+            //
+            ucProdukPenjual1.Location = new Point(366, 0);
+            ucProdukPenjual1.Margin = new Padding(9, 8, 9, 8);
+            ucProdukPenjual1.Name = "ucProdukPenjual1";
+            ucProdukPenjual1.Size = new Size(1920, 1440);
+            ucProdukPenjual1.TabIndex = 44;
+            ucProdukPenjual1.UserId = 0;
+            // 
             // LogoGoCamp
             // 
             LogoGoCamp.BackColor = Color.Transparent;
@@ -348,6 +358,7 @@ namespace PBOOO_PROJECT.View.Penjual
             Controls.Add(panel1);
             Controls.Add(sidebardashboard);
             Controls.Add(ucProfilePenjual1);
+            Controls.Add(ucProdukPenjual1);
             Name = "FormPenjual";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPenjual";
@@ -374,5 +385,6 @@ namespace PBOOO_PROJECT.View.Penjual
         private PictureBox LogoGoCamp;
         private Label MaGrow;
         private UCProfilePenjual ucProfilePenjual1;
+        private UCProdukPenjual ucProdukPenjual1;
     }
 }

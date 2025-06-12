@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
-using Projek_Akhir_PBO.Controller.Pemilik;
+using PBOOO_PROJECT.Controller.Penjual;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Projek_Akhir_PBO.View.Pemilik
+namespace PBOOO_PROJECT.View.Penjual
 {
     public partial class UCProdukPenjual : UserControl
     {
@@ -23,18 +23,18 @@ namespace Projek_Akhir_PBO.View.Pemilik
             set
             {
                 _userId = value;
-                kategoriController.UserId = _userId;
-             
+                ProductController.UserId = _userId;
+
             }
         }
-        private int idKategoriSelected = -1;
-      
+        private int idMaggotSelected = -1;
 
-        KategoriController kategoriController;
+
+        ProductController ProductController;
         int index;
         public UCProdukPenjual()
         {
-            kategoriController = new KategoriController();
+            ProductController = new ProductController();
             InitializeComponent();
         }
         private NpgsqlConnection conn;
@@ -44,19 +44,18 @@ namespace Projek_Akhir_PBO.View.Pemilik
         {
             if (string.IsNullOrEmpty(textBoxKategori.Text.Trim()))
             {
-                MessageBox.Show("Nama Kategori tidak boleh kosong", "Tambah Data",
+                MessageBox.Show("Nama Produk tidak boleh kosong", "Tambah Data",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (string.IsNullOrEmpty(comboBox1Status.Text.Trim()))
             {
-                MessageBox.Show("Nama Kategori tidak boleh kosong", "Tambah Data",
+                MessageBox.Show("Nama Produk tidak boleh kosong", "Tambah Data",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string status = comboBox1Status.SelectedItem.ToString();
-            bool dihentikan = (status == "Aktif") ? false : true;
-            kategoriController.Edit(idKategoriSelected, textBoxKategori.Text, dihentikan);
+            ProductController.Edit(idMaggotSelected, textBoxKategori.Text, status);
             ShowListKategori();
         }
 
@@ -64,41 +63,52 @@ namespace Projek_Akhir_PBO.View.Pemilik
         {
             if (string.IsNullOrEmpty(textBoxKategori.Text.Trim()))
             {
-                MessageBox.Show("Nama Kategori tidak boleh kosong", "Tambah Data",
+                MessageBox.Show("Nama Produk tidak boleh kosong", "Tambah Data",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (string.IsNullOrEmpty(comboBox1Status.Text.Trim()))
             {
-                MessageBox.Show("Nama Kategori tidak boleh kosong", "Tambah Data",
+                MessageBox.Show("Status Produk tidak boleh kosong", "Tambah Data",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string status = comboBox1Status.SelectedItem.ToString();
-            bool dihentikan = (status == "Aktif") ? false : true;
-            kategoriController.Tambah(textBoxKategori.Text, dihentikan, status);
+            ProductController.Tambah(textBoxKategori.Text, status);
             ShowListKategori();
         }
 
         private void UCCategoriesPemilik_Load(object sender, EventArgs e)
         {
             table.Columns.Add("Id", typeof(int));
-            table.Columns.Add("Nama Kategori", typeof(string));
+            table.Columns.Add("Nama Product", typeof(string));
             table.Columns.Add("Status", typeof(string));
             dataGridView1.DataSource = table;
             ShowListKategori();
         }
         public void ShowListKategori()
         {
-            kategoriController.Read();
+            ProductController.Read();
             DataTable table = new DataTable();
             table.Columns.Add("Id", typeof(int));
-            table.Columns.Add("Nama Kategori", typeof(string));
+            table.Columns.Add("Jenis Maggot", typeof(string));
+            table.Columns.Add("Harga Per Kg", typeof(decimal));
+            table.Columns.Add("Stok", typeof(decimal));
+            table.Columns.Add("ID Penjual", typeof(string));
+            table.Columns.Add("Nama Penjual", typeof(string));
             table.Columns.Add("Status", typeof(string));
 
-            foreach (var kategori in kategoriController.ListKategori)
+            foreach (var product in ProductController.ListProduct)
             {
-                table.Rows.Add(kategori.id_kategori, kategori.namakategori, kategori.Status);
+                table.Rows.Add(
+                    product.id_maggot,
+                    product.jenis_maggot,
+                    product.harga_per_kg,
+                    product.stok,
+                    product.id_penjual,
+                    product.nama_penjual,
+                    product.status
+                );
             }
 
             dataGridView1.DataSource = table;
@@ -109,13 +119,15 @@ namespace Projek_Akhir_PBO.View.Pemilik
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                idKategoriSelected = Convert.ToInt32(row.Cells[0].Value);
-                textBoxKategori.Text = row.Cells[1].Value.ToString();
-                string status = row.Cells[2].Value.ToString();
-                comboBox1Status.SelectedItem = status;
+                idMaggotSelected = Convert.ToInt32(row.Cells[0].Value);
+                textBoxKategori.Text = row.Cells[1].Value.ToString(); // jenis maggot
+                comboBox1Status.SelectedItem = row.Cells[7].Value.ToString(); // status
             }
         }
 
-      
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

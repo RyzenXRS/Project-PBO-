@@ -19,6 +19,7 @@ namespace PBOOO_PROJECT.View.Penjual
             InitializeComponent();
             _userId = userId;
             ucProfilePenjual1.UserId = userId;
+            ucProdukPenjual1.UserId = userId;
         }
 
         private void ShowUserControl(UserControl uc)
@@ -68,7 +69,7 @@ namespace PBOOO_PROJECT.View.Penjual
 
         private void buttoncategoriesPemilik_Click(object sender, EventArgs e)
         {
-
+            ShowUserControl(ucProdukPenjual1);
         }
 
         private void buttonrentersPemilik_Click(object sender, EventArgs e)
