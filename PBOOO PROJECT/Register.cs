@@ -124,7 +124,7 @@ namespace PBOOO_PROJECT
 
             if (password == konfirmasi)
             {
-                using (NpgsqlConnection con = new NpgsqlConnection("Host=localhost;Username=postgres;Password=321;Database=MaggotPBOO"))
+                using (NpgsqlConnection con = new NpgsqlConnection("Host=localhost;Username=postgres;Password=321;Database=MaggotPBO"))
                 {
                     if (selectedTable == "Pembeli")
                     {

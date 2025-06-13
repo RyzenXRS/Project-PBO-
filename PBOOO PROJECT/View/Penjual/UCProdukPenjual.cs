@@ -50,7 +50,7 @@ namespace PBOOO_PROJECT.View.Penjual
             }
             if (string.IsNullOrEmpty(comboBox1Status.Text.Trim()))
             {
-                MessageBox.Show("Nama Produk tidak boleh kosong", "Tambah Data",
+                MessageBox.Show("Status tidak boleh kosong", "Tambah Data",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -121,7 +121,7 @@ namespace PBOOO_PROJECT.View.Penjual
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 idMaggotSelected = Convert.ToInt32(row.Cells[0].Value);
                 textBoxKategori.Text = row.Cells[1].Value.ToString(); // jenis maggot
-                comboBox1Status.SelectedItem = row.Cells[7].Value.ToString(); // status
+                comboBox1Status.SelectedItem = row.Cells[6].Value.ToString(); // status
             }
         }
 

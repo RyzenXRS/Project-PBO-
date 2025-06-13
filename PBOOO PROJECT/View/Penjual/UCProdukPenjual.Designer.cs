@@ -58,10 +58,9 @@
             paneltopdashboard.CustomizableEdges = customizableEdges1;
             paneltopdashboard.Dock = DockStyle.Top;
             paneltopdashboard.Location = new Point(0, 0);
-            paneltopdashboard.Margin = new Padding(4, 5, 4, 5);
             paneltopdashboard.Name = "paneltopdashboard";
             paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            paneltopdashboard.Size = new Size(1824, 218);
+            paneltopdashboard.Size = new Size(2100, 131);
             paneltopdashboard.TabIndex = 45;
             // 
             // juduldashboard
@@ -71,10 +70,9 @@
             juduldashboard.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             juduldashboard.ForeColor = Color.FromArgb(91, 80, 80);
             juduldashboard.ImageAlign = ContentAlignment.MiddleLeft;
-            juduldashboard.Location = new Point(49, 68);
-            juduldashboard.Margin = new Padding(4, 0, 4, 0);
+            juduldashboard.Location = new Point(34, 41);
             juduldashboard.Name = "juduldashboard";
-            juduldashboard.Size = new Size(243, 69);
+            juduldashboard.Size = new Size(166, 46);
             juduldashboard.TabIndex = 20;
             juduldashboard.Text = "Product";
             // 
@@ -84,9 +82,10 @@
             button1tambah.FlatStyle = FlatStyle.Flat;
             button1tambah.Font = new Font("Microsoft Sans Serif", 20.25F);
             button1tambah.ForeColor = Color.White;
-            button1tambah.Location = new Point(1314, 665);
+            button1tambah.Location = new Point(920, 399);
+            button1tambah.Margin = new Padding(2, 2, 2, 2);
             button1tambah.Name = "button1tambah";
-            button1tambah.Size = new Size(163, 98);
+            button1tambah.Size = new Size(114, 59);
             button1tambah.TabIndex = 51;
             button1tambah.Text = "Add";
             button1tambah.UseVisualStyleBackColor = false;
@@ -98,9 +97,10 @@
             button2edit.FlatStyle = FlatStyle.Flat;
             button2edit.Font = new Font("Microsoft Sans Serif", 20.25F);
             button2edit.ForeColor = Color.White;
-            button2edit.Location = new Point(1544, 665);
+            button2edit.Location = new Point(1081, 399);
+            button2edit.Margin = new Padding(2, 2, 2, 2);
             button2edit.Name = "button2edit";
-            button2edit.Size = new Size(163, 98);
+            button2edit.Size = new Size(114, 59);
             button2edit.TabIndex = 49;
             button2edit.Text = "Edit";
             button2edit.UseVisualStyleBackColor = false;
@@ -110,18 +110,20 @@
             // 
             textBoxKategori.BorderStyle = BorderStyle.FixedSingle;
             textBoxKategori.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxKategori.Location = new Point(1264, 368);
+            textBoxKategori.Location = new Point(885, 221);
+            textBoxKategori.Margin = new Padding(2, 2, 2, 2);
             textBoxKategori.Name = "textBoxKategori";
-            textBoxKategori.Size = new Size(488, 41);
+            textBoxKategori.Size = new Size(342, 30);
             textBoxKategori.TabIndex = 48;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(1264, 298);
+            label2.Location = new Point(885, 179);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(211, 36);
+            label2.Size = new Size(142, 25);
             label2.TabIndex = 47;
             label2.Text = "Nama Kategori";
             // 
@@ -160,7 +162,8 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(49, 280);
+            dataGridView1.Location = new Point(34, 168);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -175,7 +178,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1150, 1085);
+            dataGridView1.Size = new Size(805, 651);
             dataGridView1.TabIndex = 46;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -184,26 +187,26 @@
             // 
             comboBox1Status.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1Status.FormattingEnabled = true;
-            comboBox1Status.Items.AddRange(new object[] { "Aktif", "Tidak Aktif" });
-            comboBox1Status.Location = new Point(1264, 535);
-            comboBox1Status.Margin = new Padding(4, 5, 4, 5);
+            comboBox1Status.Items.AddRange(new object[] { "tersedia", "habis" });
+            comboBox1Status.Location = new Point(885, 321);
             comboBox1Status.Name = "comboBox1Status";
-            comboBox1Status.Size = new Size(487, 44);
+            comboBox1Status.Size = new Size(342, 33);
             comboBox1Status.TabIndex = 52;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1264, 473);
+            label1.Location = new Point(885, 284);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(99, 36);
+            label1.Size = new Size(68, 25);
             label1.TabIndex = 53;
             label1.Text = "Status";
             // 
             // UCProdukPenjual
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
             Controls.Add(comboBox1Status);
@@ -213,9 +216,8 @@
             Controls.Add(label2);
             Controls.Add(dataGridView1);
             Controls.Add(paneltopdashboard);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "UCProdukPenjual";
-            Size = new Size(3000, 3000);
+            Size = new Size(2100, 1800);
             Load += UCCategoriesPemilik_Load;
             paneltopdashboard.ResumeLayout(false);
             paneltopdashboard.PerformLayout();

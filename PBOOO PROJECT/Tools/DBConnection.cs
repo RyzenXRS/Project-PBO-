@@ -9,7 +9,7 @@ namespace PBOOO_PROJECT.Tools
 {
     internal class DBConnection : IDisposable
     {
-        private readonly string _connectionString = "Server=localhost;Port=5432;User Id=postgres;Password=321;Database=MaggotPBOO;CommandTimeout=10";
+        private readonly string _connectionString = "Server=localhost;Port=5432;User Id=postgres;Password=321;Database=MaggotPBO;CommandTimeout=10";
         private NpgsqlConnection _connection;
 
         public NpgsqlConnection Connection

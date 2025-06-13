@@ -56,12 +56,12 @@ namespace PBOOO_PROJECT.View.Penjual
             buttoncategoriesPemilik = new Guna.UI2.WinForms.Guna2Button();
             buttonstocksPemilik = new Guna.UI2.WinForms.Guna2Button();
             buttondashboardPemilik = new Guna.UI2.WinForms.Guna2Button();
-            ucProfilePenjual1 = new UCProfilePenjual();
-            ucProdukPenjual1 = new UCProdukPenjual();
             panellogo = new Guna.UI2.WinForms.Guna2Panel();
             LogoGoCamp = new PictureBox();
             MaGrow = new Label();
-            //ucProfilePenjual1 = new UCProfilePenjual();
+            ucProfilePenjual1 = new UCProfilePenjual();
+            ucProdukPenjual1 = new UCProdukPenjual();
+            ucStockPenjual1 = new UCStockPenjual();
             sidebardashboard.SuspendLayout();
             panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoGoCamp).BeginInit();
@@ -230,7 +230,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttoncategoriesPemilik.ShadowDecoration.CustomizableEdges = customizableEdges10;
             buttoncategoriesPemilik.Size = new Size(254, 62);
             buttoncategoriesPemilik.TabIndex = 10;
-            buttoncategoriesPemilik.Text = "          Categories";
+            buttoncategoriesPemilik.Text = "          Product";
             buttoncategoriesPemilik.TextAlign = HorizontalAlignment.Left;
             buttoncategoriesPemilik.Click += buttoncategoriesPemilik_Click;
             // 
@@ -306,24 +306,6 @@ namespace PBOOO_PROJECT.View.Penjual
             panellogo.Size = new Size(254, 130);
             panellogo.TabIndex = 5;
             panellogo.Paint += panellogo_Paint;
-            //
-            // ucProfilePenjual1
-            //
-            ucProfilePenjual1.Location = new Point(366, 0);
-            ucProfilePenjual1.Margin = new Padding(9, 8, 9, 8);
-            ucProfilePenjual1.Name = "ucProfilePenjual1";
-            ucProfilePenjual1.Size = new Size(1920, 1440);
-            ucProfilePenjual1.TabIndex = 44;
-            ucProfilePenjual1.UserId = 0;
-            // 
-            // ucProdukPenjual1
-            //
-            ucProdukPenjual1.Location = new Point(366, 0);
-            ucProdukPenjual1.Margin = new Padding(9, 8, 9, 8);
-            ucProdukPenjual1.Name = "ucProdukPenjual1";
-            ucProdukPenjual1.Size = new Size(1920, 1440);
-            ucProdukPenjual1.TabIndex = 44;
-            ucProdukPenjual1.UserId = 0;
             // 
             // LogoGoCamp
             // 
@@ -350,6 +332,33 @@ namespace PBOOO_PROJECT.View.Penjual
             MaGrow.Text = "MaGrow";
             MaGrow.Click += GO_CAMP_Click;
             // 
+            // ucProfilePenjual1
+            // 
+            ucProfilePenjual1.Location = new Point(366, 0);
+            ucProfilePenjual1.Margin = new Padding(9, 8, 9, 8);
+            ucProfilePenjual1.Name = "ucProfilePenjual1";
+            ucProfilePenjual1.Size = new Size(1920, 1440);
+            ucProfilePenjual1.TabIndex = 44;
+            ucProfilePenjual1.UserId = 0;
+            // 
+            // ucProdukPenjual1
+            // 
+            ucProdukPenjual1.Location = new Point(366, 0);
+            ucProdukPenjual1.Margin = new Padding(9, 8, 9, 8);
+            ucProdukPenjual1.Name = "ucProdukPenjual1";
+            ucProdukPenjual1.Size = new Size(1920, 1440);
+            ucProdukPenjual1.TabIndex = 44;
+            ucProdukPenjual1.UserId = 0;
+            //
+            // ucStockPenjual1
+            //
+            ucStockPenjual1.Location = new Point(366, 0);
+            ucStockPenjual1.Margin = new Padding(9, 8, 9, 8);
+            ucStockPenjual1.Name = "ucStockPenjual1";
+            ucStockPenjual1.Size = new Size(1920, 1440);
+            ucStockPenjual1.TabIndex = 44;
+            ucStockPenjual1.UserId = 0;
+            // 
             // FormPenjual
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -359,6 +368,7 @@ namespace PBOOO_PROJECT.View.Penjual
             Controls.Add(sidebardashboard);
             Controls.Add(ucProfilePenjual1);
             Controls.Add(ucProdukPenjual1);
+            Controls.Add(ucStockPenjual1);
             Name = "FormPenjual";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPenjual";
@@ -386,5 +396,6 @@ namespace PBOOO_PROJECT.View.Penjual
         private Label MaGrow;
         private UCProfilePenjual ucProfilePenjual1;
         private UCProdukPenjual ucProdukPenjual1;
+        private UCStockPenjual ucStockPenjual1;
     }
 }

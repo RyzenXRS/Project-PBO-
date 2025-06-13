@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
-//using PBOOO_PROJECT.Controller.Penjual;
+using PBOOO_PROJECT.Controller.Penjual;
 using PBOOO_PROJECT.Models.Penjual;
 //using PBOOO_PROJECT.Models.Pembeli;
 using PBOOO_PROJECT.Tools;
