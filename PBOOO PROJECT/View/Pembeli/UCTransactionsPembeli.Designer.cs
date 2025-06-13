@@ -38,8 +38,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -49,8 +47,6 @@
             panel1 = new Panel();
             itemPanel = new FlowLayoutPanel();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            guna2TextBoxRent = new Guna.UI2.WinForms.Guna2TextBox();
-            label2 = new Label();
             boxNoEWallet = new Guna.UI2.WinForms.Guna2TextBox();
             lblNo = new Label();
             comboBoxEWallet = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -124,8 +120,6 @@
             // guna2ShadowPanel1
             // 
             guna2ShadowPanel1.BackColor = Color.Transparent;
-            guna2ShadowPanel1.Controls.Add(guna2TextBoxRent);
-            guna2ShadowPanel1.Controls.Add(label2);
             guna2ShadowPanel1.Controls.Add(boxNoEWallet);
             guna2ShadowPanel1.Controls.Add(lblNo);
             guna2ShadowPanel1.Controls.Add(comboBoxEWallet);
@@ -149,57 +143,13 @@
             guna2ShadowPanel1.Size = new Size(476, 733);
             guna2ShadowPanel1.TabIndex = 53;
             // 
-            // guna2TextBoxRent
-            // 
-            guna2TextBoxRent.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            guna2TextBoxRent.BackColor = Color.FromArgb(0, 0, 0, 0);
-            guna2TextBoxRent.BorderColor = Color.FromArgb(14, 115, 116);
-            guna2TextBoxRent.BorderRadius = 9;
-            guna2TextBoxRent.CustomizableEdges = customizableEdges3;
-            guna2TextBoxRent.DefaultText = "";
-            guna2TextBoxRent.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBoxRent.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBoxRent.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBoxRent.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBoxRent.FillColor = Color.FromArgb(245, 248, 241);
-            guna2TextBoxRent.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxRent.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
-            guna2TextBoxRent.ForeColor = Color.FromArgb(74, 75, 67);
-            guna2TextBoxRent.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxRent.Location = new Point(142, 437);
-            guna2TextBoxRent.Margin = new Padding(11, 9, 11, 9);
-            guna2TextBoxRent.Name = "guna2TextBoxRent";
-            guna2TextBoxRent.PlaceholderText = "";
-            guna2TextBoxRent.RightToLeft = RightToLeft.No;
-            guna2TextBoxRent.SelectedText = "";
-            guna2TextBoxRent.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2TextBoxRent.Size = new Size(287, 43);
-            guna2TextBoxRent.TabIndex = 59;
-            guna2TextBoxRent.TextChanged += guna2TextBoxRent_TextChanged;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(91, 80, 80);
-            label2.ImageAlign = ContentAlignment.MiddleLeft;
-            label2.Location = new Point(32, 447);
-            label2.Name = "label2";
-            label2.RightToLeft = RightToLeft.No;
-            label2.Size = new Size(106, 25);
-            label2.TabIndex = 58;
-            label2.Text = "Rent for  :";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // boxNoEWallet
             // 
             boxNoEWallet.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             boxNoEWallet.BackColor = Color.FromArgb(0, 0, 0, 0);
             boxNoEWallet.BorderColor = Color.FromArgb(14, 115, 116);
             boxNoEWallet.BorderRadius = 9;
-            boxNoEWallet.CustomizableEdges = customizableEdges5;
+            boxNoEWallet.CustomizableEdges = customizableEdges3;
             boxNoEWallet.DefaultText = "";
             boxNoEWallet.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             boxNoEWallet.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -216,7 +166,7 @@
             boxNoEWallet.PlaceholderText = "";
             boxNoEWallet.RightToLeft = RightToLeft.No;
             boxNoEWallet.SelectedText = "";
-            boxNoEWallet.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            boxNoEWallet.ShadowDecoration.CustomizableEdges = customizableEdges4;
             boxNoEWallet.Size = new Size(287, 43);
             boxNoEWallet.TabIndex = 57;
             // 
@@ -242,7 +192,7 @@
             comboBoxEWallet.BackColor = Color.FromArgb(0, 0, 0, 0);
             comboBoxEWallet.BorderColor = Color.FromArgb(14, 115, 116);
             comboBoxEWallet.BorderRadius = 9;
-            comboBoxEWallet.CustomizableEdges = customizableEdges7;
+            comboBoxEWallet.CustomizableEdges = customizableEdges5;
             comboBoxEWallet.DrawMode = DrawMode.OwnerDrawFixed;
             comboBoxEWallet.DropDownHeight = 100;
             comboBoxEWallet.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -261,7 +211,7 @@
             comboBoxEWallet.Margin = new Padding(0);
             comboBoxEWallet.Name = "comboBoxEWallet";
             comboBoxEWallet.ShadowDecoration.BorderRadius = 0;
-            comboBoxEWallet.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            comboBoxEWallet.ShadowDecoration.CustomizableEdges = customizableEdges6;
             comboBoxEWallet.Size = new Size(287, 43);
             comboBoxEWallet.TabIndex = 55;
             // 
@@ -335,7 +285,7 @@
             buttonClearAll.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonClearAll.BackColor = Color.Transparent;
             buttonClearAll.BorderRadius = 10;
-            buttonClearAll.CustomizableEdges = customizableEdges9;
+            buttonClearAll.CustomizableEdges = customizableEdges7;
             buttonClearAll.DisabledState.BorderColor = Color.DarkGray;
             buttonClearAll.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonClearAll.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -346,7 +296,7 @@
             buttonClearAll.Location = new Point(367, 27);
             buttonClearAll.Name = "buttonClearAll";
             buttonClearAll.Padding = new Padding(1, 0, 0, 0);
-            buttonClearAll.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            buttonClearAll.ShadowDecoration.CustomizableEdges = customizableEdges8;
             buttonClearAll.Size = new Size(81, 40);
             buttonClearAll.TabIndex = 49;
             buttonClearAll.Text = "Clear All";
@@ -370,7 +320,7 @@
             buttonPay.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonPay.BackColor = Color.Transparent;
             buttonPay.BorderRadius = 15;
-            buttonPay.CustomizableEdges = customizableEdges11;
+            buttonPay.CustomizableEdges = customizableEdges9;
             buttonPay.DisabledState.BorderColor = Color.DarkGray;
             buttonPay.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonPay.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -381,7 +331,7 @@
             buttonPay.Location = new Point(16, 669);
             buttonPay.Name = "buttonPay";
             buttonPay.Padding = new Padding(1, 0, 0, 0);
-            buttonPay.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            buttonPay.ShadowDecoration.CustomizableEdges = customizableEdges10;
             buttonPay.Size = new Size(444, 50);
             buttonPay.TabIndex = 47;
             buttonPay.Text = "Pay";
@@ -454,7 +404,7 @@
             datagridTransaction.ThemeStyle.RowsStyle.Height = 35;
             datagridTransaction.ThemeStyle.RowsStyle.SelectionBackColor = Color.Silver;
             datagridTransaction.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
-            datagridTransaction.CellFormatting += datagridTransaction_CellFormatting;
+            //datagridTransaction.CellFormatting += datagridTransaction_CellFormatting;
             // 
             // dgvNo
             // 
@@ -540,7 +490,5 @@
         private DataGridViewTextBoxColumn dgvQty;
         private DataGridViewTextBoxColumn dgvPrice;
         private DataGridViewTextBoxColumn dgvAmount;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxRent;
-        private Label label2;
     }
 }

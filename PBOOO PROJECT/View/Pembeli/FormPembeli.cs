@@ -22,6 +22,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             ucProfilePembeli1.UserId = _userId; 
             ucHistoryPembeli1.UserId = _userId;
             ucHomePembeli1.UserId = _userId;
+            ucTransactionsPembeli1.UserId = _userId;    
         }
         private void ShowUserControl(UserControl uc)
         {
@@ -29,6 +30,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             ucProfilePembeli1.Visible = false;
             ucHistoryPembeli1.Visible = false;
             ucHomePembeli1.Visible = false;
+            ucTransactionsPembeli1.Visible = false; 
 
 
             // Tampilkan UserControl yang dipilih
@@ -67,7 +69,7 @@ namespace PBOOO_PROJECT.View.Pembeli
 
         private void buttontransactionpenyewa_Click(object sender, EventArgs e)
         {
-
+            ShowUserControl(ucTransactionsPembeli1);
         }
 
         private void buttohistorypenyewa_Click(object sender, EventArgs e)

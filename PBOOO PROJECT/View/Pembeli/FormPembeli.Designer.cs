@@ -42,13 +42,10 @@ namespace PBOOO_PROJECT.View.Pembeli
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPembeli));
             panel1 = new Panel();
             sidebardashboard = new Panel();
             buttonprofilpeyewa = new Guna.UI2.WinForms.Guna2Button();
-            buttonReportsPy = new Guna.UI2.WinForms.Guna2Button();
             buttonlogoutpenyewa = new Guna.UI2.WinForms.Guna2Button();
             buttohistorypenyewa = new Guna.UI2.WinForms.Guna2Button();
             buttontransactionpenyewa = new Guna.UI2.WinForms.Guna2Button();
@@ -58,7 +55,8 @@ namespace PBOOO_PROJECT.View.Pembeli
             MaGrow = new Label();
             ucProfilePembeli1 = new UCProfilePembeli();
             ucHistoryPembeli1 = new UCHistoryPembeli();
-            ucHomePembeli1 = new UCHomePembeli();   
+            ucHomePembeli1 = new UCHomePembeli();
+            ucTransactionsPembeli1 = new UCTransactionsPembeli();
             sidebardashboard.SuspendLayout();
             panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoGoCamp).BeginInit();
@@ -78,7 +76,6 @@ namespace PBOOO_PROJECT.View.Pembeli
             sidebardashboard.BackColor = Color.FromArgb(138, 154, 91);
             sidebardashboard.BorderStyle = BorderStyle.FixedSingle;
             sidebardashboard.Controls.Add(buttonprofilpeyewa);
-            sidebardashboard.Controls.Add(buttonReportsPy);
             sidebardashboard.Controls.Add(buttonlogoutpenyewa);
             sidebardashboard.Controls.Add(buttohistorypenyewa);
             sidebardashboard.Controls.Add(buttontransactionpenyewa);
@@ -111,7 +108,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             buttonprofilpeyewa.ImageAlign = HorizontalAlignment.Left;
             buttonprofilpeyewa.ImageOffset = new Point(32, 0);
             buttonprofilpeyewa.IndicateFocus = true;
-            buttonprofilpeyewa.Location = new Point(0, 378);
+            buttonprofilpeyewa.Location = new Point(0, 316);
             buttonprofilpeyewa.Name = "buttonprofilpeyewa";
             buttonprofilpeyewa.Padding = new Padding(5, 2, 0, 0);
             buttonprofilpeyewa.PressedColor = Color.FromArgb(97, 191, 143);
@@ -123,43 +120,11 @@ namespace PBOOO_PROJECT.View.Pembeli
             buttonprofilpeyewa.TextAlign = HorizontalAlignment.Left;
             buttonprofilpeyewa.Click += buttonprofilpeyewa_Click;
             // 
-            // buttonReportsPy
-            // 
-            buttonReportsPy.BackColor = Color.Transparent;
-            buttonReportsPy.BorderRadius = 10;
-            buttonReportsPy.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttonReportsPy.CustomizableEdges = customizableEdges3;
-            buttonReportsPy.DisabledState.BorderColor = Color.DarkGray;
-            buttonReportsPy.DisabledState.CustomBorderColor = Color.DarkGray;
-            buttonReportsPy.DisabledState.FillColor = Color.FromArgb(97, 191, 143);
-            buttonReportsPy.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            buttonReportsPy.Dock = DockStyle.Top;
-            buttonReportsPy.FillColor = Color.FromArgb(138, 154, 91);
-            buttonReportsPy.FocusedColor = Color.FromArgb(97, 191, 143);
-            buttonReportsPy.Font = new Font("Microsoft Sans Serif", 13F);
-            buttonReportsPy.ForeColor = Color.White;
-            buttonReportsPy.HoverState.FillColor = Color.FromArgb(97, 191, 143);
-            buttonReportsPy.ImageAlign = HorizontalAlignment.Left;
-            buttonReportsPy.ImageOffset = new Point(28, 0);
-            buttonReportsPy.ImageSize = new Size(25, 25);
-            buttonReportsPy.IndicateFocus = true;
-            buttonReportsPy.Location = new Point(0, 316);
-            buttonReportsPy.Name = "buttonReportsPy";
-            buttonReportsPy.Padding = new Padding(1, 2, 0, 0);
-            buttonReportsPy.PressedColor = Color.FromArgb(97, 191, 143);
-            buttonReportsPy.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttonReportsPy.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            buttonReportsPy.Size = new Size(254, 62);
-            buttonReportsPy.TabIndex = 11;
-            buttonReportsPy.Text = "          Reports";
-            buttonReportsPy.TextAlign = HorizontalAlignment.Left;
-            buttonReportsPy.Click += buttonReportsPy_Click;
-            // 
             // buttonlogoutpenyewa
             // 
             buttonlogoutpenyewa.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonlogoutpenyewa.BorderRadius = 10;
-            buttonlogoutpenyewa.CustomizableEdges = customizableEdges5;
+            buttonlogoutpenyewa.CustomizableEdges = customizableEdges3;
             buttonlogoutpenyewa.DisabledState.BorderColor = Color.DarkGray;
             buttonlogoutpenyewa.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonlogoutpenyewa.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -169,7 +134,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             buttonlogoutpenyewa.ForeColor = Color.White;
             buttonlogoutpenyewa.Location = new Point(22, 1516);
             buttonlogoutpenyewa.Name = "buttonlogoutpenyewa";
-            buttonlogoutpenyewa.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            buttonlogoutpenyewa.ShadowDecoration.CustomizableEdges = customizableEdges4;
             buttonlogoutpenyewa.Size = new Size(264, 53);
             buttonlogoutpenyewa.TabIndex = 6;
             buttonlogoutpenyewa.Text = "Logout";
@@ -179,7 +144,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             buttohistorypenyewa.BackColor = Color.Transparent;
             buttohistorypenyewa.BorderRadius = 10;
             buttohistorypenyewa.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttohistorypenyewa.CustomizableEdges = customizableEdges7;
+            buttohistorypenyewa.CustomizableEdges = customizableEdges5;
             buttohistorypenyewa.DisabledState.BorderColor = Color.DarkGray;
             buttohistorypenyewa.DisabledState.CustomBorderColor = Color.DarkGray;
             buttohistorypenyewa.DisabledState.FillColor = Color.FromArgb(97, 191, 143);
@@ -199,7 +164,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             buttohistorypenyewa.Padding = new Padding(3, 1, 0, 0);
             buttohistorypenyewa.PressedColor = Color.FromArgb(97, 191, 143);
             buttohistorypenyewa.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttohistorypenyewa.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            buttohistorypenyewa.ShadowDecoration.CustomizableEdges = customizableEdges6;
             buttohistorypenyewa.Size = new Size(254, 62);
             buttohistorypenyewa.TabIndex = 10;
             buttohistorypenyewa.Text = "          History";
@@ -211,7 +176,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             buttontransactionpenyewa.BackColor = Color.Transparent;
             buttontransactionpenyewa.BorderRadius = 10;
             buttontransactionpenyewa.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttontransactionpenyewa.CustomizableEdges = customizableEdges9;
+            buttontransactionpenyewa.CustomizableEdges = customizableEdges7;
             buttontransactionpenyewa.DisabledState.BorderColor = Color.DarkGray;
             buttontransactionpenyewa.DisabledState.CustomBorderColor = Color.DarkGray;
             buttontransactionpenyewa.DisabledState.FillColor = Color.FromArgb(97, 191, 143);
@@ -230,7 +195,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             buttontransactionpenyewa.Padding = new Padding(3, 2, 0, 0);
             buttontransactionpenyewa.PressedColor = Color.FromArgb(97, 191, 143);
             buttontransactionpenyewa.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttontransactionpenyewa.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            buttontransactionpenyewa.ShadowDecoration.CustomizableEdges = customizableEdges8;
             buttontransactionpenyewa.Size = new Size(254, 62);
             buttontransactionpenyewa.TabIndex = 9;
             buttontransactionpenyewa.Text = "          Transaction";
@@ -243,7 +208,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             buttonhomepenyewa.BorderColor = Color.Transparent;
             buttonhomepenyewa.BorderRadius = 10;
             buttonhomepenyewa.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttonhomepenyewa.CustomizableEdges = customizableEdges11;
+            buttonhomepenyewa.CustomizableEdges = customizableEdges9;
             buttonhomepenyewa.DisabledState.BorderColor = Color.DarkGray;
             buttonhomepenyewa.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonhomepenyewa.DisabledState.FillColor = Color.FromArgb(97, 191, 143);
@@ -262,7 +227,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             buttonhomepenyewa.Padding = new Padding(3, 1, 0, 0);
             buttonhomepenyewa.PressedColor = Color.FromArgb(97, 191, 143);
             buttonhomepenyewa.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttonhomepenyewa.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            buttonhomepenyewa.ShadowDecoration.CustomizableEdges = customizableEdges10;
             buttonhomepenyewa.Size = new Size(254, 62);
             buttonhomepenyewa.TabIndex = 7;
             buttonhomepenyewa.Text = "          Home";
@@ -273,11 +238,11 @@ namespace PBOOO_PROJECT.View.Pembeli
             // 
             panellogo.Controls.Add(LogoGoCamp);
             panellogo.Controls.Add(MaGrow);
-            panellogo.CustomizableEdges = customizableEdges13;
+            panellogo.CustomizableEdges = customizableEdges11;
             panellogo.Dock = DockStyle.Top;
             panellogo.Location = new Point(0, 0);
             panellogo.Name = "panellogo";
-            panellogo.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            panellogo.ShadowDecoration.CustomizableEdges = customizableEdges12;
             panellogo.Size = new Size(254, 130);
             panellogo.TabIndex = 5;
             panellogo.Paint += panellogo_Paint;
@@ -298,17 +263,18 @@ namespace PBOOO_PROJECT.View.Pembeli
             // 
             MaGrow.AutoSize = true;
             MaGrow.BackColor = Color.Transparent;
-            MaGrow.Font = new Font("Microsoft Sans Serif", 21F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaGrow.Font = new Font("Microsoft Sans Serif", 21F, FontStyle.Bold, GraphicsUnit.Point, 0);
             MaGrow.ForeColor = Color.FromArgb(220, 225, 189);
             MaGrow.Location = new Point(80, 51);
             MaGrow.Name = "MaGrow";
-            MaGrow.Size = new Size(120, 32);
+            MaGrow.Size = new Size(126, 32);
             MaGrow.TabIndex = 19;
             MaGrow.Text = "MaGrow";
             MaGrow.Click += GO_CAMP_Click;
             // 
             // ucProfilePembeli1
             // 
+            ucProfilePembeli1.BackColor = SystemColors.Control;
             ucProfilePembeli1.Location = new Point(366, 0);
             ucProfilePembeli1.Margin = new Padding(9, 8, 9, 8);
             ucProfilePembeli1.Name = "ucProfilePembeli1";
@@ -333,6 +299,14 @@ namespace PBOOO_PROJECT.View.Pembeli
             ucHomePembeli1.Size = new Size(1920, 1440);
             ucHomePembeli1.TabIndex = 44;
             ucHomePembeli1.UserId = 0;
+            // ucTransactionsPembeli1
+            // 
+            ucTransactionsPembeli1.Location = new Point(366, 0);
+            ucTransactionsPembeli1.Margin = new Padding(9, 8, 9, 8);
+            ucTransactionsPembeli1.Name = "ucTransactionsPembeli1";
+            ucTransactionsPembeli1.Size = new Size(1920, 1440);
+            ucTransactionsPembeli1.TabIndex = 44;
+            ucTransactionsPembeli1.UserId = 0;
             // 
             // FormPembeli
             // 
@@ -344,6 +318,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             Controls.Add(ucProfilePembeli1);
             Controls.Add(ucHistoryPembeli1);
             Controls.Add(ucHomePembeli1);
+            Controls.Add(ucTransactionsPembeli1);
             Name = "FormPembeli";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPembeli";
@@ -360,7 +335,6 @@ namespace PBOOO_PROJECT.View.Pembeli
         private Panel panel1;
         private Panel sidebardashboard;
         private Guna.UI2.WinForms.Guna2Button buttonprofilpeyewa;
-        private Guna.UI2.WinForms.Guna2Button buttonReportsPy;
         private Guna.UI2.WinForms.Guna2Button buttonlogoutpenyewa;
         private Guna.UI2.WinForms.Guna2Button buttohistorypenyewa;
         private Guna.UI2.WinForms.Guna2Button buttontransactionpenyewa;
@@ -371,5 +345,6 @@ namespace PBOOO_PROJECT.View.Pembeli
         private UCProfilePembeli ucProfilePembeli1;
         private UCHistoryPembeli ucHistoryPembeli1;
         private UCHomePembeli ucHomePembeli1;
+        private UCTransactionsPembeli ucTransactionsPembeli1;
     }
 }

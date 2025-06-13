@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Npgsql;
+using PBOOO_PROJECT.Controller.Penjual;
+using PBOOO_PROJECT.Models.Pembeli;
+using PBOOO_PROJECT.Models.Penjual;
+using PBOOO_PROJECT.Tools;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,10 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Npgsql;
-using PBOOO_PROJECT.Controller.Penjual;
-using PBOOO_PROJECT.Models.Pembeli;
-using PBOOO_PROJECT.Tools;
+using static Guna.UI2.Native.WinApi;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PBOOO_PROJECT.View.Pembeli
@@ -35,7 +37,6 @@ namespace PBOOO_PROJECT.View.Pembeli
             InitializeComponent();
             itemPanel.Controls.Clear();
             LoadProducts();
-            guna2TextBoxRent.TextChanged += guna2TextBoxRent_TextChanged;
         }
 
         private void UCTransactionsPenyewa_Load(object sender, EventArgs e)
@@ -43,43 +44,42 @@ namespace PBOOO_PROJECT.View.Pembeli
             datagridTransaction.BorderStyle = BorderStyle.FixedSingle;
         }
 
-        private void AddItems(string id, string name, string cat, string price, string stock)
+        private void AddItems(string id, string jenis, string harga, string stok, string idPenjual)
         {
             if (itemPanel == null || datagridTransaction == null)
             {
                 throw new InvalidOperationException("itemPanel or datagridTransaction is not initialized.");
             }
 
-            var w = new UCItemCamping()
+            var w = new UCItemMaggot()
             {
-                namaalatcamping = name,
-                hargaalatcamping = Convert.ToInt32(price),
-                jumlahalatcamping = Convert.ToInt32(stock),
-                namakategori = cat,
-                id_alatcamping = Convert.ToInt32(id)
+                id_maggot = int.Parse(id),
+                id_penjual = int.Parse(idPenjual),
+                jenis_maggot = jenis,
+                harga_per_kg = decimal.Parse(harga),
+                stok_kg = int.Parse(stok)
             };
-
             itemPanel.Controls.Add(w);
 
             w.onSelect += (ss, ee) =>
             {
-                var wdg = (UCItemCamping)ss;
+                var wdg = (UCItemMaggot)ss;
 
                 foreach (DataGridViewRow item in datagridTransaction.Rows)
                 {
-                    if (item.Cells["dgvId"].Value != null && Convert.ToInt32(item.Cells["dgvId"].Value) == wdg.id_alatcamping)
+                    if (item.Cells["dgvId"].Value != null && Convert.ToInt32(item.Cells["dgvId"].Value) == wdg.id_maggot)
                     {
                         if (item.Cells["dgvQty"].Value != null && item.Cells["dgvPrice"].Value != null)
                         {
                             item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) + 1;
-                            item.Cells["dgvAmount"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) * double.Parse(item.Cells["dgvPrice"].Value.ToString());
+                            item.Cells["dgvAmount"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) * Convert.ToDouble(item.Cells["dgvPrice"].Value.ToString());
                             GetTotal();
                             return;
                         }
                     }
                 }
 
-                datagridTransaction.Rows.Add(new object[] { 0, wdg.id_alatcamping, wdg.namaalatcamping, 1, wdg.hargaalatcamping, wdg.hargaalatcamping });
+                datagridTransaction.Rows.Add(new object[] { 0, wdg.id_maggot, wdg.jenis_maggot, 1, wdg.harga_per_kg, wdg.harga_per_kg});
                 GetTotal();
             };
         }
@@ -90,23 +90,24 @@ namespace PBOOO_PROJECT.View.Pembeli
 
             foreach (DataGridViewRow item in datagridTransaction.Rows)
             {
-                if (item.Cells["dgvAmount"].Value != null)
+                if (item.Cells["dgvQty"].Value != null && item.Cells["dgvPrice"].Value != null)
                 {
                     //tot += double.Parse(item.Cells["dgvAmount"].Value.ToString());
                     int qty = Convert.ToInt32(item.Cells["dgvQty"].Value);
-                    double price = Convert.ToDouble(item.Cells["dgvPrice"].Value);
-                    int rentalDuration = int.TryParse(guna2TextBoxRent.Text.Trim(), out int duration) ? duration : 1;
-                    tot += qty * price * rentalDuration;
+                    double price = Convert.ToDouble(item.Cells["dgvPrice"].Value);                    tot += qty * price;
                 }
             }
 
-            lblTotal.Text = tot.ToString();
+            lblTotal.Text = $"Rp {tot:N0}";
         }
 
         private void LoadProducts()
         {
 
-            string query = "select * from alat_camping ac join kategori_alat_camping kac on (ac.id_kategori=kac.id_kategori)";
+            string query = @"SELECT m.id_maggot,m.jenis_maggot,m.harga_per_kg,COALESCE(sm.jumlah_kg, 0) AS stok_kg,m.id_penjual
+                            FROM maggot m
+                            LEFT JOIN stok_maggot sm ON sm.id_maggot = m.id_maggot
+                            WHERE COALESCE(sm.jumlah_kg, 0) > 0";
             using (var db = new DBConnection())
             {
                 db.Open();
@@ -119,45 +120,42 @@ namespace PBOOO_PROJECT.View.Pembeli
 
                         foreach (DataRow item in dt.Rows)
                         {
-                            AddItems(item["id_alatcamping"].ToString(), item["namaalatcamping"].ToString(), item["namakategori"].ToString(),
-                                item["hargaalatcamping"].ToString(), item["jumlahalatcamping"].ToString());
+                            AddItems(item["id_maggot"].ToString(), item["jenis_maggot"].ToString(), item["harga_per_kg"].ToString(),
+                                item["stok_kg"].ToString(), item["id_penjual"].ToString());
                         }
                     }
                 }
             }
         }
 
-        private void datagridTransaction_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void datagridTransaction_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            int count = 0;
-            foreach (DataGridViewRow row in datagridTransaction.Rows)
+            for (int i = 0; i < datagridTransaction.Rows.Count; i++)
             {
-                count++;
-                row.Cells[0].Value = count;
+                datagridTransaction.Rows[i].Cells[0].Value = i + 1;
             }
         }
 
         private void buttonPay_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(guna2TextBoxRent.Text.Trim(), out int nomor))
-            {
-                MessageBox.Show("lama sewa harus berupa angka", "Tambah Data",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             if (string.IsNullOrEmpty(comboBoxEWallet.Text.Trim()) || string.IsNullOrEmpty(boxNoEWallet.Text.Trim()))
             {
                 MessageBox.Show("Nomor e-wallet atau jenis e-wallet harus ada", "Tambah Data",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (datagridTransaction.Rows.Count == 0)
+            {
+                MessageBox.Show("Tidak ada item yang ditambahkan ke transaksi.", "Transaksi Gagal",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             InsertTransaction();
-
         }
 
         public void InsertTransaction()
         {
-            string conStr = "Server=localhost;Port=5432;User Id=postgres;Password=firsta;Database=Camping;CommandTimeout=10";
+            string conStr = "Server=localhost;Port=5432;User Id=postgres;Password=321;Database=MaggotPBO;CommandTimeout=10";
             using (NpgsqlConnection conn = new NpgsqlConnection(conStr))
             {
                 conn.Open();
@@ -165,14 +163,14 @@ namespace PBOOO_PROJECT.View.Pembeli
                 {
                     try
                     {
-                        DialogResult result = MessageBox.Show("Do you want to add this item to the transaction?", "Confirmation",
+                        DialogResult result = MessageBox.Show("Lanjutkan transaksi pembelian maggot?", "Konfirmasi",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (result == DialogResult.Yes)
                         {
                             string insertPembayaranEwalletQuery = @"
                         INSERT INTO pembayaran_ewallet (nomor_ewallet, jenis_ewallet)
-                        VALUES (@nomor_ewallet, @jenis_ewallet)
+                        VALUES (@nomer_ewallet, @jenis_ewallet)
                         RETURNING id_ewallet";
 
                             int idEwallet;
@@ -184,44 +182,40 @@ namespace PBOOO_PROJECT.View.Pembeli
                             }
 
 
-                            string insertPeminjamanQuery = @"
-                        INSERT INTO peminjaman (id_penyewa, tanggal_peminjaman, id_ewallet, status_pinjam)
-                        VALUES (@UserId, @TanggalPinjam, @IdEwallet, @Status)
-                        RETURNING id_peminjaman";
-
-                            int idPeminjaman;
-                            using (var cmd = new NpgsqlCommand(insertPeminjamanQuery, conn))
+                            string insertTransaksi = @"INSERT INTO transaksi_maggot (id_pembeli_maggot, id_ewallet, id_maggot, jumlah_kg, status, tanggal)
+                                                       VALUES (@idPembeli, @idEwallet, @idMaggot, @jumlahKg, @status, @tanggal)
+                                                        RETURNING id_transaksi_maggot";
+                            int idTransaksi;
+                            using (var cmd = new NpgsqlCommand(insertTransaksi, conn))
                             {
-                                cmd.Parameters.AddWithValue("@UserId", _userId);
-                                cmd.Parameters.AddWithValue("@TanggalPinjam", DateTime.Now);
-                                cmd.Parameters.AddWithValue("@IdEwallet", idEwallet);
-                                cmd.Parameters.AddWithValue("@Status", false);
-                                idPeminjaman = (int)cmd.ExecuteScalar();
+                                // Ambil baris pertama untuk ambil id_maggot
+                                var row = datagridTransaction.Rows[0];
+                                cmd.Parameters.AddWithValue("@idPembeli", _userId);
+                                cmd.Parameters.AddWithValue("@idEwallet", idEwallet);
+                                cmd.Parameters.AddWithValue("@idMaggot", Convert.ToInt32(row.Cells["dgvId"].Value));
+                                cmd.Parameters.AddWithValue("@jumlahKg", Convert.ToInt32(row.Cells["dgvQty"].Value));
+                                cmd.Parameters.AddWithValue("@status", "dikirim");
+                                cmd.Parameters.AddWithValue("@tanggal", DateTime.Now);
+                                idTransaksi = (int)cmd.ExecuteScalar();
                             }
-
-
-                            string insertDetailPeminjamanQuery = @"
-                        INSERT INTO detail_transaksi (id_peminjaman, id_alatcamping, lama_sewa, quantity)
-                        VALUES (@IdPeminjaman, @IdAlatCamping, @LamaSewa, @qty)";
-
+                            string insertDetail = @"INSERT INTO detail_transaksi_maggot (id_transaksi_maggot, id_maggot, jumlah_kg)
+                                                    VALUES (@idTransaksi, @idMaggot, @jumlahKg)";
                             foreach (DataGridViewRow row in datagridTransaction.Rows)
                             {
                                 if (row.Cells["dgvId"].Value != null)
                                 {
-                                    using (var cmd = new NpgsqlCommand(insertDetailPeminjamanQuery, conn))
+                                    using (var cmd = new NpgsqlCommand(insertDetail, conn))
                                     {
-                                        cmd.Parameters.AddWithValue("@IdPeminjaman", idPeminjaman);
-                                        cmd.Parameters.AddWithValue("@IdAlatCamping", Convert.ToInt32(row.Cells["dgvId"].Value));
-                                        cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
-                                        cmd.Parameters.AddWithValue("@LamaSewa", int.Parse(guna2TextBoxRent.Text.Trim())); // Assuming 1 for now, adjust as needed
+                                        cmd.Parameters.AddWithValue("@idTransaksi", idTransaksi);
+                                        cmd.Parameters.AddWithValue("@idMaggot", Convert.ToInt32(row.Cells["dgvId"].Value));
+                                        cmd.Parameters.AddWithValue("@jumlahKg", Convert.ToInt32(row.Cells["dgvQty"].Value));
                                         cmd.ExecuteNonQuery();
                                     }
                                 }
                             }
-
                             transaction.Commit();
                             clearAll();
-                            MessageBox.Show("");
+                            MessageBox.Show("Transaksi Berhasil Ditambahkan", "Sukses");
                         }
                         else
                         {
@@ -246,7 +240,6 @@ namespace PBOOO_PROJECT.View.Pembeli
             datagridTransaction.Rows.Clear();
             boxNoEWallet.Text = string.Empty;
             comboBoxEWallet.SelectedIndex = -1;
-            guna2TextBoxRent.Text = string.Empty;
             lblTotal.Text = string.Empty;
         }
         private void buttonClearAll_Click(object sender, EventArgs e)
@@ -254,7 +247,6 @@ namespace PBOOO_PROJECT.View.Pembeli
             datagridTransaction.Rows.Clear();
             boxNoEWallet.Text = string.Empty;
             comboBoxEWallet.SelectedIndex = -1;
-            guna2TextBoxRent.Text = string.Empty;
             lblTotal.Text = string.Empty;
         }
 

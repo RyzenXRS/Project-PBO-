@@ -220,7 +220,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(paneltopdashboard);
             Name = "UCProfilePenyewa";
-            Size = new Size(1277, 864);
+            Size = new Size(2100, 1400);
             Load += UCProfilePenyewa_Load;
             paneltopdashboard.ResumeLayout(false);
             paneltopdashboard.PerformLayout();
