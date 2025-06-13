@@ -83,7 +83,7 @@
             paneltopdashboard.Location = new Point(0, 0);
             paneltopdashboard.Name = "paneltopdashboard";
             paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            paneltopdashboard.Size = new Size(1277, 131);
+            paneltopdashboard.Size = new Size(1902, 131);
             paneltopdashboard.TabIndex = 45;
             // 
             // juduldashboard
@@ -131,7 +131,6 @@
             guna2ShadowPanel1.Controls.Add(label1);
             guna2ShadowPanel1.Controls.Add(buttonPay);
             guna2ShadowPanel1.Controls.Add(datagridTransaction);
-            guna2ShadowPanel1.Dock = DockStyle.Right;
             guna2ShadowPanel1.FillColor = Color.White;
             guna2ShadowPanel1.Location = new Point(801, 131);
             guna2ShadowPanel1.Name = "guna2ShadowPanel1";
@@ -404,7 +403,6 @@
             datagridTransaction.ThemeStyle.RowsStyle.Height = 35;
             datagridTransaction.ThemeStyle.RowsStyle.SelectionBackColor = Color.Silver;
             datagridTransaction.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
-            //datagridTransaction.CellFormatting += datagridTransaction_CellFormatting;
             // 
             // dgvNo
             // 
@@ -456,7 +454,7 @@
             Controls.Add(panel1);
             Controls.Add(paneltopdashboard);
             Name = "UCTransactionsPembeli";
-            Size = new Size(1277, 864);
+            Size = new Size(1902, 1400);
             paneltopdashboard.ResumeLayout(false);
             paneltopdashboard.PerformLayout();
             panel1.ResumeLayout(false);

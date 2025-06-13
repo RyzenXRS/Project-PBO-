@@ -311,7 +311,7 @@
             ucProfileAdmin1.Location = new Point(256, 0);
             ucProfileAdmin1.Margin = new Padding(6, 5, 6, 5);
             ucProfileAdmin1.Name = "ucProfileAdmin1";
-            ucProfileAdmin1.Size = new Size(1344, 864);
+            ucProfileAdmin1.Size = new Size(1920, 1440);
             ucProfileAdmin1.TabIndex = 44;
             ucProfileAdmin1.UserId = 0;
             // 
