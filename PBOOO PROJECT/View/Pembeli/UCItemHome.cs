@@ -16,8 +16,8 @@ namespace PBOOO_PROJECT.View.Penyewa
         {
             InitializeComponent();
         }
-        public int id_alatcamping { get; set; }
-        public int hargaalatcamping
+        public int id_maggot { get; set; }
+        public int harga_per_kg
         {
             get
             {
@@ -36,18 +36,28 @@ namespace PBOOO_PROJECT.View.Penyewa
                 lblPrice.Text = value.ToString();
             }
         }
-        public string namakategori { get; set; }
+        public string jenis_maggot { get; set; }
 
-        public string namaalatcamping
+        public string jenis_sampah
         {
             get { return lblNama.Text; }
             set { lblNama.Text = value; }
         }
 
-        public string deskripsialat
+        public string deskripsi
         {
             get { return lblDesc.Text; }
             set { lblDesc.Text = value; }
+        }
+
+        private void lblNama_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDesc_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

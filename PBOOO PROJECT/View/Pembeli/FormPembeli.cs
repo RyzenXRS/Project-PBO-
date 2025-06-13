@@ -19,11 +19,15 @@ namespace PBOOO_PROJECT.View.Pembeli
         {
             InitializeComponent();;
             _userId = userId;
+            ucProfilePembeli1.UserId = _userId; 
+            ucHistoryPembeli1.UserId = _userId;
         }
         private void ShowUserControl(UserControl uc)
         {
             // Sembunyikan semua UserControl
             ucProfilePembeli1.Visible = false;
+            ucHistoryPembeli1.Visible = false;
+
 
             // Tampilkan UserControl yang dipilih
             uc.Visible = true;
@@ -66,7 +70,7 @@ namespace PBOOO_PROJECT.View.Pembeli
 
         private void buttohistorypenyewa_Click(object sender, EventArgs e)
         {
-
+            ShowUserControl(ucHistoryPembeli1);
         }
 
         private void buttonReportsPy_Click(object sender, EventArgs e)

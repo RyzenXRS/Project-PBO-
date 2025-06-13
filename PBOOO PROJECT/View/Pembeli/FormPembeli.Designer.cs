@@ -1,4 +1,6 @@
-﻿namespace PBOOO_PROJECT.View.Pembeli
+﻿using PBOOO_PROJECT.View.Penjual;
+
+namespace PBOOO_PROJECT.View.Pembeli
 {
     partial class FormPembeli
     {
@@ -55,6 +57,7 @@
             LogoGoCamp = new PictureBox();
             MaGrow = new Label();
             ucProfilePembeli1 = new UCProfilePembeli();
+            ucHistoryPembeli1 = new UCHistoryPembeli();
             sidebardashboard.SuspendLayout();
             panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoGoCamp).BeginInit();
@@ -303,6 +306,24 @@
             MaGrow.Text = "MaGrow";
             MaGrow.Click += GO_CAMP_Click;
             // 
+            // ucProfilePembeli1
+            // 
+            ucProfilePembeli1.Location = new Point(366, 0);
+            ucProfilePembeli1.Margin = new Padding(9, 8, 9, 8);
+            ucProfilePembeli1.Name = "ucProfilePembeli1";
+            ucProfilePembeli1.Size = new Size(1920, 1440);
+            ucProfilePembeli1.TabIndex = 44;
+            ucProfilePembeli1.UserId = 0;
+            // 
+            // ucHistoryPembeli1
+            // 
+            ucHistoryPembeli1.Location = new Point(366, 0);
+            ucHistoryPembeli1.Margin = new Padding(9, 8, 9, 8);
+            ucHistoryPembeli1.Name = "ucHistoryPembeli1";
+            ucHistoryPembeli1.Size = new Size(1920, 1440);
+            ucHistoryPembeli1.TabIndex = 44;
+            ucHistoryPembeli1.UserId = 0;
+            // 
             // FormPembeli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -311,6 +332,7 @@
             Controls.Add(panel1);
             Controls.Add(sidebardashboard);
             Controls.Add(ucProfilePembeli1);
+            Controls.Add(ucHistoryPembeli1);
             Name = "FormPembeli";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPembeli";
@@ -336,5 +358,6 @@
         private PictureBox LogoGoCamp;
         private Label MaGrow;
         private UCProfilePembeli ucProfilePembeli1;
+        private UCHistoryPembeli ucHistoryPembeli1;
     }
 }

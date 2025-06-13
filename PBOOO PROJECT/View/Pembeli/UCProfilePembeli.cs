@@ -73,7 +73,7 @@ namespace PBOOO_PROJECT.View.Pembeli
 
         private void UCProfilePenyewa_Load(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT nama_pembeli, no_telp, alamat_pembeli FROM pembeli WHERE id_pembeli = @userId";
+            string selectQuery = "SELECT nama_pembeli, no_telp, alamat FROM pembeli WHERE id_pembeli = @userId";
             using (var db = new DBConnection())
             {
                 db.Open();
@@ -89,11 +89,10 @@ namespace PBOOO_PROJECT.View.Pembeli
                   
                             profilePy.nama_pembeli = (string)reader["nama_pembeli"];
                             profilePy.no_telp = (string)reader["no_telp"];
-                            profilePy.alamat_pembeli = (string)reader["alamat_penmbeli"];
+                            profilePy.alamat_pembeli = (string)reader["alamat"];
                             textBoxUsername.Text = profilePy.nama_pembeli;
                             textBoxNoHP.Text = profilePy.no_telp;
                             textBoxAlamat.Text = profilePy.alamat_pembeli;
-
                         }
                     }
                 }
@@ -120,8 +119,8 @@ namespace PBOOO_PROJECT.View.Pembeli
                   MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string cekQuery = "SELECT COUNT(*) FROM penyewa WHERE nama_penyewa = @nama_penyewa AND id_penyewa != @userId";
-            string updateQuery = "UPDATE penyewa SET nama_penyewa = @nama_penyewa, no_telepon_penyewa = @no_hp, alamat_penyewa = @alamat_penyewa WHERE id_penyewa = @userId";
+            string cekQuery = "SELECT COUNT(*) FROM pembeli WHERE nama_pembeli = @nama_pembeli AND id_pembeli != @userId";
+            string updateQuery = "UPDATE pembeli SET nama_pembeli = @nama_pembeli, no_telp = @no_hp, alamat = @alamat_pembeli WHERE id_pembeli = @userId";
 
             try
             {
@@ -130,23 +129,23 @@ namespace PBOOO_PROJECT.View.Pembeli
                     db.Open();
                     using (NpgsqlCommand checkCmd = new NpgsqlCommand(cekQuery, db.Connection))
                     {
-                        checkCmd.Parameters.AddWithValue("@nama_penyewa", textBoxUsername.Text.Trim());
+                        checkCmd.Parameters.AddWithValue("@nama_pembeli", textBoxUsername.Text.Trim());
                         checkCmd.Parameters.AddWithValue("@userId", UserId);
                         int count = Convert.ToInt32(checkCmd.ExecuteScalar());
 
                         if (count > 0)
                         {
-                            MessageBox.Show("Nama penyewa sudah ada", "Edit Data",
+                            MessageBox.Show("Nama pembeli sudah ada", "Edit Data",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                     }
                     using (NpgsqlCommand cmd = new NpgsqlCommand(updateQuery, db.Connection))
                     {
-                        cmd.Parameters.AddWithValue("@nama_penyewa", textBoxUsername.Text.Trim());
+                        cmd.Parameters.AddWithValue("@nama_pembeli", textBoxUsername.Text.Trim());
                         cmd.Parameters.AddWithValue("@userId", UserId);
                         cmd.Parameters.AddWithValue("@no_hp", textBoxNoHP.Text.Trim());
-                        cmd.Parameters.AddWithValue("@alamat_penyewa", textBoxAlamat.Text.Trim());
+                        cmd.Parameters.AddWithValue("@alamat_pembeli", textBoxAlamat.Text.Trim());
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
