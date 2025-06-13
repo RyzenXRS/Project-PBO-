@@ -83,7 +83,7 @@
             button1tambah.Font = new Font("Microsoft Sans Serif", 20.25F);
             button1tambah.ForeColor = Color.White;
             button1tambah.Location = new Point(920, 399);
-            button1tambah.Margin = new Padding(2, 2, 2, 2);
+            button1tambah.Margin = new Padding(2);
             button1tambah.Name = "button1tambah";
             button1tambah.Size = new Size(114, 59);
             button1tambah.TabIndex = 51;
@@ -98,7 +98,7 @@
             button2edit.Font = new Font("Microsoft Sans Serif", 20.25F);
             button2edit.ForeColor = Color.White;
             button2edit.Location = new Point(1081, 399);
-            button2edit.Margin = new Padding(2, 2, 2, 2);
+            button2edit.Margin = new Padding(2);
             button2edit.Name = "button2edit";
             button2edit.Size = new Size(114, 59);
             button2edit.TabIndex = 49;
@@ -111,7 +111,7 @@
             textBoxKategori.BorderStyle = BorderStyle.FixedSingle;
             textBoxKategori.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxKategori.Location = new Point(885, 221);
-            textBoxKategori.Margin = new Padding(2, 2, 2, 2);
+            textBoxKategori.Margin = new Padding(2);
             textBoxKategori.Name = "textBoxKategori";
             textBoxKategori.Size = new Size(342, 30);
             textBoxKategori.TabIndex = 48;
@@ -163,7 +163,7 @@
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(34, 168);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;

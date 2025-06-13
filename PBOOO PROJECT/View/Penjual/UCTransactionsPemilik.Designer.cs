@@ -54,7 +54,7 @@
             paneltopdashboard.Location = new Point(0, 0);
             paneltopdashboard.Name = "paneltopdashboard";
             paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            paneltopdashboard.Size = new Size(1277, 131);
+            paneltopdashboard.Size = new Size(2000, 131);
             paneltopdashboard.TabIndex = 45;
             paneltopdashboard.Paint += paneltopdashboard_Paint;
             // 
@@ -138,7 +138,7 @@
             label2.TabIndex = 49;
             label2.Text = "Detail Transaksi:";
             // 
-            // UCTransactionsPemilik
+            // UCTransactionsPenjual
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -147,7 +147,7 @@
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Controls.Add(paneltopdashboard);
-            Name = "UCTransactionsPemilik";
+            Name = "UCTransactionsPenjual";
             Size = new Size(2000, 1400);
             Load += UCTransactionsPemilik_Load;
             paneltopdashboard.ResumeLayout(false);

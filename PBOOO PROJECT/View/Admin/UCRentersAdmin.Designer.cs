@@ -54,7 +54,7 @@
             paneltopdashboard.Location = new Point(0, 0);
             paneltopdashboard.Name = "paneltopdashboard";
             paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            paneltopdashboard.Size = new Size(1504, 131);
+            paneltopdashboard.Size = new Size(1920, 131);
             paneltopdashboard.TabIndex = 44;
             // 
             // juduldashboard

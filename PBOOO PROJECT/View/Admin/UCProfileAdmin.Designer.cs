@@ -65,7 +65,7 @@
             paneltopdashboard.Location = new Point(0, 0);
             paneltopdashboard.Name = "paneltopdashboard";
             paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            paneltopdashboard.Size = new Size(1277, 131);
+            paneltopdashboard.Size = new Size(2100, 131);
             paneltopdashboard.TabIndex = 44;
             paneltopdashboard.Paint += paneltopdashboard_Paint;
             // 
@@ -91,7 +91,7 @@
             label2.Location = new Point(326, 498);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(140, 26);
+            label2.Size = new Size(125, 25);
             label2.TabIndex = 49;
             label2.Text = "Nama Admin";
             label2.Click += label2_Click;
@@ -120,7 +120,7 @@
             label3.Location = new Point(326, 580);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(72, 26);
+            label3.Size = new Size(67, 25);
             label3.TabIndex = 54;
             label3.Text = "No Hp";
             label3.Click += label3_Click;
@@ -161,7 +161,7 @@
             guna2Nohp.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             guna2Nohp.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2Nohp.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2Nohp.Font = new Font("Lufga", 20.2499962F);
+            guna2Nohp.Font = new Font("Microsoft Sans Serif", 20.2499962F);
             guna2Nohp.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2Nohp.Location = new Point(502, 573);
             guna2Nohp.Margin = new Padding(12, 16, 12, 16);
