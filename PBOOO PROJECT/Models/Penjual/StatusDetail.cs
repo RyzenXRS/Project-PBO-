@@ -10,7 +10,7 @@ namespace PBOOO_PROJECT.Models.Penjual
     {
         public string jenis_maggot { get; set; }
         public int jumlah_kg { get; set; }
-        public int harga_per_kg { get; set; }
-        public int total_harga { get; set; }
+        public decimal harga_per_kg { get; set; }
+        public decimal total_harga { get; set; }
     }
 }

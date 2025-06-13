@@ -22,6 +22,7 @@ namespace PBOOO_PROJECT.View.Penjual
             ucProdukPenjual1.UserId = userId;
             ucStockPenjual1.UserId = userId;
             ucDashboardPenjual1.UserId = userId;
+            ucStatusPenjual1.UserId = userId;
         }
 
         private void ShowUserControl(UserControl uc)
@@ -31,6 +32,8 @@ namespace PBOOO_PROJECT.View.Penjual
             ucProdukPenjual1.Visible = false;
             ucStockPenjual1.Visible = false;
             ucDashboardPenjual1.Visible = false;
+            ucStatusPenjual1.Visible = false;   
+
 
             // Tampilkan UserControl yang dipilih
             uc.Visible = true;
@@ -79,12 +82,11 @@ namespace PBOOO_PROJECT.View.Penjual
 
         private void buttonrentersPemilik_Click(object sender, EventArgs e)
         {
-
+            ShowUserControl(ucStatusPenjual1);
         }
 
         private void buttonTransactionsPemilik_Click(object sender, EventArgs e)
         {
-
         }
 
         private void buttonprofilepemilik_Click(object sender, EventArgs e)

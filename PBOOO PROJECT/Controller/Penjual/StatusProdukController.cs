@@ -24,31 +24,58 @@ namespace PBOOO_PROJECT.Controller.Penjual
 
         public void Read()
         {
-            string query = @"SELECT t.id_transaksi_maggot, p.nama_penjual, m.jenis_maggot, t.jumlah_kg, m.harga_per_kg,(t.jumlah_kg * m.harga_per_kg) AS total_harga, t.status, b.nama_pembeli
-                            FROM transaksi_maggot t
-                            JOIN penjual p ON p.id_penjual = p.id_penjual
-                            JOIN maggot m ON t.id_maggot = m.id_maggot
-                            JOIN pembeli b ON b.id_pembeli = b.id_pembeli
-                            WHERE p.id_penjual = @id_penjual
-                            ORDER BY t.id_transaksi_maggot ASC;";
+            string query = @"SELECT t.id_transaksi_maggot,t.tanggal,p.nama_penjual,m.jenis_maggot,t.jumlah_kg,m.harga_per_kg,t.jumlah_kg * m.harga_per_kg AS total_harga,t.status,b.nama_pembeli,w.nomor_ewallet
+                             FROM transaksi_maggot AS t
+                             JOIN maggot  m ON m.id_maggot = t.id_maggot
+                             JOIN penjual p ON p.id_penjual = m.id_penjual
+                             LEFT JOIN pembayaran_ewallet w ON w.id_ewallet = t.id_ewallet
+                             JOIN pembeli b ON b.id_pembeli = t.id_pembeli_maggot
+                             WHERE p.id_penjual = @id_penjual    
+                             ORDER BY t.id_transaksi_maggot;";
 
             using (var db = new DBConnection())
             {
                 db.Open();
-                using (NpgsqlCommand data = new NpgsqlCommand(query, db.Connection))
+                using (var cmd = new NpgsqlCommand(query, db.Connection))
                 {
-                    data.Parameters.AddWithValue("@userId", _userId);
-                    NpgsqlDataReader reader = data.ExecuteReader();
+                    cmd.Parameters.AddWithValue("@id_penjual", UserId);
+                    using var reader = cmd.ExecuteReader();
                     statusProduk.Clear();
+
                     while (reader.Read())
                     {
-                        StatusProduk statproduk = new StatusProduk();
-                        statproduk.id_transaksi_maggot = (int)reader["id_transaksi_maggot"];
-                        statproduk.nama_pembeli = (string)reader["nama_pembeli"];
-                        statproduk.nomor_ewallet = (string)reader["nomor_ewallet"];
-                        statproduk.tanggal = ((DateTime)reader["tanggal"]).ToString("yyyy-MM-dd");
-                        statproduk.Status = Enum.Parse<TransaksiStatus>(reader["status"].ToString(), true);
-                        statproduk.total_harga = Convert.ToInt32(reader["total_harga"]);
+                        StatusProduk statproduk = new StatusProduk
+                        {
+                            id_transaksi_maggot = reader.GetInt32(reader.GetOrdinal("id_transaksi_maggot")),
+                            nama_pembeli = reader.GetString(reader.GetOrdinal("nama_pembeli")),
+                            nomor_ewallet = reader.IsDBNull(reader.GetOrdinal("nomor_ewallet"))
+                                            ? "-"
+                                            : reader.GetString(reader.GetOrdinal("nomor_ewallet")),
+                            tanggal = reader.GetDateTime(reader.GetOrdinal("tanggal"))
+                                             .ToString("yyyy-MM-dd"),
+                            Status = Enum.Parse<TransaksiStatus>(
+                                        reader.GetString(reader.GetOrdinal("status")), true),
+                            total_harga = reader.GetInt32(reader.GetOrdinal("total_harga"))
+                        };
+                        string statusStr = reader.GetString(reader.GetOrdinal("status")).ToLower();
+
+                        switch (statusStr)
+                        {
+                            case "diproses":
+                            case "dikirim":
+                                statproduk.Status = TransaksiStatus.dikirim;
+                                break;
+                            case "diterima":
+                                statproduk.Status = TransaksiStatus.diterima;
+                                break;
+                            case "dibatalkan":
+                                statproduk.Status = TransaksiStatus.dibatalkan;
+                                break;
+                            default:
+                                statproduk.Status = TransaksiStatus.dikirim; // fallback
+                                break;
+                        }
+                        statusProduk.Add(statproduk);
                     }
                 }
             }
@@ -72,31 +99,31 @@ namespace PBOOO_PROJECT.Controller.Penjual
         }
         public List<StatusDetail> GetTransaksiMaggotDetails(int id_transaksi_maggot)
         {
-            string query = @"SELECT m.jenis_maggot, dt.jumlah_kg, m.harga_per_kg, (dt.jumlah_kg * m.harga_per_kg) AS total_harga
-                     FROM detail_transaksi_maggot dt
-                     JOIN maggot m ON dt.id_maggot = m.id_maggot
-                     WHERE dt.id_transaksi_maggot = @id_transaksi_maggot";
+            string query = @"SELECT m.jenis_maggot,t.jumlah_kg,m.harga_per_kg,t.jumlah_kg * m.harga_per_kg AS total_harga
+                             FROM detail_transaksi_maggot AS dt
+                             JOIN transaksi_maggot      AS t ON t.id_transaksi_maggot = dt.id_transaksi_maggot
+                             JOIN maggot                AS m ON m.id_maggot           = dt.id_maggot
+                             WHERE dt.id_transaksi_maggot = @id_transaksi_maggot;";
 
-            List<StatusDetail> details = new List<StatusDetail>();
+            var details = new List<StatusDetail>();
 
-            using (var db = new DBConnection()) // sesuai controller lu
+            using (var db = new DBConnection())
             {
                 db.Open();
-                using (NpgsqlCommand cmd = new NpgsqlCommand(query, db.Connection))
+                using (var cmd = new NpgsqlCommand(query, db.Connection))
                 {
                     cmd.Parameters.AddWithValue("@id_transaksi_maggot", id_transaksi_maggot);
-                    NpgsqlDataReader reader = cmd.ExecuteReader();
+                    using var reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        StatusDetail detail = new StatusDetail()
+                        details.Add(new StatusDetail
                         {
-                            jenis_maggot = (string)reader["jenis_maggot"].ToString(),
-                            jumlah_kg = (int)reader["jumlah_kg"],
-                            harga_per_kg = (int)reader["harga_per_kg"],
-                            total_harga = (int)reader["total_harga"]
-                        };
-                        details.Add(detail);
+                            jenis_maggot = reader.GetString(reader.GetOrdinal("jenis_maggot")),
+                            jumlah_kg = reader.GetInt32(reader.GetOrdinal("jumlah_kg")),
+                            harga_per_kg = reader.GetDecimal(reader.GetOrdinal("harga_per_kg")),
+                            total_harga = reader.GetDecimal(reader.GetOrdinal("total_harga"))
+                        });
                     }
                 }
             }
@@ -104,3 +131,4 @@ namespace PBOOO_PROJECT.Controller.Penjual
         }
     }
 }
+

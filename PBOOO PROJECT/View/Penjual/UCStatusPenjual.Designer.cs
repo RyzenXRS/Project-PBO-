@@ -96,9 +96,9 @@
             juduldashboard.ImageAlign = ContentAlignment.MiddleLeft;
             juduldashboard.Location = new Point(34, 41);
             juduldashboard.Name = "juduldashboard";
-            juduldashboard.Size = new Size(166, 46);
+            juduldashboard.Size = new Size(258, 46);
             juduldashboard.TabIndex = 20;
-            juduldashboard.Text = "Renters";
+            juduldashboard.Text = "Stock Status";
             // 
             // button1Clear
             // 

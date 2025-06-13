@@ -8,6 +8,7 @@ namespace PBOOO_PROJECT.Models.Penjual
 {
     public enum TransaksiStatus
     {
+        diproses,
         dikirim,
         diterima,
         dibatalkan
