@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
-using Projek_Akhir_PBO.Controller.Pemilik;
-using Projek_Akhir_PBO.Models.Pemilik;
-using Projek_Akhir_PBO.Tools;
+using PBOOO_PROJECT.Controller.Penjual;
+using PBOOO_PROJECT.Models.Pembeli;
+using PBOOO_PROJECT.Tools;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Projek_Akhir_PBO.View.Penyewa
+namespace PBOOO_PROJECT.View.Pembeli
 {
     public partial class UCTransactionsPembeli : UserControl
     {
@@ -261,6 +261,11 @@ namespace Projek_Akhir_PBO.View.Penyewa
         private void guna2TextBoxRent_TextChanged(object sender, EventArgs e)
         {
             GetTotal();
+        }
+
+        private void itemPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

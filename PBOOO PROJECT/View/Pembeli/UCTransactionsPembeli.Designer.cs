@@ -1,4 +1,4 @@
-﻿namespace Projek_Akhir_PBO.View.Penyewa
+﻿namespace PBOOO_PROJECT.View.Pembeli
 {
     partial class UCTransactionsPembeli
     {
@@ -89,7 +89,6 @@
             paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
             paneltopdashboard.Size = new Size(1277, 131);
             paneltopdashboard.TabIndex = 45;
-            paneltopdashboard.Paint += this.paneltopdashboard_Paint;
             // 
             // juduldashboard
             // 
@@ -120,6 +119,7 @@
             itemPanel.Name = "itemPanel";
             itemPanel.Size = new Size(798, 733);
             itemPanel.TabIndex = 0;
+            itemPanel.Paint += itemPanel_Paint;
             // 
             // guna2ShadowPanel1
             // 
