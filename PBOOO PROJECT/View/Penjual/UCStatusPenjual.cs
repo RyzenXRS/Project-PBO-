@@ -45,21 +45,23 @@ namespace PBOOO_PROJECT.View.Penjual
         {
             statusController.Read();
             DataTable table = new DataTable();
-            table.Columns.Add("Id", typeof(int));
-            table.Columns.Add("Nama Penyewa", typeof(string));
-            table.Columns.Add("Nomor E-wallet", typeof(string));
-            table.Columns.Add("Tanggal Peminjaman", typeof(string));
-            table.Columns.Add("Status Peminjaman", typeof(string));
-            table.Columns.Add("Tanggal Pengembalian", typeof(string));
-            table.Columns.Add("Status Pengembalian", typeof(string));
-            table.Columns.Add("Total Harga", typeof(int));
-            foreach (var renters in rentersController.ListRenters)
-            {
-                table.Rows.Add(renters.id_peminjaman, renters.nama_penyewa, renters.nomor_ewallet, renters.tanggal_peminjaman, renters.status_pinjam_string
-                                , renters.tanggalpengembalian, renters.status_kembali_string,
-                                renters.total_harga_keseluruhan);
-            }
 
+            table.Columns.Add("Id", typeof(int));
+            table.Columns.Add("Nama Pembeli", typeof(string));
+            table.Columns.Add("Nomor E-wallet", typeof(string));
+            table.Columns.Add("Tanggal Transaksi", typeof(string));
+            table.Columns.Add("Status Transaksi", typeof(string));
+            table.Columns.Add("Total Harga", typeof(int));
+
+            foreach (var transaksi in statusController.statusProduk)
+            {
+                table.Rows.Add(transaksi.id_transaksi_maggot,
+                                transaksi.nama_pembeli,
+                                transaksi.nomor_ewallet,
+                                transaksi.tanggal,
+                                transaksi.Status,
+                                transaksi.total_harga);
+            }
             dataGridView1.DataSource = table;
         }
 
@@ -74,30 +76,41 @@ namespace PBOOO_PROJECT.View.Penjual
         }
         public void ClearAll()
         {
-            tb1.Text = string.Empty;
-            tb4.Text = string.Empty;
-            tb2.Text = string.Empty;
-            tb3.Text = string.Empty;
-            cbpeminjaman.SelectedIndex = -1;
-            cbpengembalian.SelectedIndex = -1;
-            dataGridView2.Visible = false;
+            tb1.Text = string.Empty; // Nama Pembeli
+            tb2.Text = string.Empty; // Nomor E-wallet
+            tb3.Text = string.Empty; // Tanggal Transaksi
+            tb4.Text = string.Empty; // Total Harga
+            cbstatustransaksi.SelectedIndex = -1; // Combobox untuk status
         }
+
         private void button2edit_Click(object sender, EventArgs e)
         {
-            if (idRentersSelected == -1)
+            if (idMaggotSelected == -1)
             {
-                MessageBox.Show("Pilih peminjaman yang ingin di edit!", "Edit Data",
+                MessageBox.Show("Pilih transaksi maggot yang ingin diedit!", "Edit Data",
                      MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string status_pinjam_string = cbpeminjaman.SelectedItem.ToString();
-            bool status_pinjam = (status_pinjam_string == "Proses") ? false : true;
-            Renters renters = new Renters
+            string status_transaksi_string = cbstatustransaksi.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(status_transaksi_string))
             {
-                id_peminjaman = idRentersSelected,
-                status_pinjam = status_pinjam
-            };
-            rentersController.UpdateStatusPinjam(renters);
+                MessageBox.Show("Silakan pilih status terlebih dahulu.", "Edit Data",
+                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Parse the selected status string into the TransaksiStatus enum
+            TransaksiStatus statusTransaksi;
+            if (!Enum.TryParse(status_transaksi_string, out statusTransaksi))
+            {
+                MessageBox.Show("Status transaksi tidak valid.", "Edit Data",
+                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Fix: Pass both required arguments to UpdateStatusTransaksi
+            statusController.UpdateStatusTransaksi(idMaggotSelected, statusTransaksi);
+
             ClearAll();
             LoadDataGrid();
         }
@@ -107,45 +120,48 @@ namespace PBOOO_PROJECT.View.Penjual
             if (index >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[index];
-                idRentersSelected = Convert.ToInt32(row.Cells[0].Value);
-                tb1.Text = row.Cells[1].Value.ToString();
-                tb2.Text = row.Cells[2].Value.ToString();
-                tb4.Text = row.Cells[5].Value.ToString();
-                tb3.Text = row.Cells[3].Value.ToString();
-                string status_pinjam_string = row.Cells[4].Value.ToString();
-                string status_kembali_string = row.Cells[6].Value.ToString();
-                cbpeminjaman.SelectedItem = status_pinjam_string;
-                cbpengembalian.SelectedItem = status_kembali_string;
+                idMaggotSelected = Convert.ToInt32(row.Cells[0].Value);
+                tb1.Text = row.Cells[1].Value.ToString(); // Nama Pembeli
+                tb2.Text = row.Cells[2].Value.ToString(); // Nomor E-Wallet
+                tb4.Text = row.Cells[3].Value.ToString(); // Tanggal Transaksi
+                tb3.Text = row.Cells[5].Value.ToString(); // Total Harga
+                string status_transaksi = row.Cells[4].Value.ToString();
 
+                cbstatustransaksi.SelectedItem = status_transaksi;
+
+                // Mengunci field yang memang gak boleh diedit
                 tb1.Enabled = false;
                 tb2.Enabled = false;
                 tb4.Enabled = false;
                 tb3.Enabled = false;
-                if (cbpeminjaman.Text == "Terkirim")
+
+                // Jika status = "Dikirim", comboBox gak boleh diubah
+                if (cbstatustransaksi.Text == "Dikirim")
                 {
-                    cbpeminjaman.Enabled = false;
+                    cbstatustransaksi.Enabled = false;
                 }
-                dataGridView2.Visible = true;
-                label3.Visible = true;
-                DataGridViewRow baris = dataGridView1.Rows[e.RowIndex];
-                idRentersSelected = Convert.ToInt32(row.Cells[0].Value);
-                var details = rentersController.GetDetailPeminjaman(idRentersSelected);
-                dataGridView2.Controls.Clear();
-                DataTable table2 = new DataTable();
-
-                table2.Columns.Add("Nama Barang", typeof(string));
-                table2.Columns.Add("Harga Barang", typeof(int));
-                table2.Columns.Add("Quantity", typeof(int));
-                table2.Columns.Add("Total Harga", typeof(string));
-                dataGridView2.DataSource = table2;
-
-                foreach (var detail in details)
+                else
                 {
-                    table2.Rows.Add(detail.NamaAlatCamping, detail.HargaAlatCamping,
-                        detail.Quantity, detail.Total_Harga);
+                    cbstatustransaksi.Enabled = true;
                 }
             }
+            dataGridView2.Visible = true;
+            label3.Visible = true;
+
+            var details = statusController.GetTransaksiMaggotDetails(idMaggotSelected);
+            DataTable table2 = new DataTable();
+            table2.Columns.Add("Jenis Maggot", typeof(string)); // sesuai field yang lu punya
+            table2.Columns.Add("Jumlah (Kg)", typeof(int));
+            table2.Columns.Add("Harga per Kg", typeof(int));
+            table2.Columns.Add("Total", typeof(int));
+            dataGridView2.DataSource = table2;
+
+            foreach (var detail in details)
+            {
+                table2.Rows.Add(detail.jenis_maggot, detail.jumlah_kg, detail.harga_per_kg, detail.jumlah_kg * detail.harga_per_kg);
+            }
         }
+
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -160,31 +176,11 @@ namespace PBOOO_PROJECT.View.Penjual
         {
 
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void tb2_TextChanged(object sender, EventArgs e)
         {
-            if (idRentersSelected == -1)
-            {
-                MessageBox.Show("Pilih peminjaman yang ingin di edit!", "Edit Data",
-                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string status_kembali_string = cbpengembalian.SelectedItem.ToString();
-            bool status_kembali = (status_kembali_string == "Proses") ? false : true;
-            string status_pinjam_string = cbpeminjaman.SelectedItem.ToString();
-            bool status_pinjam = (status_pinjam_string == "Proses") ? false : true;
-            Renters renters = new Renters
-            {
-                id_peminjaman = idRentersSelected,
-                status_pinjam = status_pinjam,
-                status_kembali = status_kembali
-            };
-
-            rentersController.UpdateStatusKembali(renters.id_peminjaman, status_kembali, renters.status_pinjam);
-            ClearAll();
-            LoadDataGrid();
         }
 
-        private void tb2_TextChanged(object sender, EventArgs e)
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

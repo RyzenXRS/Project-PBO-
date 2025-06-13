@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
             paneltopdashboard = new Guna.UI2.WinForms.Guna2Panel();
             juduldashboard = new Label();
             button1Clear = new Button();
             tb2 = new Guna.UI2.WinForms.Guna2TextBox();
             tb1 = new Guna.UI2.WinForms.Guna2TextBox();
-            cbpeminjaman = new Guna.UI2.WinForms.Guna2ComboBox();
+            cbstatustransaksi = new Guna.UI2.WinForms.Guna2ComboBox();
             label4 = new Label();
             Stok = new Label();
             label1 = new Label();
@@ -61,6 +63,8 @@
             tb3 = new Guna.UI2.WinForms.Guna2TextBox();
             label3 = new Label();
             dataGridView2 = new DataGridView();
+            label5 = new Label();
+            tb4 = new Guna.UI2.WinForms.Guna2TextBox();
             paneltopdashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -74,11 +78,11 @@
             paneltopdashboard.Controls.Add(juduldashboard);
             paneltopdashboard.CustomBorderColor = Color.FromArgb(217, 224, 184);
             paneltopdashboard.CustomBorderThickness = new Padding(0, 0, 0, 1);
-            paneltopdashboard.CustomizableEdges = customizableEdges11;
+            paneltopdashboard.CustomizableEdges = customizableEdges1;
             paneltopdashboard.Dock = DockStyle.Top;
             paneltopdashboard.Location = new Point(0, 0);
             paneltopdashboard.Name = "paneltopdashboard";
-            paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
             paneltopdashboard.Size = new Size(1277, 131);
             paneltopdashboard.TabIndex = 45;
             paneltopdashboard.Paint += paneltopdashboard_Paint;
@@ -113,7 +117,7 @@
             // 
             // tb2
             // 
-            tb2.CustomizableEdges = customizableEdges13;
+            tb2.CustomizableEdges = customizableEdges3;
             tb2.DefaultText = "";
             tb2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -130,14 +134,14 @@
             tb2.PlaceholderText = "";
             tb2.ReadOnly = true;
             tb2.SelectedText = "";
-            tb2.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            tb2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             tb2.Size = new Size(189, 38);
             tb2.TabIndex = 91;
             tb2.TextChanged += tb2_TextChanged;
             // 
             // tb1
             // 
-            tb1.CustomizableEdges = customizableEdges15;
+            tb1.CustomizableEdges = customizableEdges5;
             tb1.DefaultText = "";
             tb1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -154,29 +158,29 @@
             tb1.PlaceholderText = "";
             tb1.ReadOnly = true;
             tb1.SelectedText = "";
-            tb1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            tb1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             tb1.Size = new Size(189, 37);
             tb1.TabIndex = 88;
             // 
-            // cbpeminjaman
+            // cbstatustransaksi
             // 
-            cbpeminjaman.AllowDrop = true;
-            cbpeminjaman.BackColor = Color.Transparent;
-            cbpeminjaman.CustomizableEdges = customizableEdges17;
-            cbpeminjaman.DrawMode = DrawMode.OwnerDrawFixed;
-            cbpeminjaman.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbpeminjaman.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbpeminjaman.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbpeminjaman.Font = new Font("Microsoft Sans Serif", 15F);
-            cbpeminjaman.ForeColor = Color.Black;
-            cbpeminjaman.ImeMode = ImeMode.On;
-            cbpeminjaman.ItemHeight = 30;
-            cbpeminjaman.Items.AddRange(new object[] { "dikirim", "diterima", "dibatalkan" });
-            cbpeminjaman.Location = new Point(1036, 179);
-            cbpeminjaman.Name = "cbpeminjaman";
-            cbpeminjaman.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            cbpeminjaman.Size = new Size(212, 36);
-            cbpeminjaman.TabIndex = 87;
+            cbstatustransaksi.AllowDrop = true;
+            cbstatustransaksi.BackColor = Color.Transparent;
+            cbstatustransaksi.CustomizableEdges = customizableEdges7;
+            cbstatustransaksi.DrawMode = DrawMode.OwnerDrawFixed;
+            cbstatustransaksi.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbstatustransaksi.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbstatustransaksi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbstatustransaksi.Font = new Font("Microsoft Sans Serif", 15F);
+            cbstatustransaksi.ForeColor = Color.Black;
+            cbstatustransaksi.ImeMode = ImeMode.On;
+            cbstatustransaksi.ItemHeight = 30;
+            cbstatustransaksi.Items.AddRange(new object[] { "dikirim", "diterima", "dibatalkan" });
+            cbstatustransaksi.Location = new Point(1036, 179);
+            cbstatustransaksi.Name = "cbstatustransaksi";
+            cbstatustransaksi.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbstatustransaksi.Size = new Size(212, 36);
+            cbstatustransaksi.TabIndex = 87;
             // 
             // label4
             // 
@@ -244,47 +248,47 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle9.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(97, 191, 147);
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(97, 191, 147);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(14, 115, 116);
-            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(14, 115, 116);
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(14, 115, 116);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(14, 115, 116);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeight = 34;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(97, 191, 147);
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(97, 191, 147);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(83, 143);
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = SystemColors.Window;
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Window;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Window;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.ReadOnly = true;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -295,7 +299,7 @@
             // 
             // tb3
             // 
-            tb3.CustomizableEdges = customizableEdges19;
+            tb3.CustomizableEdges = customizableEdges9;
             tb3.DefaultText = "";
             tb3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -312,7 +316,7 @@
             tb3.PlaceholderText = "";
             tb3.ReadOnly = true;
             tb3.SelectedText = "";
-            tb3.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            tb3.ShadowDecoration.CustomizableEdges = customizableEdges10;
             tb3.Size = new Size(309, 36);
             tb3.TabIndex = 94;
             tb3.TextChanged += guna2TextBox1_TextChanged;
@@ -336,48 +340,48 @@
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = Color.White;
-            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle13.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(97, 191, 147);
-            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(97, 191, 147);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.CausesValidation = false;
             dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = Color.FromArgb(14, 115, 116);
-            dataGridViewCellStyle14.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle14.ForeColor = Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(14, 115, 116);
-            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(14, 115, 116);
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(14, 115, 116);
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView2.ColumnHeadersHeight = 34;
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = SystemColors.Window;
-            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle15.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(97, 191, 147);
-            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.False;
-            dataGridView2.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Window;
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(97, 191, 147);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.Location = new Point(83, 589);
             dataGridView2.Margin = new Padding(2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = SystemColors.Window;
-            dataGridViewCellStyle16.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle16.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = SystemColors.Window;
-            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
-            dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Window;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 62;
             dataGridView2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -385,11 +389,49 @@
             dataGridView2.Size = new Size(925, 223);
             dataGridView2.TabIndex = 96;
             dataGridView2.Visible = false;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 14F);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(473, 445);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(107, 24);
+            label5.TabIndex = 97;
+            label5.Text = "Total Harga";
+            // 
+            // tb4
+            // 
+            tb4.CustomizableEdges = customizableEdges11;
+            tb4.DefaultText = "";
+            tb4.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb4.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb4.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb4.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb4.Enabled = false;
+            tb4.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb4.Font = new Font("Microsoft Sans Serif", 15F);
+            tb4.ForeColor = Color.Black;
+            tb4.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb4.Location = new Point(699, 447);
+            tb4.Margin = new Padding(22, 34, 22, 34);
+            tb4.Name = "tb4";
+            tb4.PlaceholderText = "";
+            tb4.ReadOnly = true;
+            tb4.SelectedText = "";
+            tb4.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            tb4.Size = new Size(309, 36);
+            tb4.TabIndex = 98;
             // 
             // UCStatusPenjual
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(tb4);
+            Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
@@ -397,7 +439,7 @@
             Controls.Add(button1Clear);
             Controls.Add(tb2);
             Controls.Add(tb1);
-            Controls.Add(cbpeminjaman);
+            Controls.Add(cbstatustransaksi);
             Controls.Add(label4);
             Controls.Add(Stok);
             Controls.Add(label1);
@@ -421,7 +463,7 @@
         private Button button1Clear;
         private Guna.UI2.WinForms.Guna2TextBox tb2;
         private Guna.UI2.WinForms.Guna2TextBox tb1;
-        private Guna.UI2.WinForms.Guna2ComboBox cbpeminjaman;
+        private Guna.UI2.WinForms.Guna2ComboBox cbstatustransaksi;
         private Label label4;
         private Label Stok;
         private Label label1;
@@ -431,5 +473,7 @@
         private Guna.UI2.WinForms.Guna2TextBox tb3;
         private Label label3;
         private DataGridView dataGridView2;
+        private Label label5;
+        private Guna.UI2.WinForms.Guna2TextBox tb4;
     }
 }
