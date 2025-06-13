@@ -21,6 +21,7 @@ namespace PBOOO_PROJECT.View.Penjual
             ucProfilePenjual1.UserId = userId;
             ucProdukPenjual1.UserId = userId;
             ucStockPenjual1.UserId = userId;
+            ucDashboardPenjual1.UserId = userId;
         }
 
         private void ShowUserControl(UserControl uc)
@@ -29,6 +30,7 @@ namespace PBOOO_PROJECT.View.Penjual
             ucProfilePenjual1.Visible = false;
             ucProdukPenjual1.Visible = false;
             ucStockPenjual1.Visible = false;
+            ucDashboardPenjual1.Visible = false;
 
             // Tampilkan UserControl yang dipilih
             uc.Visible = true;
@@ -62,7 +64,7 @@ namespace PBOOO_PROJECT.View.Penjual
 
         private void buttondashboardPemilik_Click(object sender, EventArgs e)
         {
-
+            ShowUserControl(ucDashboardPenjual1);
         }
 
         private void buttonstocksPemilik_Click(object sender, EventArgs e)
@@ -92,7 +94,7 @@ namespace PBOOO_PROJECT.View.Penjual
 
         private void sidebardashboard_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
     }
 }

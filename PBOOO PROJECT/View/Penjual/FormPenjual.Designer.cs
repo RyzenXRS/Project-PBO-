@@ -62,6 +62,7 @@ namespace PBOOO_PROJECT.View.Penjual
             ucProfilePenjual1 = new UCProfilePenjual();
             ucProdukPenjual1 = new UCProdukPenjual();
             ucStockPenjual1 = new UCStockPenjual();
+            ucDashboardPenjual1 = new UCDashboardPenjual();
             sidebardashboard.SuspendLayout();
             panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoGoCamp).BeginInit();
@@ -358,6 +359,15 @@ namespace PBOOO_PROJECT.View.Penjual
             ucStockPenjual1.Size = new Size(1920, 1440);
             ucStockPenjual1.TabIndex = 44;
             ucStockPenjual1.UserId = 0;
+            //
+            // ucDashboardPenjual1
+            //
+            ucDashboardPenjual1.Location = new Point(366, 0);
+            ucDashboardPenjual1.Margin = new Padding(9, 8, 9, 8);
+            ucDashboardPenjual1.Name = "ucStockPenjual1";
+            ucDashboardPenjual1.Size = new Size(1920, 1440);
+            ucDashboardPenjual1.TabIndex = 44;
+            ucDashboardPenjual1.UserId = 0;
             // 
             // FormPenjual
             // 
@@ -369,6 +379,7 @@ namespace PBOOO_PROJECT.View.Penjual
             Controls.Add(ucProfilePenjual1);
             Controls.Add(ucProdukPenjual1);
             Controls.Add(ucStockPenjual1);
+            Controls.Add(ucDashboardPenjual1);
             Name = "FormPenjual";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPenjual";
@@ -397,5 +408,6 @@ namespace PBOOO_PROJECT.View.Penjual
         private UCProfilePenjual ucProfilePenjual1;
         private UCProdukPenjual ucProdukPenjual1;
         private UCStockPenjual ucStockPenjual1;
+        private UCDashboardPenjual ucDashboardPenjual1;
     }
 }
