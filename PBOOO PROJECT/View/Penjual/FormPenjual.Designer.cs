@@ -364,7 +364,7 @@ namespace PBOOO_PROJECT.View.Penjual
             //
             ucDashboardPenjual1.Location = new Point(366, 0);
             ucDashboardPenjual1.Margin = new Padding(9, 8, 9, 8);
-            ucDashboardPenjual1.Name = "ucStockPenjual1";
+            ucDashboardPenjual1.Name = "ucDashboardPenjual1";
             ucDashboardPenjual1.Size = new Size(1920, 1440);
             ucDashboardPenjual1.TabIndex = 44;
             ucDashboardPenjual1.UserId = 0;

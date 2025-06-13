@@ -24,7 +24,7 @@ namespace PBOOO_PROJECT.View.Penjual
             set
             {
                 _userId = value;
-
+                RefreshDashboard(); // Panggil method ini setelah UserId di-set
             }
         }
         public UCDashboardPenjual()
@@ -37,10 +37,16 @@ namespace PBOOO_PROJECT.View.Penjual
             Revenue();
         }
 
+        private void RefreshDashboard()
+        {
+            Order();
+            Dikirim();
+            Maggot();
+            Revenue();
+        }
 
         public void Order()
         {
-            int total = 0;
             string query = string.Format(@"SELECT COUNT(*) AS total_order
                                             FROM transaksi_maggot tm
                                             JOIN maggot m ON m.id_maggot = tm.id_maggot
@@ -50,11 +56,12 @@ namespace PBOOO_PROJECT.View.Penjual
                 db.Open();
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, db.Connection))
                 {
+                    cmd.Parameters.AddWithValue("@id_penjual", UserId);
                     NpgsqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
                         int count = Convert.ToInt32(reader[0]);
-                        Total_TP.Text = count.ToString();
+                        Total_TO.Text = count.ToString();
                     }
                     reader.Close();
                 }
@@ -72,6 +79,7 @@ namespace PBOOO_PROJECT.View.Penjual
                 db.Open();
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, db.Connection))
                 {
+                    cmd.Parameters.AddWithValue("@id_penjual", UserId);
                     NpgsqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
@@ -90,6 +98,7 @@ namespace PBOOO_PROJECT.View.Penjual
                 db.Open();
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, db.Connection))
                 {
+                    cmd.Parameters.AddWithValue("@id_penjual", UserId);
                     NpgsqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
@@ -114,7 +123,6 @@ namespace PBOOO_PROJECT.View.Penjual
             using (var db = new DBConnection()) // db harus punya Open()
             {
                 db.Open();
-
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, db.Connection))
                 {
                     cmd.Parameters.AddWithValue("@id_penjual", UserId);
@@ -128,7 +136,7 @@ namespace PBOOO_PROJECT.View.Penjual
                     else
                     {
                         double total = Convert.ToDouble(result);
-                        Total_TR.Text = total.ToString("N2"); // 2 decimal
+                        Total_TR.Text = total.ToString("N0"); // No decimals
                     }
                 }
             }
