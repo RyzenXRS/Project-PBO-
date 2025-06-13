@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projek_Akhir_PBO.Controller.Pemilik;
+using PBOOO_PROJECT.Controller.Penjual;
 
-namespace Projek_Akhir_PBO.View.Pemilik
+namespace PBOOO_PROJECT.View.Penjual
 {
-    public partial class UCTransactionsPemilik : UserControl
+    public partial class UCTransactionsPenjual : UserControl
     {
         private int _userId;
 
@@ -22,14 +22,14 @@ namespace Projek_Akhir_PBO.View.Pemilik
             {
                 _userId = value;
                 datatransaksiController.UserId = _userId;
-                LoadDataGrid();  
+                LoadDataGrid();
             }
         }
 
         private int idDataTransaksiSelected = -1;
         DataTransaksiContoller datatransaksiController;
 
-        public UCTransactionsPemilik()
+        public UCTransactionsPenjual()
         {
             datatransaksiController = new DataTransaksiContoller();
             InitializeComponent();
@@ -39,16 +39,15 @@ namespace Projek_Akhir_PBO.View.Pemilik
         {
             datatransaksiController.Read();
             DataTable table = new DataTable();
-            table.Columns.Add("Id Peminjaman", typeof(int));
-            table.Columns.Add("Nama Penyewa", typeof(string));
+            table.Columns.Add("Id Transaksi Maggot", typeof(int));
+            table.Columns.Add("Nama Pembeli", typeof(string));
             table.Columns.Add("Jenis Ewallet", typeof(string));
             table.Columns.Add("Nomor Ewallet", typeof(string));
-            table.Columns.Add("Tanggal Peminjaman", typeof(DateTime));
-            table.Columns.Add("Tanggal Pengembalian", typeof(DateTime));
+            table.Columns.Add("Tanggal Pembelian", typeof(DateTime));
             table.Columns.Add("Total Harga Keseluruhan", typeof(long));
             foreach (var datatransaksi in datatransaksiController.Listdatatransaksi)
             {
-                table.Rows.Add(datatransaksi.id_peminjaman, datatransaksi.nama_penyewa, datatransaksi.jenis_ewallet, datatransaksi.nomor_ewallet, datatransaksi.tanggal_peminjaman, datatransaksi.tanggalpengembalian, datatransaksi.total_harga_keseluruhan);
+                table.Rows.Add(datatransaksi.id_transaksi_maggot, datatransaksi.nama_pembeli, datatransaksi.jenis_ewallet, datatransaksi.nomor_ewallet, datatransaksi.tanggal, datatransaksi.total_harga_keseluruhan);
             }
 
             dataGridView1.DataSource = table;
@@ -77,21 +76,26 @@ namespace Projek_Akhir_PBO.View.Pemilik
                 dataGridView2.Controls.Clear();
                 DataTable table2 = new DataTable();
 
-                table2.Columns.Add("Nama Barang", typeof(string));
-                table2.Columns.Add("Harga Barang", typeof(int));
-                table2.Columns.Add("Quantity", typeof(int));
+                table2.Columns.Add("Nama Maggot", typeof(string));
+                table2.Columns.Add("Stock", typeof(int));
+                table2.Columns.Add("Harga", typeof(int));
                 table2.Columns.Add("Total Harga", typeof(string));
                 dataGridView2.DataSource = table2;
 
                 foreach (var detail in details)
                 {
-                    table2.Rows.Add(detail.NamaAlatCamping, detail.HargaAlatCamping,
-                        detail.Quantity, detail.Total_Harga);
+                    table2.Rows.Add(detail.jenis_maggot, detail.jumlah_kg,
+                        detail.harga_per_kg, detail.total_harga);
                 }
             }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void paneltopdashboard_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -1,4 +1,5 @@
-﻿using PBOOO_PROJECT.View.Admin;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using PBOOO_PROJECT.View.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,7 @@ namespace PBOOO_PROJECT.View.Penjual
             ucStockPenjual1.UserId = userId;
             ucDashboardPenjual1.UserId = userId;
             ucStatusPenjual1.UserId = userId;
+            ucTransactionsPenjual1.UserId = userId;
         }
 
         private void ShowUserControl(UserControl uc)
@@ -32,7 +34,9 @@ namespace PBOOO_PROJECT.View.Penjual
             ucProdukPenjual1.Visible = false;
             ucStockPenjual1.Visible = false;
             ucDashboardPenjual1.Visible = false;
-            ucStatusPenjual1.Visible = false;   
+            ucStatusPenjual1.Visible = false;
+            ucTransactionsPenjual1.Visible = false;
+
 
 
             // Tampilkan UserControl yang dipilih
@@ -87,6 +91,7 @@ namespace PBOOO_PROJECT.View.Penjual
 
         private void buttonTransactionsPemilik_Click(object sender, EventArgs e)
         {
+            ShowUserControl(ucTransactionsPenjual1);
         }
 
         private void buttonprofilepemilik_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
-﻿namespace Projek_Akhir_PBO.View.Pemilik
+﻿namespace PBOOO_PROJECT.View.Penjual
 {
-    partial class UCTransactionsPemilik
+    partial class UCTransactionsPenjual
     {
         /// <summary> 
         /// Required designer variable.
@@ -56,17 +56,18 @@
             paneltopdashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
             paneltopdashboard.Size = new Size(1277, 131);
             paneltopdashboard.TabIndex = 45;
+            paneltopdashboard.Paint += paneltopdashboard_Paint;
             // 
             // juduldashboard
             // 
             juduldashboard.AutoSize = true;
             juduldashboard.BackColor = Color.Transparent;
-            juduldashboard.Font = new Font("Lufga", 30F, FontStyle.Bold);
+            juduldashboard.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold);
             juduldashboard.ForeColor = Color.FromArgb(91, 80, 80);
             juduldashboard.ImageAlign = ContentAlignment.MiddleLeft;
             juduldashboard.Location = new Point(34, 41);
             juduldashboard.Name = "juduldashboard";
-            juduldashboard.Size = new Size(267, 52);
+            juduldashboard.Size = new Size(261, 46);
             juduldashboard.TabIndex = 20;
             juduldashboard.Text = "Transactions";
             // 
@@ -114,12 +115,12 @@
             label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Lufga SemiBold", 20.25F, FontStyle.Bold);
+            label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(91, 80, 80);
             label1.ImageAlign = ContentAlignment.MiddleLeft;
             label1.Location = new Point(34, 149);
             label1.Name = "label1";
-            label1.Size = new Size(209, 35);
+            label1.Size = new Size(212, 31);
             label1.TabIndex = 48;
             label1.Text = "Data Transaksi";
             // 
@@ -128,12 +129,12 @@
             label2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Lufga SemiBold", 20.25F, FontStyle.Bold);
+            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(91, 80, 80);
             label2.ImageAlign = ContentAlignment.MiddleLeft;
             label2.Location = new Point(34, 502);
             label2.Name = "label2";
-            label2.Size = new Size(228, 35);
+            label2.Size = new Size(235, 31);
             label2.TabIndex = 49;
             label2.Text = "Detail Transaksi:";
             // 
@@ -147,7 +148,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(paneltopdashboard);
             Name = "UCTransactionsPemilik";
-            Size = new Size(1277, 864);
+            Size = new Size(2000, 1400);
             Load += UCTransactionsPemilik_Load;
             paneltopdashboard.ResumeLayout(false);
             paneltopdashboard.PerformLayout();
