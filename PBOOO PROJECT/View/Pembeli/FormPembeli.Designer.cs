@@ -58,6 +58,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             MaGrow = new Label();
             ucProfilePembeli1 = new UCProfilePembeli();
             ucHistoryPembeli1 = new UCHistoryPembeli();
+            ucHomePembeli1 = new UCHomePembeli();   
             sidebardashboard.SuspendLayout();
             panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoGoCamp).BeginInit();
@@ -324,6 +325,15 @@ namespace PBOOO_PROJECT.View.Pembeli
             ucHistoryPembeli1.TabIndex = 44;
             ucHistoryPembeli1.UserId = 0;
             // 
+            // ucHomePembeli1
+            // 
+            ucHomePembeli1.Location = new Point(366, 0);
+            ucHomePembeli1.Margin = new Padding(9, 8, 9, 8);
+            ucHomePembeli1.Name = "ucHomePembeli1";
+            ucHomePembeli1.Size = new Size(1920, 1440);
+            ucHomePembeli1.TabIndex = 44;
+            ucHomePembeli1.UserId = 0;
+            // 
             // FormPembeli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -333,6 +343,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             Controls.Add(sidebardashboard);
             Controls.Add(ucProfilePembeli1);
             Controls.Add(ucHistoryPembeli1);
+            Controls.Add(ucHomePembeli1);
             Name = "FormPembeli";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPembeli";
@@ -359,5 +370,6 @@ namespace PBOOO_PROJECT.View.Pembeli
         private Label MaGrow;
         private UCProfilePembeli ucProfilePembeli1;
         private UCHistoryPembeli ucHistoryPembeli1;
+        private UCHomePembeli ucHomePembeli1;
     }
 }

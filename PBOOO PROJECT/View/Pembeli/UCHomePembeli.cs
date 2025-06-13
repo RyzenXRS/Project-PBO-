@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Npgsql;
+using PBOOO_PROJECT.Controller.Penjual;
+using PBOOO_PROJECT.Tools;
+using PBOOO_PROJECT.View.Pembeli;
+using PBOOO_PROJECT.View.Penjual;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Npgsql;
-using PBOOO_PROJECT.Controller.Penjual;
-using PBOOO_PROJECT.Tools;
 
 namespace PBOOO_PROJECT.View.Pembeli
 {
@@ -37,7 +39,7 @@ namespace PBOOO_PROJECT.View.Pembeli
 
         private void AddCategory()
         {
-            string query = "select * from alat_camping";
+            string query = "SELECT DISTINCT jenis_maggot FROM maggot ORDER BY jenis_maggot";
             using (var db = new DBConnection())
             {
                 db.Open();
@@ -58,7 +60,7 @@ namespace PBOOO_PROJECT.View.Pembeli
                                 b.FillColor = Color.FromArgb(220, 225, 189);
                                 b.Size = new Size(180, 45);
                                 b.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-                                b.Text = dr["namaalatcamping"].ToString();
+                                b.Text = dr["jenis_maggot"].ToString();
 
 
                                 b.Click += new EventHandler(b_click);
@@ -73,39 +75,36 @@ namespace PBOOO_PROJECT.View.Pembeli
 
         private void b_click(object sender, EventArgs e)
         {
-            return;
-            //Guna.UI2.WinForms.Guna2Button b = (Guna.UI2.WinForms.Guna2Button)sender;
-            //foreach (var item in panelItem.Controls)
-            //{
-            //    //var pro = (UCItemHome)item;
-            //    pro.Visible = pro.namaalatcamping.ToLower().Contains(b.Text.Trim().ToLower());
-            //}
+            Guna.UI2.WinForms.Guna2Button b = (Guna.UI2.WinForms.Guna2Button)sender;
+            foreach (var item in panelItem.Controls)
+            {
+                var pro = (UCItemHome)item;
+                pro.Visible = pro.jenis_maggot.ToLower().Contains(b.Text.Trim().ToLower());
+            }
         }
 
-        private void AddItems(string id, string name, string cat, string price, string desc)
+        private void AddItems(string id, string jenis, string harga, string desc, string id_penjual)
         {
-            return;
             if (panelItem == null)
             {
                 throw new InvalidOperationException("panelitem or datagridTransaction is not initialized.");
             }
 
-            //var w = new UCItemHome()
+            var w = new UCItemHome()
             {
-                //namaalatcamping = name,
-                //hargaalatcamping = Convert.ToInt32(price),
-                //namakategori = cat,
-                //id_alatcamping = Convert.ToInt32(id),
-                //deskripsialat = desc
+                id_maggot = Convert.ToInt32(id),
+                id_penjual = Convert.ToInt32(id_penjual),
+                jenis_maggot = jenis,
+                harga_per_kg = Convert.ToDecimal(harga),
+                deskripsi = desc
             };
 
-            //panelItem.Controls.Add(w);
+            panelItem.Controls.Add(w);
         }
 
         private void LoadProducts()
         {
-
-            string query = "select * from alat_camping ac join kategori_alat_camping kac on (ac.id_kategori=kac.id_kategori)";
+            string query = "SELECT m.id_maggot,m.jenis_maggot,m.harga_per_kg,COALESCE(sm.jumlah_kg, 0) AS stok_kg, m.id_penjual,'Maggot berkualitas tinggi' AS deskripsi\r\nFROM maggot m\r\nLEFT JOIN stok_maggot sm ON sm.id_maggot = m.id_maggot\r\nWHERE COALESCE(sm.jumlah_kg, 0) > 0;";
             using (var db = new DBConnection())
             {
                 db.Open();
@@ -118,8 +117,25 @@ namespace PBOOO_PROJECT.View.Pembeli
 
                         foreach (DataRow item in dt.Rows)
                         {
-                            AddItems(item["id_alatcamping"].ToString(), item["namaalatcamping"].ToString(), item["namakategori"].ToString(),
-                                item["hargaalatcamping"].ToString(), item["deskripsi"].ToString());
+                            //var card = new UCItemMaggot
+                            //{
+                            //    id_maggot = int.Parse(item["id_maggot"].ToString()),
+                            //    id_penjual = int.Parse(item["id_penjual"].ToString()),
+                            //    jenis_maggot = item["jenis_maggot"].ToString(),
+                            //    harga_per_kg = (decimal)item["harga_per_kg"],
+                            //    stok_kg = int.Parse(item["stok_kg"].ToString()),
+                            //    //jenis_sampah = "Sampah Organik" // contoh, jika tersedia
+                            //};
+                            //card.onSelect += Card_onSelect;
+                            //panelItem.Controls.Add(card);
+                            AddItems(
+                                item["id_maggot"].ToString(),
+                                item["jenis_maggot"].ToString(),
+                                item["harga_per_kg"].ToString(), // Fix: Convert decimal to string
+                                item["deskripsi"].ToString(),      // Fix: Correct column name and convert to string
+                                item["id_penjual"].ToString()
+                            );
+
                         }
                     }
                 }

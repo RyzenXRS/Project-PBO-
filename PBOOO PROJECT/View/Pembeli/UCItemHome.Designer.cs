@@ -1,4 +1,4 @@
-﻿namespace PBOOO_PROJECT.View.Penyewa
+﻿namespace PBOOO_PROJECT.View.Pembeli
 {
     partial class UCItemHome
     {

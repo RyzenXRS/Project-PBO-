@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBOOO_PROJECT.View.Penyewa
+namespace PBOOO_PROJECT.View.Pembeli
 {
     public partial class UCItemHome : UserControl
     {
@@ -17,12 +17,13 @@ namespace PBOOO_PROJECT.View.Penyewa
             InitializeComponent();
         }
         public int id_maggot { get; set; }
-        public int harga_per_kg
+        public int id_penjual { get; set; }
+        public decimal harga_per_kg
         {
             get
             {
-                int value;
-                if (int.TryParse(lblPrice.Text, out value))
+                decimal value;
+                if (decimal.TryParse(lblPrice.Text, out value))
                 {
                     return value;
                 }
@@ -33,12 +34,11 @@ namespace PBOOO_PROJECT.View.Penyewa
             }
             set
             {
-                lblPrice.Text = value.ToString();
+                lblPrice.Text = value.ToString("N0");
             }
         }
-        public string jenis_maggot { get; set; }
 
-        public string jenis_sampah
+        public string jenis_maggot
         {
             get { return lblNama.Text; }
             set { lblNama.Text = value; }
