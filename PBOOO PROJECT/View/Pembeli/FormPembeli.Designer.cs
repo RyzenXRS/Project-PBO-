@@ -54,6 +54,7 @@
             panellogo = new Guna.UI2.WinForms.Guna2Panel();
             LogoGoCamp = new PictureBox();
             MaGrow = new Label();
+            ucProfilePembeli1 = new UCProfilePembeli();
             sidebardashboard.SuspendLayout();
             panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoGoCamp).BeginInit();
@@ -309,6 +310,7 @@
             ClientSize = new Size(1536, 864);
             Controls.Add(panel1);
             Controls.Add(sidebardashboard);
+            Controls.Add(ucProfilePembeli1);
             Name = "FormPembeli";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPembeli";
@@ -333,5 +335,6 @@
         private Guna.UI2.WinForms.Guna2Panel panellogo;
         private PictureBox LogoGoCamp;
         private Label MaGrow;
+        private UCProfilePembeli ucProfilePembeli1;
     }
 }

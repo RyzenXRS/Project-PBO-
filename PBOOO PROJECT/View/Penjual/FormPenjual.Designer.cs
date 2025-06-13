@@ -384,7 +384,7 @@ namespace PBOOO_PROJECT.View.Penjual
             // 
             ucTransactionsPenjual1.Location = new Point(366, 0);
             ucTransactionsPenjual1.Margin = new Padding(9, 8, 9, 8);
-            ucTransactionsPenjual1.Name = "ucStatusPenjual1";
+            ucTransactionsPenjual1.Name = "ucTransactionsPenjual1";
             ucTransactionsPenjual1.Size = new Size(1920, 1440);
             ucTransactionsPenjual1.TabIndex = 44;
             ucTransactionsPenjual1.UserId = 0;

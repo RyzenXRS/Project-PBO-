@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using PBOOO_PROJECT.View.Penjual;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +17,18 @@ namespace PBOOO_PROJECT.View.Pembeli
         private int _userId;
         public FormPembeli(int userId)
         {
-            _userId = userId;
             InitializeComponent();;
+            _userId = userId;
         }
+        private void ShowUserControl(UserControl uc)
+        {
+            // Sembunyikan semua UserControl
+            ucProfilePembeli1.Visible = false;
 
+            // Tampilkan UserControl yang dipilih
+            uc.Visible = true;
+            uc.BringToFront();
+        }
         private void FormPembeli_Load(object sender, EventArgs e)
         {
 
@@ -67,7 +76,7 @@ namespace PBOOO_PROJECT.View.Pembeli
 
         private void buttonprofilpeyewa_Click(object sender, EventArgs e)
         {
-
+            ShowUserControl(ucProfilePembeli1);
         }
 
         private void sidebardashboard_Paint(object sender, PaintEventArgs e)
