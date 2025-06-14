@@ -17,12 +17,12 @@ namespace PBOOO_PROJECT.View.Pembeli
         private int _userId;
         public FormPembeli(int userId)
         {
-            InitializeComponent();;
+            InitializeComponent(); ;
             _userId = userId;
-            ucProfilePembeli1.UserId = _userId; 
+            ucProfilePembeli1.UserId = _userId;
             ucHistoryPembeli1.UserId = _userId;
             ucHomePembeli1.UserId = _userId;
-            ucTransactionsPembeli1.UserId = _userId;    
+            ucTransactionsPembeli1.UserId = _userId;
         }
         private void ShowUserControl(UserControl uc)
         {
@@ -30,7 +30,7 @@ namespace PBOOO_PROJECT.View.Pembeli
             ucProfilePembeli1.Visible = false;
             ucHistoryPembeli1.Visible = false;
             ucHomePembeli1.Visible = false;
-            ucTransactionsPembeli1.Visible = false; 
+            ucTransactionsPembeli1.Visible = false;
 
 
             // Tampilkan UserControl yang dipilih
@@ -90,6 +90,17 @@ namespace PBOOO_PROJECT.View.Pembeli
         private void sidebardashboard_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Anda yakin ingin keluar ?", "Konfirmasi Pesan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                Form1 formLogin = new Form1();
+                formLogin.Show();
+                this.Hide();
+            }
         }
     }
 }

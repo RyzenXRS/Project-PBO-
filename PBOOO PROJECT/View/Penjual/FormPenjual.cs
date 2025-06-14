@@ -101,7 +101,18 @@ namespace PBOOO_PROJECT.View.Penjual
 
         private void sidebardashboard_Paint(object sender, PaintEventArgs e)
         {
-            
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Anda yakin ingin keluar ?", "Konfirmasi Pesan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                Form1 formLogin = new Form1();
+                formLogin.Show();
+                this.Hide();
+            }
         }
     }
 }

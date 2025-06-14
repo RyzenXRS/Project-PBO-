@@ -30,8 +30,6 @@ namespace PBOOO_PROJECT.View.Penjual
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -46,7 +44,11 @@ namespace PBOOO_PROJECT.View.Penjual
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPenjual));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             sidebardashboard = new Panel();
             buttonprofilepemilik = new Guna.UI2.WinForms.Guna2Button();
@@ -65,6 +67,7 @@ namespace PBOOO_PROJECT.View.Penjual
             ucDashboardPenjual1 = new UCDashboardPenjual();
             ucStatusPenjual1 = new UCStatusPenjual();
             ucTransactionsPenjual1 = new UCTransactionsPenjual();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             sidebardashboard.SuspendLayout();
             panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoGoCamp).BeginInit();
@@ -83,6 +86,7 @@ namespace PBOOO_PROJECT.View.Penjual
             // 
             sidebardashboard.BackColor = Color.FromArgb(138, 154, 91);
             sidebardashboard.BorderStyle = BorderStyle.FixedSingle;
+            sidebardashboard.Controls.Add(guna2Button1);
             sidebardashboard.Controls.Add(buttonprofilepemilik);
             sidebardashboard.Controls.Add(buttonTransactionsPemilik);
             sidebardashboard.Controls.Add(buttonrentersPemilik);
@@ -104,7 +108,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonprofilepemilik.BackColor = Color.Transparent;
             buttonprofilepemilik.BorderRadius = 10;
             buttonprofilepemilik.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttonprofilepemilik.CustomizableEdges = customizableEdges1;
+            buttonprofilepemilik.CustomizableEdges = customizableEdges3;
             buttonprofilepemilik.DisabledState.BorderColor = Color.DarkGray;
             buttonprofilepemilik.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonprofilepemilik.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -121,7 +125,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonprofilepemilik.Name = "buttonprofilepemilik";
             buttonprofilepemilik.Padding = new Padding(3, 2, 0, 0);
             buttonprofilepemilik.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttonprofilepemilik.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            buttonprofilepemilik.ShadowDecoration.CustomizableEdges = customizableEdges4;
             buttonprofilepemilik.Size = new Size(254, 62);
             buttonprofilepemilik.TabIndex = 8;
             buttonprofilepemilik.Text = "          Profile";
@@ -133,7 +137,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonTransactionsPemilik.BackColor = Color.Transparent;
             buttonTransactionsPemilik.BorderRadius = 10;
             buttonTransactionsPemilik.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttonTransactionsPemilik.CustomizableEdges = customizableEdges3;
+            buttonTransactionsPemilik.CustomizableEdges = customizableEdges5;
             buttonTransactionsPemilik.DisabledState.BorderColor = Color.DarkGray;
             buttonTransactionsPemilik.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonTransactionsPemilik.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -151,7 +155,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonTransactionsPemilik.Name = "buttonTransactionsPemilik";
             buttonTransactionsPemilik.Padding = new Padding(0, 2, 0, 0);
             buttonTransactionsPemilik.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttonTransactionsPemilik.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            buttonTransactionsPemilik.ShadowDecoration.CustomizableEdges = customizableEdges6;
             buttonTransactionsPemilik.Size = new Size(254, 62);
             buttonTransactionsPemilik.TabIndex = 12;
             buttonTransactionsPemilik.Text = "          Transactions";
@@ -163,7 +167,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonrentersPemilik.BackColor = Color.Transparent;
             buttonrentersPemilik.BorderRadius = 10;
             buttonrentersPemilik.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttonrentersPemilik.CustomizableEdges = customizableEdges5;
+            buttonrentersPemilik.CustomizableEdges = customizableEdges7;
             buttonrentersPemilik.DisabledState.BorderColor = Color.DarkGray;
             buttonrentersPemilik.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonrentersPemilik.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -181,7 +185,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonrentersPemilik.Name = "buttonrentersPemilik";
             buttonrentersPemilik.Padding = new Padding(3, 2, 0, 0);
             buttonrentersPemilik.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttonrentersPemilik.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            buttonrentersPemilik.ShadowDecoration.CustomizableEdges = customizableEdges8;
             buttonrentersPemilik.Size = new Size(254, 62);
             buttonrentersPemilik.TabIndex = 11;
             buttonrentersPemilik.Text = "          Status";
@@ -192,7 +196,7 @@ namespace PBOOO_PROJECT.View.Penjual
             // 
             buttonlogoutpemilik.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonlogoutpemilik.BorderRadius = 10;
-            buttonlogoutpemilik.CustomizableEdges = customizableEdges7;
+            buttonlogoutpemilik.CustomizableEdges = customizableEdges9;
             buttonlogoutpemilik.DisabledState.BorderColor = Color.DarkGray;
             buttonlogoutpemilik.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonlogoutpemilik.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -202,7 +206,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonlogoutpemilik.ForeColor = Color.White;
             buttonlogoutpemilik.Location = new Point(22, 1516);
             buttonlogoutpemilik.Name = "buttonlogoutpemilik";
-            buttonlogoutpemilik.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            buttonlogoutpemilik.ShadowDecoration.CustomizableEdges = customizableEdges10;
             buttonlogoutpemilik.Size = new Size(264, 53);
             buttonlogoutpemilik.TabIndex = 6;
             buttonlogoutpemilik.Text = "Logout";
@@ -212,7 +216,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttoncategoriesPemilik.BackColor = Color.Transparent;
             buttoncategoriesPemilik.BorderRadius = 10;
             buttoncategoriesPemilik.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttoncategoriesPemilik.CustomizableEdges = customizableEdges9;
+            buttoncategoriesPemilik.CustomizableEdges = customizableEdges11;
             buttoncategoriesPemilik.DisabledState.BorderColor = Color.DarkGray;
             buttoncategoriesPemilik.DisabledState.CustomBorderColor = Color.DarkGray;
             buttoncategoriesPemilik.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -230,7 +234,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttoncategoriesPemilik.Name = "buttoncategoriesPemilik";
             buttoncategoriesPemilik.Padding = new Padding(2, 1, 0, 0);
             buttoncategoriesPemilik.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttoncategoriesPemilik.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            buttoncategoriesPemilik.ShadowDecoration.CustomizableEdges = customizableEdges12;
             buttoncategoriesPemilik.Size = new Size(254, 62);
             buttoncategoriesPemilik.TabIndex = 10;
             buttoncategoriesPemilik.Text = "          Product";
@@ -242,7 +246,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonstocksPemilik.BackColor = Color.Transparent;
             buttonstocksPemilik.BorderRadius = 10;
             buttonstocksPemilik.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttonstocksPemilik.CustomizableEdges = customizableEdges11;
+            buttonstocksPemilik.CustomizableEdges = customizableEdges13;
             buttonstocksPemilik.DisabledState.BorderColor = Color.DarkGray;
             buttonstocksPemilik.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonstocksPemilik.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -260,7 +264,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttonstocksPemilik.Name = "buttonstocksPemilik";
             buttonstocksPemilik.Padding = new Padding(3, 2, 0, 0);
             buttonstocksPemilik.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttonstocksPemilik.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            buttonstocksPemilik.ShadowDecoration.CustomizableEdges = customizableEdges14;
             buttonstocksPemilik.Size = new Size(254, 62);
             buttonstocksPemilik.TabIndex = 9;
             buttonstocksPemilik.Text = "          Stocks";
@@ -273,7 +277,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttondashboardPemilik.BorderColor = Color.Transparent;
             buttondashboardPemilik.BorderRadius = 10;
             buttondashboardPemilik.CheckedState.FillColor = Color.FromArgb(97, 191, 143);
-            buttondashboardPemilik.CustomizableEdges = customizableEdges13;
+            buttondashboardPemilik.CustomizableEdges = customizableEdges15;
             buttondashboardPemilik.DisabledState.BorderColor = Color.DarkGray;
             buttondashboardPemilik.DisabledState.CustomBorderColor = Color.DarkGray;
             buttondashboardPemilik.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -290,7 +294,7 @@ namespace PBOOO_PROJECT.View.Penjual
             buttondashboardPemilik.Name = "buttondashboardPemilik";
             buttondashboardPemilik.Padding = new Padding(3, 1, 0, 0);
             buttondashboardPemilik.ShadowDecoration.Color = Color.FromArgb(97, 191, 143);
-            buttondashboardPemilik.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            buttondashboardPemilik.ShadowDecoration.CustomizableEdges = customizableEdges16;
             buttondashboardPemilik.Size = new Size(254, 62);
             buttondashboardPemilik.TabIndex = 7;
             buttondashboardPemilik.Text = "          Dashboard";
@@ -301,11 +305,11 @@ namespace PBOOO_PROJECT.View.Penjual
             // 
             panellogo.Controls.Add(LogoGoCamp);
             panellogo.Controls.Add(MaGrow);
-            panellogo.CustomizableEdges = customizableEdges15;
+            panellogo.CustomizableEdges = customizableEdges17;
             panellogo.Dock = DockStyle.Top;
             panellogo.Location = new Point(0, 0);
             panellogo.Name = "panellogo";
-            panellogo.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            panellogo.ShadowDecoration.CustomizableEdges = customizableEdges18;
             panellogo.Size = new Size(254, 130);
             panellogo.TabIndex = 5;
             panellogo.Paint += panellogo_Paint;
@@ -389,6 +393,26 @@ namespace PBOOO_PROJECT.View.Penjual
             ucTransactionsPenjual1.TabIndex = 44;
             ucTransactionsPenjual1.UserId = 0;
             // 
+            // guna2Button1
+            // 
+            guna2Button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(64, 65, 56);
+            guna2Button1.Font = new Font("Microsoft Sans Serif", 13F);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(22, 723);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.Size = new Size(210, 53);
+            guna2Button1.TabIndex = 46;
+            guna2Button1.Text = "Logout";
+            guna2Button1.Click += guna2Button1_Click;
+            // 
             // FormPenjual
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -433,5 +457,6 @@ namespace PBOOO_PROJECT.View.Penjual
         private UCDashboardPenjual ucDashboardPenjual1;
         private UCStatusPenjual ucStatusPenjual1;
         private UCTransactionsPenjual ucTransactionsPenjual1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

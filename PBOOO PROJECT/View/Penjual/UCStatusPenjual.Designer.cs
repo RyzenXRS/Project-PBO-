@@ -425,6 +425,7 @@
             tb4.ShadowDecoration.CustomizableEdges = customizableEdges12;
             tb4.Size = new Size(309, 36);
             tb4.TabIndex = 98;
+            tb4.TextChanged += tb4_TextChanged;
             // 
             // UCStatusPenjual
             // 

@@ -95,7 +95,7 @@ namespace PBOOO_PROJECT.View.Admin
                 return;
             }
             string cekQuery = "SELECT COUNT(*) FROM admin WHERE nama_admin = @nama_admin AND id_admin != @userId";
-            string updateQuery = "UPDATE admin SET nama_admin = @nama_admin, no_hp = @no_hp WHERE id_admin = @userId";
+            string updateQuery = "UPDATE admin SET nama_admin = @nama_admin, no_telp = @no_hp WHERE id_admin = @userId";
 
             try
             {

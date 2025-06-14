@@ -123,8 +123,8 @@ namespace PBOOO_PROJECT.View.Penjual
                 idMaggotSelected = Convert.ToInt32(row.Cells[0].Value);
                 tb1.Text = row.Cells[1].Value.ToString(); // Nama Pembeli
                 tb2.Text = row.Cells[2].Value.ToString(); // Nomor E-Wallet
-                tb4.Text = row.Cells[3].Value.ToString(); // Tanggal Transaksi
-                tb3.Text = row.Cells[5].Value.ToString(); // Total Harga
+                tb4.Text = row.Cells[5].Value.ToString(); // Tanggal Transaksi
+                tb3.Text = row.Cells[3].Value.ToString(); // Total Harga
                 string status_transaksi = row.Cells[4].Value.ToString();
 
                 cbstatustransaksi.SelectedItem = status_transaksi;
@@ -181,6 +181,11 @@ namespace PBOOO_PROJECT.View.Penjual
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tb4_TextChanged(object sender, EventArgs e)
         {
 
         }
